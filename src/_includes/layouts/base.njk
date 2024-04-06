@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width,initial-scale=1" name="viewport" />
+
+  <title>Jochen Stierberger</title>
+  <meta content="Personal Website" property="og:title" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@heyjochen" />
+  <meta name="twitter:title" content="Jochen Stierberger" />
+  <meta name="twitter:description" content="Personal Website" />
+  <meta name="twitter:image" content="https://stierberger.com/og.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jochen Stierberger" />
+  <meta property="og:description" content="Personal Website" />
+  <meta property="og:url" content="https://stierberger.com" />
+  <meta property="og:image" content="https://stierberger.com/og.png" />
+  <meta content="" name="description" />
+  <meta content="" property="og:description" />
+  <meta content="https://minwiz.com/og.png" property="og:image" />
+  <meta content="summary" name="twitter:card" />
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <header>
+    <a href="/" class="home-link">{{ metadata.base_url }}</a>
+
+    <nav>
+      <ul class="nav">
+        {%- for entry in collections.all | eleventyNavigation %}
+        <li class="nav-item"><a href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif %}>{{
+            entry.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <main id="skip">
+    {{ content | safe }}
+  </main>
+
+  <footer></footer>
+</body>
+
+</html>
