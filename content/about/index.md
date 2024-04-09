@@ -4,7 +4,7 @@ eleventyNavigation:
   key: about
   order: 3
 ---
-# about.
+# About
 
 What's up, my name is Jochen, I'm a Software Engineer. I have lived, worked and enjoyed life on three continents.
 
@@ -14,7 +14,7 @@ I listen to a lot of punk and hardcore. I went to see Restraining Order last yea
 
 Right now, I am reading the Phoenix Project, just finished watching the 3 Body Problem and will read Bookworm soon. One of my favorite movies is La Haine.
 
-# reach out.
+## Reach out
 
 Feel free to shoot me an email. While I don't know a lot, I'm happy to talk tech or give advice to anyone new to the industry.
 
