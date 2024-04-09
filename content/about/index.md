@@ -19,4 +19,4 @@ Right now, I am reading the Phoenix Project, just finished watching the 3 Body P
 Feel free to shoot me an email. While I don't know a lot, I'm happy to talk tech or give advice to anyone new to the industry.
 
 email: hi at jochen dot fyi
-<blockquote><p>Check out what I am doing <a href="/now">now/</a> or <a href="/how">how/</a> I built this page.</p></blockquote>
+<blockquote><p>Check out what I am doing <a href="/now">now</a> or <a href="/how">how</a> I built this page.</p></blockquote>
