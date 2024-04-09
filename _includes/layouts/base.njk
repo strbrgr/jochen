@@ -16,9 +16,9 @@
     <a href="/" class="home-link">{{ metadata.base_url }}</a>
 
     <nav>
-      <ul class="nav">
+      <ul class="nav__list">
         {%- for entry in collections.all | eleventyNavigation %}
-        <li class="nav-item"><a href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif %}>{{
+        <li class="nav__item"><a href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif %}>{{
             entry.title }}</a></li>
         {%- endfor %}
       </ul>
@@ -29,7 +29,9 @@
     {{ content | safe }}
   </main>
 
-  <!-- This page `{{ page.url | htmlBaseUrl }}` was built on {% currentBuildDate %} -->
+  <footer>
+    This page `{{ page.url | htmlBaseUrl }}` was built on {% currentBuildDate %}
+  </footer>
 </body>
 
 </html>
