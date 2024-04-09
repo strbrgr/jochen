@@ -33,11 +33,11 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-    return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+    return (tags || []).filter(tag => ["all", "nav", "post", "posts", "book"].indexOf(tag) === -1);
   });
 
   eleventyConfig.addShortcode("currentBuildDate", () => {
-    return (new Date()).toISOString();
+    return (new Date()).toDateString();
   })
 
   // Return the smallest number argument
