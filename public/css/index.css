@@ -10,20 +10,12 @@
 
 @media (prefers-color-scheme: dark) {
   * {
-    --c-100: #F8F9FA;
-    --c-200: #E9ECEF;
-    --c-300: #DEE2E6;
-    --c-400: #CED4DA;
-    --c-500: #ADB5BD;
-    --c-600: #6C757D;
-    --c-700: #495057;
-    --c-800: #343A40;
-    --c-900: #212529;
-    --tc: #D6DFFF;
-    --tc-100: #887;
-    --bc: #000412;
-    --hc: #cdb;
-    --bc-bq: #0d1510
+    --c-100: #f8f9fa;
+    --c-200: #B8C1CC;
+    --c-300: #42484C;
+    --c-400: #383D43;
+    --c-500: #2E3338;
+    --c-600: #212529;
   }
 }
 
@@ -31,7 +23,7 @@ body {
   font: 1.25rem var(--font);
   line-height: 1.4;
   color: var(--c-100);
-  background: var(--c-900);
+  background: var(--c-600);
   max-width: 36em;
   margin: 0 auto;
   padding: 0 0.7em;
@@ -49,12 +41,12 @@ a {
 }
 
 a:hover {
-  color: var(--c-400);
+  color: var(--c-200);
 }
 
 *::selection {
   background: var(--c-100);
-  color: var(--c-900);
+  color: var(--c-600);
 }
 
 p {
@@ -95,8 +87,8 @@ header>a {
 }
 
 blockquote {
-  background-color: var(--c-800);
-  border-left: 2px solid var(--c-600);
+  background-color: var(--c-500);
+  border-left: 2px solid var(--c-300);
 
   p {
     padding: .5em;
@@ -120,14 +112,14 @@ table {
 }
 
 thead {
-  background-color: var(--c-800);
+  background-color: var(--c-500);
 }
 
 thead th {
   padding: 1em;
   font-size: .9rem;
   text-align: left;
-  border-bottom: 1px solid var(--c-500);
+  border-bottom: 1px solid var(--c-200);
 }
 
 tbody td {
@@ -137,15 +129,15 @@ tbody td {
 }
 
 tbody tr {
-  border-bottom: 1px solid var(--c-500);
+  border-bottom: 1px solid var(--c-200);
 }
 
 tbody tr:nth-child(odd) {
-  background-color: var(--c-600);
+  background-color: var(--c-400);
 }
 
 tbody tr:nth-child(even) {
-  background-color: var(--c-700);
+  background-color: var(--c-300);
 }
 
 .postlist {
@@ -227,9 +219,9 @@ tbody tr:nth-child(even) {
 }
 
 pre[class^="language-"] {
-  background: var(--c-800);
+  background: var(--c-500);
   padding: 1em;
-  border: 1px solid var(--c-600);
+  border: 1px solid var(--c-300);
   font-size: 0.8em;
   margin: 1em 0;
 }
@@ -245,7 +237,7 @@ code {
  * */
 code:not(pre code) {
   font-size: 0.8em;
-  background: var(--c-800);
+  background: var(--c-500);
   padding: 2px;
-  border: 1px solid var(--c-600);
+  border: 1px solid var(--c-300);
 }
