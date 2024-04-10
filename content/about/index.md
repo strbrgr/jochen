@@ -8,7 +8,7 @@ eleventyNavigation:
 
 What's up, my name is Jochen, I'm a Software Engineer. I have lived, worked and enjoyed life on three continents.
 
-I'm curious, like to go down all kinds of rabbit holes and live a frugal lifestyle and spend wisely.
+I'm curious, like to go down all kinds of rabbit holes, live a frugal lifestyle and spend wisely.
 
 I listen to a lot of punk and hardcore. I went to see Restraining Order last year and man do they have energy.
 

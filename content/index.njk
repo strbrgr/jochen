@@ -1,0 +1,24 @@
+---
+layout: layouts/home.njk
+numberOfLatestPostsToShow: 3
+---
+
+<h1>Hi.</h1>
+
+<p>My name is Jochen. I work as a Software Engineer in Chicago where I build cutting-edge applications, prioritizing quality and performance of the products shipped.</p>
+
+<p>I occasionally write about things that I find interesting.</p>
+<p>If you want to know more about me feel free to check out my <a href="/about">about</a> page or find out <a href="/how">how</a> I made this page fast, performant and climate-friendly.
+
+{% set postsCount = collections.posts | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+
+{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+{% set postslistCounter = postsCount %}
+{% include "postslist.njk" %}
+
+{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+{% if morePosts > 0 %}
+<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/posts/">the archive</a>.</p>
+{% endif %}
