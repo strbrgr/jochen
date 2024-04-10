@@ -1,15 +1,20 @@
 * {
   margin: 0;
-  --tc: #222;
-  --bc: #fff;
-  --hc: #25c;
-  --bc-bq: #eee;
+  --c-t: #212121;
+  --c-bg: #f8f9fa;
+  --c-100: #212529;
+  --c-200: #2E3338;
+  --c-300: #E7EBEE;
+  --c-400: #CFD7DD;
+  --c-500: #B7C3CC;
   --font: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
   --font-code: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   * {
+    --c-t: #f8f9fa;
+    --c-bg: #212121;
     --c-100: #f8f9fa;
     --c-200: #B8C1CC;
     --c-300: #42484C;
@@ -22,8 +27,8 @@
 body {
   font: 1.25rem var(--font);
   line-height: 1.4;
-  color: var(--c-100);
-  background: var(--c-600);
+  color: var(--c-t);
+  background: var(--c-bg);
   max-width: 36em;
   margin: 0 auto;
   padding: 0 0.7em;
@@ -64,6 +69,7 @@ section:last-of-type {
 }
 
 .nav__list {
+  list-style: none;
   display: flex;
 }
 
@@ -96,9 +102,9 @@ blockquote {
 }
 
 ul {
-  list-style: none;
   padding: 0;
   margin-bottom: .5em;
+  padding-left: 1rem;
 }
 
 ol {
@@ -216,6 +222,11 @@ tbody tr:nth-child(even) {
 
 .post__content {
   margin: 2rem 0;
+}
+
+.post__nextprev {
+  list-style: none;
+  padding: 0;
 }
 
 pre[class^="language-"] {
