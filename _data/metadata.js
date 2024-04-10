@@ -3,10 +3,9 @@ module.exports = {
   base_url: "jochen.fyi",
   url: "https://jochen.fyi/",
   language: "en",
-  description: "I am writing about my experiences as a naval navel-gazer.",
+  description: "I am writing about ",
   author: {
-    name: "Your Name Here",
-    email: "youremailaddress@example.com",
-    url: "https://example.com/about-me/"
+    name: "Jochen Stierberger",
+    url: "https://jochen.fyi"
   }
 }
