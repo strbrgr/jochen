@@ -4,9 +4,9 @@
   --c-bg: #f8f9fa;
   --c-100: #212529;
   --c-200: #2E3338;
-  --c-300: #E7EBEE;
+  --c-300: #B7C3CC;
   --c-400: #CFD7DD;
-  --c-500: #B7C3CC;
+  --c-500: #E7EBEE;
   --font: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
   --font-code: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
 }
@@ -50,8 +50,8 @@ a:hover {
 }
 
 *::selection {
-  background: var(--c-100);
-  color: var(--c-600);
+  background: var(--c-t);
+  color: var(--c-bg);
 }
 
 p {
