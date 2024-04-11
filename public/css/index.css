@@ -104,7 +104,8 @@ blockquote {
 ul {
   padding: 0;
   margin-bottom: .5em;
-  padding-left: 1rem;
+  padding-left: 2em;
+  list-style-type: circle;
 }
 
 ol {
