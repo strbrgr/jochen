@@ -11,7 +11,7 @@ Short notes about what I'm up to, listen to, and read. My booklist is relatively
 - I also just started reading _Sandworm_, a book about cybersecurity and Zero days.
 - I'm getting back into working with _Rust_. There are so many things that I like about it and I think we, as Software Engineers, need to care more about what we write and not just spit out LOC's.
 
-## Bangers
+## Tunes
 
 - __Restraining Order__ - Fight Back
 - __Big Laugh__ - No Embrace
