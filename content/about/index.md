@@ -6,13 +6,13 @@ eleventyNavigation:
 ---
 # About
 
-What's up, my name is Jochen, I'm a Software Engineer. I have lived, worked and enjoyed life on three continents.
+What's up, my name is Jochen, I'm a Software Engineer. I have lived, worked, and enjoyed life on three continents.
 
-I'm curious, like to go down all kinds of rabbit holes, live a frugal lifestyle and spend wisely.
+I'm curious, like to go down all kinds of rabbit holes, live a frugal lifestyle, and spend wisely.
 
 I listen to a lot of punk and hardcore. I went to see Restraining Order last year and man do they have energy.
 
-Right now, I am reading the Phoenix Project, just finished watching the 3 Body Problem and will read Bookworm soon. One of my favorite movies is La Haine.
+Right now, I am reading the Phoenix Project, just finished watching the Three-Body Problem, and will read Bookworm soon. One of my favorite movies is La Haine.
 
 ## Reach out
 
