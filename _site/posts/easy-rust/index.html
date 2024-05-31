@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Rust</title>
+  <meta name="description" content="I am writing about ">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@_strbrgr" />
+  <meta name="twitter:title" content="Jochen Stierberger" />
+  <meta name="twitter:description" content="Personal Website" />
+  <meta name="twitter:image" content="https://jochen.fyi/og.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jochen Stierberger" />
+  <meta property="og:description" content="Personal Website" />
+  <meta property="og:url" content="https://jochen.fyi" />
+  <meta property="og:image" content="https://jochen.fyi/og.png" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍋</text></svg>" />
+  <style>* {
+  margin: 0;
+  --c-t: #212121;
+  --c-bg: #f8f9fa;
+  --c-100: #212529;
+  --c-200: #2E3338;
+  --c-300: #B7C3CC;
+  --c-400: #CFD7DD;
+  --c-500: #E7EBEE;
+  --font: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+  --font-code: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --c-t: #f8f9fa;
+    --c-bg: #212121;
+    --c-100: #f8f9fa;
+    --c-200: #B8C1CC;
+    --c-300: #42484C;
+    --c-400: #383D43;
+    --c-500: #2E3338;
+    --c-600: #212529;
+  }
+}
+
+body {
+  font: 1.25rem var(--font);
+  line-height: 1.4;
+  color: var(--c-t);
+  background: var(--c-bg);
+  max-width: 36em;
+  margin: 0 auto;
+  padding: 0 0.7em;
+  text-align: justify;
+}
+
+main {
+  margin: 3em 0;
+}
+
+a {
+  color: var(--c-100);
+  text-decoration: underline;
+  transition: .05s;
+}
+
+a:hover {
+  color: var(--c-200);
+}
+
+*::selection {
+  background: var(--c-t);
+  color: var(--c-bg);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+section,
+section:target~section:last-of-type {
+  display: none;
+}
+
+section:target,
+section:last-of-type {
+  display: inherit;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+}
+
+.nav__item {
+  margin-right: 1em;
+}
+
+header {
+  display: flex;
+  margin: 1em 0;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header>a {
+  font-weight: 700;
+}
+
+blockquote {
+  background-color: var(--c-500);
+  border-left: 2px solid var(--c-300);
+
+  p {
+    padding: .5em;
+  }
+}
+
+ul {
+  padding: 0;
+  margin-bottom: .5em;
+  padding-left: 2em;
+  list-style-type: circle;
+}
+
+ol {
+  margin: 1em 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 3rem 0;
+}
+
+thead {
+  background-color: var(--c-500);
+}
+
+thead th {
+  padding: 1em;
+  font-size: .9rem;
+  text-align: left;
+  border-bottom: 1px solid var(--c-200);
+}
+
+tbody td {
+  padding: 1em;
+  text-align: left;
+  font-size: .9rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--c-200);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--c-400);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--c-300);
+}
+
+.postlist {
+  list-style: none;
+  padding: 0;
+  padding-left: 1.5rem;
+}
+
+.postlist__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  counter-increment: start-from -1;
+  margin-bottom: 1em;
+}
+
+.postlist__item:before {
+  display: inline-block;
+  pointer-events: none;
+  content: "" counter(start-from, decimal-leading-zero) ". ";
+  line-height: 100%;
+  text-align: right;
+  margin-left: -1.5rem;
+}
+
+.postlist__date,
+.postlist__item:before {
+  font-size: 0.8125em;
+  color: var(--color-gray-90);
+}
+
+.postlist__date {
+  word-spacing: -0.5px;
+}
+
+.postlist__link {
+  font-size: 1.1875em;
+  font-weight: 700;
+  flex-basis: calc(100% - 1.5rem);
+  padding-left: .25em;
+  padding-right: .5em;
+  text-underline-position: from-font;
+  text-underline-offset: 0;
+  text-decoration-thickness: 1px;
+}
+
+.postlist__item-active .postlist__link {
+  font-weight: bold;
+}
+
+.post__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.postlist__item>.post__tag {
+  align-self: center;
+}
+
+/* Tags list */
+.post__metadata {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post__metadata time {
+  margin-right: 1em;
+}
+
+.post__content {
+  margin: 2rem 0;
+}
+
+.post__nextprev {
+  list-style: none;
+  padding: 0;
+}
+
+pre[class^="language-"] {
+  background: var(--c-500);
+  padding: 1em;
+  border: 1px solid var(--c-300);
+  font-size: 0.8em;
+  margin: 1em 0;
+  overflow: scroll;
+}
+
+code {
+  line-height: 1.5em;
+  padding: 0 2px;
+  margin: -1px 0px;
+}
+
+/* Selects <code> that is not in <pre>
+ * to target inline code elements
+ * */
+code:not(pre code) {
+  font-size: 0.8em;
+  background: var(--c-500);
+  padding: 2px;
+  border: 1px solid var(--c-300);
+}
+
+.centered {
+  display: block;
+  margin: 0 auto;
+}</style>
+</head>
+
+<body>
+  <header>
+    <a href="/" class="home-link">jochen.fyi</a>
+
+    <nav>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="/posts/" >Posts</a></li>
+        <li class="nav__item"><a href="/about/" >About</a></li>
+        <!-- <li class="nav__item"><a href="feed.xml">RSS</a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Easy Rust</h1>
+
+<ul class="post__metadata">
+	<li><time datetime="2024-04-16">16 April 2024</time></li>
+	<li><a href="/tags/code/" class="post__tag">code</a></li>
+</ul>
+
+<section class="post__content">
+  <p>I'm currently reading <em>Easy Rust</em> by David MacLeod. I started with Rust about a year ago, but haven't dedicated too much time up until now. These are some of the things I learned along the way.</p>
+<h2>Comments</h2>
+<p>Similar to how we write comments in JS:</p>
+<p><code>//</code> (single line), <code>/* */</code> (multi line or inline) and <code>///</code> (documentation).</p>
+<h2>Types</h2>
+<p><code>i</code> vs <code>u</code> meaning signed (negative and positive) vs unsigned (only positive).
+<code>isize</code> and <code>usize</code> depend on your computer architecture, so for a 32bit system <code>isize</code> would be a <code>i32</code>.</p>
+<h3>Characters</h3>
+<p>We can cast a number to a char:</p>
+<pre class="language-Rust" tabindex="0"><code class="language-Rust">let number = 100;
+println!("{}", number as u8 as char)</code></pre>
+<p>Characters use single quotes whereas strings use double quotes.</p>
+<p>We can use <code>.chars().count()</code> to return the length of a string.</p>
+<h2>Inference</h2>
+<p>Rust's inference is smart enough to figure out which type it has to use. Even in a situation like this:</p>
+<pre class="language-Rust" tabindex="0"><code class="language-Rust">let variable_a: f32 = 2.4;
+let variable_b = 4.3; // normally floats default to f64
+
+let variable_c = variable_a + variable_b // this works</code></pre>
+<h2>Shadowing</h2>
+<p>We use shadowing for when we want to avoid creating multiple new variables but still need to do a lot of computations and reassignments.</p>
+<h2>Printing</h2>
+<p>I didn't know that you can print output to the console in a variety of ways. It seems like there is a good formatting syntax.</p>
+<h2>Strings</h2>
+<p>There are two types of strings in Rust: <code>&amp;str</code> and <code>String</code>. This <s>seems to be</s> is confusing. Why did they decide to do that? <code>&amp;str</code> is a reference and you don't own it. It is fast as it lives on the stack. The stack needs to know its size in advance so we have to give it the <code>&amp;</code>. With a <code>String</code> things are different. You own it and you have additional possibilities to interact with it.</p>
+
+</section>
+
+
+  </main>
+</body>
+
+</html>

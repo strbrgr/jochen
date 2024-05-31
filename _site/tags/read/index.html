@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagged “read”</title>
+  <meta name="description" content="I am writing about ">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@_strbrgr" />
+  <meta name="twitter:title" content="Jochen Stierberger" />
+  <meta name="twitter:description" content="Personal Website" />
+  <meta name="twitter:image" content="https://jochen.fyi/og.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jochen Stierberger" />
+  <meta property="og:description" content="Personal Website" />
+  <meta property="og:url" content="https://jochen.fyi" />
+  <meta property="og:image" content="https://jochen.fyi/og.png" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍋</text></svg>" />
+  <style>.postlist { counter-reset: start-from 3 }
+* {
+  margin: 0;
+  --c-t: #212121;
+  --c-bg: #f8f9fa;
+  --c-100: #212529;
+  --c-200: #2E3338;
+  --c-300: #B7C3CC;
+  --c-400: #CFD7DD;
+  --c-500: #E7EBEE;
+  --font: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+  --font-code: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --c-t: #f8f9fa;
+    --c-bg: #212121;
+    --c-100: #f8f9fa;
+    --c-200: #B8C1CC;
+    --c-300: #42484C;
+    --c-400: #383D43;
+    --c-500: #2E3338;
+    --c-600: #212529;
+  }
+}
+
+body {
+  font: 1.25rem var(--font);
+  line-height: 1.4;
+  color: var(--c-t);
+  background: var(--c-bg);
+  max-width: 36em;
+  margin: 0 auto;
+  padding: 0 0.7em;
+  text-align: justify;
+}
+
+main {
+  margin: 3em 0;
+}
+
+a {
+  color: var(--c-100);
+  text-decoration: underline;
+  transition: .05s;
+}
+
+a:hover {
+  color: var(--c-200);
+}
+
+*::selection {
+  background: var(--c-t);
+  color: var(--c-bg);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+section,
+section:target~section:last-of-type {
+  display: none;
+}
+
+section:target,
+section:last-of-type {
+  display: inherit;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+}
+
+.nav__item {
+  margin-right: 1em;
+}
+
+header {
+  display: flex;
+  margin: 1em 0;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header>a {
+  font-weight: 700;
+}
+
+blockquote {
+  background-color: var(--c-500);
+  border-left: 2px solid var(--c-300);
+
+  p {
+    padding: .5em;
+  }
+}
+
+ul {
+  padding: 0;
+  margin-bottom: .5em;
+  padding-left: 2em;
+  list-style-type: circle;
+}
+
+ol {
+  margin: 1em 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 3rem 0;
+}
+
+thead {
+  background-color: var(--c-500);
+}
+
+thead th {
+  padding: 1em;
+  font-size: .9rem;
+  text-align: left;
+  border-bottom: 1px solid var(--c-200);
+}
+
+tbody td {
+  padding: 1em;
+  text-align: left;
+  font-size: .9rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--c-200);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--c-400);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--c-300);
+}
+
+.postlist {
+  list-style: none;
+  padding: 0;
+  padding-left: 1.5rem;
+}
+
+.postlist__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  counter-increment: start-from -1;
+  margin-bottom: 1em;
+}
+
+.postlist__item:before {
+  display: inline-block;
+  pointer-events: none;
+  content: "" counter(start-from, decimal-leading-zero) ". ";
+  line-height: 100%;
+  text-align: right;
+  margin-left: -1.5rem;
+}
+
+.postlist__date,
+.postlist__item:before {
+  font-size: 0.8125em;
+  color: var(--color-gray-90);
+}
+
+.postlist__date {
+  word-spacing: -0.5px;
+}
+
+.postlist__link {
+  font-size: 1.1875em;
+  font-weight: 700;
+  flex-basis: calc(100% - 1.5rem);
+  padding-left: .25em;
+  padding-right: .5em;
+  text-underline-position: from-font;
+  text-underline-offset: 0;
+  text-decoration-thickness: 1px;
+}
+
+.postlist__item-active .postlist__link {
+  font-weight: bold;
+}
+
+.post__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.postlist__item>.post__tag {
+  align-self: center;
+}
+
+/* Tags list */
+.post__metadata {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post__metadata time {
+  margin-right: 1em;
+}
+
+.post__content {
+  margin: 2rem 0;
+}
+
+.post__nextprev {
+  list-style: none;
+  padding: 0;
+}
+
+pre[class^="language-"] {
+  background: var(--c-500);
+  padding: 1em;
+  border: 1px solid var(--c-300);
+  font-size: 0.8em;
+  margin: 1em 0;
+  overflow: scroll;
+}
+
+code {
+  line-height: 1.5em;
+  padding: 0 2px;
+  margin: -1px 0px;
+}
+
+/* Selects <code> that is not in <pre>
+ * to target inline code elements
+ * */
+code:not(pre code) {
+  font-size: 0.8em;
+  background: var(--c-500);
+  padding: 2px;
+  border: 1px solid var(--c-300);
+}
+
+.centered {
+  display: block;
+  margin: 0 auto;
+}</style>
+</head>
+
+<body>
+  <header>
+    <a href="/" class="home-link">jochen.fyi</a>
+
+    <nav>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="/posts/" >Posts</a></li>
+        <li class="nav__item"><a href="/about/" >About</a></li>
+        <!-- <li class="nav__item"><a href="feed.xml">RSS</a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Tagged “read”</h1>
+
+
+
+<ol reversed class="postlist">
+
+	<li class="postlist__item">
+		<a href="/posts/deep-work/" class="postlist__link">Deep Work</a>
+		<time class="postlist__date" datetime="2024-04-10">April 2024</time>
+	</li>
+
+	<li class="postlist__item">
+		<a href="/posts/so-good-they-cant-ignore-you/" class="postlist__link">So good they can&#39;t ignore you</a>
+		<time class="postlist__date" datetime="2024-04-10">April 2024</time>
+	</li>
+
+</ol>
+
+
+<p>See <a href="/tags/">all tags</a>.</p>
+
+
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installing Arch on a Thinkpad T480s</title>
+  <meta name="description" content="I am writing about ">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@_strbrgr" />
+  <meta name="twitter:title" content="Jochen Stierberger" />
+  <meta name="twitter:description" content="Personal Website" />
+  <meta name="twitter:image" content="https://jochen.fyi/og.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jochen Stierberger" />
+  <meta property="og:description" content="Personal Website" />
+  <meta property="og:url" content="https://jochen.fyi" />
+  <meta property="og:image" content="https://jochen.fyi/og.png" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍋</text></svg>" />
+  <style>* {
+  margin: 0;
+  --c-t: #212121;
+  --c-bg: #f8f9fa;
+  --c-100: #212529;
+  --c-200: #2E3338;
+  --c-300: #B7C3CC;
+  --c-400: #CFD7DD;
+  --c-500: #E7EBEE;
+  --font: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+  --font-code: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --c-t: #f8f9fa;
+    --c-bg: #212121;
+    --c-100: #f8f9fa;
+    --c-200: #B8C1CC;
+    --c-300: #42484C;
+    --c-400: #383D43;
+    --c-500: #2E3338;
+    --c-600: #212529;
+  }
+}
+
+body {
+  font: 1.25rem var(--font);
+  line-height: 1.4;
+  color: var(--c-t);
+  background: var(--c-bg);
+  max-width: 36em;
+  margin: 0 auto;
+  padding: 0 0.7em;
+  text-align: justify;
+}
+
+main {
+  margin: 3em 0;
+}
+
+a {
+  color: var(--c-100);
+  text-decoration: underline;
+  transition: .05s;
+}
+
+a:hover {
+  color: var(--c-200);
+}
+
+*::selection {
+  background: var(--c-t);
+  color: var(--c-bg);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+section,
+section:target~section:last-of-type {
+  display: none;
+}
+
+section:target,
+section:last-of-type {
+  display: inherit;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+}
+
+.nav__item {
+  margin-right: 1em;
+}
+
+header {
+  display: flex;
+  margin: 1em 0;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header>a {
+  font-weight: 700;
+}
+
+blockquote {
+  background-color: var(--c-500);
+  border-left: 2px solid var(--c-300);
+
+  p {
+    padding: .5em;
+  }
+}
+
+ul {
+  padding: 0;
+  margin-bottom: .5em;
+  padding-left: 2em;
+  list-style-type: circle;
+}
+
+ol {
+  margin: 1em 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 3rem 0;
+}
+
+thead {
+  background-color: var(--c-500);
+}
+
+thead th {
+  padding: 1em;
+  font-size: .9rem;
+  text-align: left;
+  border-bottom: 1px solid var(--c-200);
+}
+
+tbody td {
+  padding: 1em;
+  text-align: left;
+  font-size: .9rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--c-200);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--c-400);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--c-300);
+}
+
+.postlist {
+  list-style: none;
+  padding: 0;
+  padding-left: 1.5rem;
+}
+
+.postlist__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  counter-increment: start-from -1;
+  margin-bottom: 1em;
+}
+
+.postlist__item:before {
+  display: inline-block;
+  pointer-events: none;
+  content: "" counter(start-from, decimal-leading-zero) ". ";
+  line-height: 100%;
+  text-align: right;
+  margin-left: -1.5rem;
+}
+
+.postlist__date,
+.postlist__item:before {
+  font-size: 0.8125em;
+  color: var(--color-gray-90);
+}
+
+.postlist__date {
+  word-spacing: -0.5px;
+}
+
+.postlist__link {
+  font-size: 1.1875em;
+  font-weight: 700;
+  flex-basis: calc(100% - 1.5rem);
+  padding-left: .25em;
+  padding-right: .5em;
+  text-underline-position: from-font;
+  text-underline-offset: 0;
+  text-decoration-thickness: 1px;
+}
+
+.postlist__item-active .postlist__link {
+  font-weight: bold;
+}
+
+.post__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.postlist__item>.post__tag {
+  align-self: center;
+}
+
+/* Tags list */
+.post__metadata {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post__metadata time {
+  margin-right: 1em;
+}
+
+.post__content {
+  margin: 2rem 0;
+}
+
+.post__nextprev {
+  list-style: none;
+  padding: 0;
+}
+
+pre[class^="language-"] {
+  background: var(--c-500);
+  padding: 1em;
+  border: 1px solid var(--c-300);
+  font-size: 0.8em;
+  margin: 1em 0;
+  overflow: scroll;
+}
+
+code {
+  line-height: 1.5em;
+  padding: 0 2px;
+  margin: -1px 0px;
+}
+
+/* Selects <code> that is not in <pre>
+ * to target inline code elements
+ * */
+code:not(pre code) {
+  font-size: 0.8em;
+  background: var(--c-500);
+  padding: 2px;
+  border: 1px solid var(--c-300);
+}
+
+.centered {
+  display: block;
+  margin: 0 auto;
+}</style>
+</head>
+
+<body>
+  <header>
+    <a href="/" class="home-link">jochen.fyi</a>
+
+    <nav>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="/posts/" >Posts</a></li>
+        <li class="nav__item"><a href="/about/" >About</a></li>
+        <!-- <li class="nav__item"><a href="feed.xml">RSS</a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Installing Arch on a Thinkpad T480s</h1>
+
+<ul class="post__metadata">
+	<li><time datetime="2024-05-23">23 May 2024</time></li>
+	<li><a href="/tags/code/" class="post__tag">code</a></li>
+</ul>
+
+<section class="post__content">
+  <p>I recently scooped up a used Thinkpad T480s for a great price on ebay. I wanted to get more into Linux and thought why not start out cheap, see if I like it and maybe get rid of my MacBook at some point? Honestly I like the build and feel of the Thinkpad a lot. It's matte black looks quiet sleek and compared to my M1 it actually feels sturdier even though it has a lot of plastic.</p>
+<p>With my Thinkpad, I wanted to understand the thing that I use for eight hours a day a bit more. I don't know too much about Operating Systems so I thought giving Linux a try would be the smart thing to do here as Apple's ecosystem is closed source and using Windows makes me feel like <code>Milton</code> in Office Space.</p>
+<h3>Torture yourself with Arch as your first Distro</h3>
+<p>I'm the kind of person who likes to torture himself more than necessary so of course I chose <code>Arch</code> as my first Distro. Might as well go all-in, eh? Why only half-ass it?</p>
+<p>I started like a classic neckbeard and meticulously followed the Wiki to get my Thinkpad T480s up and running. I got into formatting, mounting partitions, selecting the right partition system, installing <code>grub</code>, and running <code>fstab</code>. You know the drill...
+Honestly doing this a couple times is fun (maybe?) but why dealing with this hassle if there is better solutions out there? In the end I don't want to be bothered with things that I could automate and someone else has already figured out.</p>
+<h3>Just run <code>archinstall</code></h3>
+<p>Seriously, use <code>archinstall</code>. Boot into your live arch install environment, connect to your wifi (<code>station _STATION_ connect _SSID</code>), ping whatever website to make sure you are connected and alter installation settings to your likings.</p>
+<p>I made sure to only install what I need and kept my list to a minimum:
+<code>vim git rust nitrogen feh fish firefox bspwm sxhkd dmenu pcmanfm polybar alacritty thunar thunar-volman gvfs xorg-server xorg-xinit xorg-xrandr xorg-xsetroot xorg-xmodmap xorg-setxkbmap xf86-input-libinput xf86-video-intel bluez bluez-utils pulseaudio-bluetooth pulseaudio pulseaudio-alsa pavucontrol alsa-plugins alsa-utils</code></p>
+<p>After <code>sudo reboot now</code>, I ran the following commands to get a first simple config up and running before customizing my environment:</p>
+<pre class="language-sh" tabindex="0"><code class="language-sh"><span class="token builtin class-name">cd</span> <span class="token environment constant">$HOME</span>/.config/
+<span class="token function">mkdir</span> bspwm sxhkd polybar picom dunst
+<span class="token function">cp</span> /usr/share/doc/bspwm/examples/bspwmrc bspwm/
+<span class="token function">cp</span> /usr/share/doc/bspwm/examples/sxhkdrc sxhkd/
+<span class="token function">cp</span> /etc/xdg/picom.conf picom/
+<span class="token function">cp</span> /etc/polybar/config.ini polybar/
+<span class="token function">cp</span> /etc/dunst/dunstrc/ dunst/
+<span class="token builtin class-name">cd</span> bspwm/</code></pre>
+<p>Now that that is done, run <code>chmod +x bspwmrc</code> from within your bspwm directory. <code>Vim</code> into the file and add the following:</p>
+<pre class="language-sh" tabindex="0"><code class="language-sh">sxhdk <span class="token operator">&amp;</span>
+picom <span class="token parameter variable">--config</span> <span class="token environment constant">$HOME</span>/.config/picom/picom.conf <span class="token operator">&amp;</span>
+nitrogen <span class="token parameter variable">--restore</span> <span class="token operator">&amp;</span>
+polybar <span class="token operator">&amp;</span></code></pre>
+<p>Go into your <code>sxhkd</code> directory next and edit the <code>sxhkdrc</code> file. You basically want to change key-bindings to whatever makes sense to you. Moving forward we will need to create a <code>.xinitrc</code> file in our <code>~/.config</code> folder with the following entry:</p>
+<pre class="language-sh" tabindex="0"><code class="language-sh"><span class="token shebang important">#!/bin/sh</span>
+<span class="token builtin class-name">exec</span> bspwm</code></pre>
+<p>Then we need to make sure to autostart bspwm whenever our system boots. One way to do this is via an entry in your shell. After <code>fish</code> is installed we can confirm its existence via <code>cat /etc/shells</code> and then select it by using <code>chsh</code>. In our <code>~/.config/fish</code> folder we need to edit the <code>config.fish</code> file and add the following to start x at startup:</p>
+<pre class="language-sh" tabindex="0"><code class="language-sh"><span class="token comment"># Start X at login</span>
+<span class="token keyword">if</span> status is-interactive
+    <span class="token keyword">if</span> <span class="token builtin class-name">test</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token environment constant">$DISPLAY</span>"</span> <span class="token parameter variable">-a</span> <span class="token string">"<span class="token environment constant">$XDG_VTNR</span>"</span> <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token builtin class-name">exec</span> startx -- <span class="token parameter variable">-keeptty</span>
+    end
+end</code></pre>
+<p>I don't ever use <code>CapsLock</code> so I will remap it to <code>CTRL</code>. As we installed <code>xorg-xmodmap</code> we can now run <code>xmodmap -pke &gt; ~/.Xmodmap</code> and then edit the file like so:</p>
+<pre class="language-sh" tabindex="0"><code class="language-sh"></code></pre>
+<h3>What's next</h3>
+<p>Honestly, I'd rather invest the time saved by using <code>archinstall</code> on learning how to make daily snapshots of my system, similar to what <code>TimeMachine</code> does on my Mac. There are more things I want to get in to like getting something up and running with Ansible to make my install as convenient as possible.</p>
+
+</section>
+
+
+  </main>
+</body>
+
+</html>
