@@ -236,6 +236,7 @@ pre[class^="language-"] {
   border: 1px solid var(--c-300);
   font-size: 0.8em;
   margin: 1em 0;
+  overflow: scroll;
 }
 
 code {
@@ -252,4 +253,9 @@ code:not(pre code) {
   background: var(--c-500);
   padding: 2px;
   border: 1px solid var(--c-300);
+}
+
+.centered {
+  display: block;
+  margin: 0 auto;
 }

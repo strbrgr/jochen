@@ -27,3 +27,5 @@ Further, instead of using a syntax-highlighting solution like Prism, I used CSS 
 I plan to write up a bit more content about each step involved, so stay tuned.
 
 Moving forward I make sure to carefully choose what I need on a project by thinking about its benefits and how I can avoid adding each new dependency.
+
+<img class="centered" src="https://512kb.club/assets/images/green-team.gif" alt="Official 512kB club logo" />
