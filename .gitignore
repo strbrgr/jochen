@@ -1,6 +1,6 @@
-_site/
 node_modules/
 package-lock.json
 .cache
 todo.md
 11ty-np*
+.DS_Store
