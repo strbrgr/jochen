@@ -7,15 +7,6 @@
     <description>Short writings about everything related to software engineering.</description>
     <language>en</language>
     <item>
-      <title>Watching clouds pass by</title>
-      <link>https://jochen.fyi/posts/watching-clouds-pass-by/</link>
-      <description>&lt;p&gt;Today I spent some time outside. I was lying in the grass near Buckingham Fountain and stared into the blue sky. All I did was to watch the clouds pass by. It felt peaceful and refreshing after being locked up for months.&lt;/p&gt;
-</description>
-      <pubDate>Sun, 09 Jun 2024 18:58:37 +0000</pubDate>
-      <dc:creator>Jochen Stierberger</dc:creator>
-      <guid>https://jochen.fyi/posts/watching-clouds-pass-by/</guid>
-    </item>
-    <item>
       <title>Road to 512k</title>
       <link>https://jochen.fyi/posts/road-to-512k/</link>
       <description>&lt;p&gt;When I built my website about a year ago, I decided to give SvelteKit a go as it was the only Frontend framework that I haven&#39;t tried out. However, once I had my first release out, I wanted to go one step further.&lt;/p&gt;
