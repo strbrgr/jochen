@@ -3,7 +3,7 @@ module.exports = {
   base_url: "jochen.fyi",
   url: "https://jochen.fyi/",
   language: "en",
-  description: "I am writing about ",
+  description: "Personal Website of Software Engineer Jochen Stierberger",
   author: {
     name: "Jochen Stierberger",
     url: "https://jochen.fyi"
