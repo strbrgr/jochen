@@ -129,10 +129,20 @@ thead th {
   border-bottom: 1px solid var(--c-200);
 }
 
-tbody td {
+th:last-child {
+  text-align: right;
+}
+
+td {
+  width: 100%;
   padding: 1em;
   text-align: left;
   font-size: .9rem;
+}
+
+td:last-child {
+  white-space: nowrap;
+  text-align: right;
 }
 
 tbody tr {
