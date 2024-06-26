@@ -149,10 +149,20 @@ thead th {
   border-bottom: 1px solid var(--c-200);
 }
 
-tbody td {
+th:last-child {
+  text-align: right;
+}
+
+td {
+  width: 100%;
   padding: 1em;
   text-align: left;
   font-size: .9rem;
+}
+
+td:last-child {
+  white-space: nowrap;
+  text-align: right;
 }
 
 tbody tr {
@@ -441,7 +451,7 @@ pre[class*="language-"] {
     <h1>Watching clouds pass by</h1>
 
 <ul class="post__metadata">
-	<li><time datetime="2024-06-09">09 June 2024</time></li>
+	<li><time datetime="2024-06-19">19 June 2024</time></li>
 	<li><a href="/tags/random/" class="post__tag">random</a></li>
 </ul>
 

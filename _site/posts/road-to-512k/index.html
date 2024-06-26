@@ -149,10 +149,20 @@ thead th {
   border-bottom: 1px solid var(--c-200);
 }
 
-tbody td {
+th:last-child {
+  text-align: right;
+}
+
+td {
+  width: 100%;
   padding: 1em;
   text-align: left;
   font-size: .9rem;
+}
+
+td:last-child {
+  white-space: nowrap;
+  text-align: right;
 }
 
 tbody tr {
@@ -602,7 +612,7 @@ pre[class*="language-"] {
 <p>One option to spin this a bit further would be to avoid serving .html via different routes and conditionally render content via CSS and html id's. While this would save separate <code>GET</code> requests for content, it would clutter my codebase. It's a trade-off I'm not willing to take.</p>
 
 </section>
-<ul class="post__nextprev"><li>Previous: <a href="/posts/deep-work/">Deep Work</a></li>
+<ul class="post__nextprev"><li>Previous: <a href="/posts/deep-work/">Deep Work</a></li><li>Next: <a href="/posts/syncthing-to-sync-things/">Syncthing to sync things</a></li>
 </ul>
 
 

@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://jochen.fyi/og.png" />
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍋</text></svg>" />
-  <style>.postlist { counter-reset: start-from 4 }
+  <style>.postlist { counter-reset: start-from 5 }
 * {
   margin: 0;
   --c-t: #212121;
@@ -150,10 +150,20 @@ thead th {
   border-bottom: 1px solid var(--c-200);
 }
 
-tbody td {
+th:last-child {
+  text-align: right;
+}
+
+td {
+  width: 100%;
   padding: 1em;
   text-align: left;
   font-size: .9rem;
+}
+
+td:last-child {
+  white-space: nowrap;
+  text-align: right;
 }
 
 tbody tr {
@@ -445,6 +455,11 @@ pre[class*="language-"] {
 
 
 <ol reversed class="postlist">
+
+	<li class="postlist__item">
+		<a href="/posts/syncthing-to-sync-things/" class="postlist__link">Syncthing to sync things</a>
+		<time class="postlist__date" datetime="2024-06-25">June 2024</time>
+	</li>
 
 	<li class="postlist__item">
 		<a href="/posts/road-to-512k/" class="postlist__link">Road to 512k</a>
