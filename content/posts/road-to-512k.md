@@ -3,19 +3,18 @@ title: Road to 512k
 tags:
   - post
   - performance
-date: 2024-06-01T00:00:00.000Z
 ---
-When I built my website about a year ago, I decided to give SvelteKit a go as it was the only Frontend framework that I haven't tried out. However, once I had my first release out, I wanted to go one step further.
+A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven't touched. Once I had my first release out I revisited my decision.
 
-I'm fascinated by performance and optimizations of systems. My website is and will always be static without the need for handling user interactions that go beyond changing pages. I like to keep it simple. So I realized SvelteKit was the wrong tool.
+I'm fascinated by performance and optimizations of systems. My website is and will always be static. I don't need to handle user interaction that go beyond routing. Are SvelteKit and JavaScript the wrong tool?
 
 ## Finding the right tool
 
-Over time I played with the thought of how much I could reduce the build size of my website. Pretty much at the same time, I discovered the [512k club](https://512kb.club/), a collection of performance-focused web pages from across the Internet and I set myself the goal to get my website to under 10kB.
+Over time I played with the thought of how much I could reduce the build size of my website. Pretty much at the same time, I discovered the [512KB Club](https://512kb.club/). I set myself the goal to get my website to under 10kB.
 
 ### First assessment
 
-Previously every time someone accessed my URL about 140kB got sent from server to client. Most of that came from fonts and custom JavaScript code:
+Every time someone accessed my old website ~140kB got sent from server to client. Most of that were fonts and JavaScript code:
 
 #### text/html
 
@@ -64,13 +63,19 @@ Previously every time someone accessed my URL about 140kB got sent from server t
 | /favicon.png   | 3.75kB     |
 | **Total Size** | **3.75kB** |
 
-To get to <10kB I need to prioritize. Obviously 70kB of JavaScript are unnecessary for a static website. The 46kB for my preferred font can't be part of the final build either. Dumping both would reduce my build from 140kB to 24kb. Close but not there yet.
+## Getting my build under 10kb
 
-## From 24kB to <10kB
+To get to <10kB I need to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts can't be part of the final build either. I decided to dump both SvelteKit and fonts.
 
-Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life a bit easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) that allowed me to write most of my website content in Markdown and being able to use a templating language like nunjucks. It's pretty easy to set-up and I was productive way faster than when I tried out other SSG alternatives. Another thing I did to save some kB's was to use an emoji as favicon instead of creating one that takes up some more space.
+Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) allowing me to write most of my website content in Markdown and being able to use a templating language like nunjucks. Setup was easy and I was productive sooner compared to other SSG alternatives. I saved another couple kB's by using an emoji as favicon instead of creating one that takes up additional space. My website is hosted on GitHub with an automatic deploy pipeline. Access from within North America should be fast.
 
-## To the max
+As of now, 07/27/224, transferred size via [Cloudflare](https://radar.cloudflare.com/scan/63f2b9d8-c74b-47f2-b5cd-7c62dea67755/network) shows the following:
+| URL | Size |
+| -------------- | ---------- |
+| / | 9.07kB |
+| **Total Size** | **9.07kB** |
 
-One option to spin this a bit further would be to avoid serving .html via different routes and conditionally render content via CSS and html id's. While this would save separate `GET` requests for content, it would clutter my codebase. It's a trade-off I'm not willing to take.
+## Next iteration
+
+To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate `GET` requests for content, it would clutter my codebase. I'm not sure if that is a trade-off I'm not willing to take.
 

@@ -7,46 +7,14 @@
     <description>Short writings about everything related to software engineering.</description>
     <language>en</language>
     <item>
-      <title>Syncthing to sync things</title>
-      <link>https://jochen.fyi/posts/syncthing-to-sync-things/</link>
-      <description>&lt;h4&gt;tldr&lt;/h4&gt;
-&lt;p&gt;Use Markdown for knowledge management. Sync vaults across devices with Syncthing and symlinks.&lt;/p&gt;
-&lt;h1&gt;SyncThing to sync things&lt;/h1&gt;
-&lt;p&gt;A few month ago I rolled off one, began work on another account, and had to deal with the outcome of changing domains and stakeholders.
-This was demanding, but ultimately positive as I got introduced to new patterns and syntax which inspired me to improve my note taking.&lt;/p&gt;
-&lt;h2&gt;Track solutions&lt;/h2&gt;
-&lt;p&gt;I use Obsidian to track my work, but haven&#39;t tracked things I learn on the daily. Recently, I needed to filter API calls that weren&#39;t &lt;code&gt;GET&lt;/code&gt; requests. While an &lt;code&gt;if-else&lt;/code&gt; statement worked, a cleaner approach using &lt;code&gt;.includes()&lt;/code&gt; in JavaScript was more readable:&lt;/p&gt;
-&lt;pre class=&quot;language-javascript&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;PUT&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;PATCH&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;type&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token comment&quot;&gt;// do something here&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I had previously used &lt;code&gt;.includes()&lt;/code&gt; but worried about forgetting it without documentation. I wanted to preserve these types of notes on both my work and personal machines, but so far lacked a synchronization solution.&lt;/p&gt;
-&lt;h2&gt;Vault organization&lt;/h2&gt;
-&lt;p&gt;Right now I have the below Vaults:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;Code&lt;/code&gt;: Everything related to my own progression. Notes I take on Books, Frameworks, Languages and Platforms.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Life&lt;/code&gt;: Health Documents, Receipts, Green Card / Citizenship.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Work&lt;/code&gt;: 401k docs, Interview questions, Review Documents.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Each Vault has a root folder for assets (screenshots) and templates, along with a fleeting folder for temporary notes that may be discarded or transformed.&lt;/p&gt;
-&lt;h2&gt;Synchronization strategy&lt;/h2&gt;
-&lt;p&gt;I could use Obsidian Sync or manually copy files. Obsidian Sync wasn&#39;t an option because they offer more than I need, so why pay 50$ per year? I know that manually copying files will not be an option because... Well, because I don&#39;t have the time and I am lazy. I would rather set up a system once and be done with it. So what is this system?
-I saw SyncThing popping up in my feed but never bothered looking at it until about a month ago. I realized it would be ideal. All I wanted to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both &lt;code&gt;Code&lt;/code&gt; vaults connected in no time. Edits on one machine are now reflected on the other. Problem solved.&lt;/p&gt;
-&lt;h2&gt;Backup strategy&lt;/h2&gt;
-&lt;p&gt;My current backup strategy is basic. Vaults reside under &lt;code&gt;~/Documents/Vaults&lt;/code&gt;. Only the &lt;code&gt;Code&lt;/code&gt; vault is backed up, as I intend to use it across MacBook, iPhone, and iPad. I also created symlinks from the local path to iCloud, enabling vault access on all three devices without Obsidian Sync.&lt;/p&gt;
-</description>
-      <pubDate>Tue, 25 Jun 2024 07:53:07 +0000</pubDate>
-      <dc:creator>Jochen Stierberger</dc:creator>
-      <guid>https://jochen.fyi/posts/syncthing-to-sync-things/</guid>
-    </item>
-    <item>
       <title>Road to 512k</title>
       <link>https://jochen.fyi/posts/road-to-512k/</link>
-      <description>&lt;p&gt;When I built my website about a year ago, I decided to give SvelteKit a go as it was the only Frontend framework that I haven&#39;t tried out. However, once I had my first release out, I wanted to go one step further.&lt;/p&gt;
-&lt;p&gt;I&#39;m fascinated by performance and optimizations of systems. My website is and will always be static without the need for handling user interactions that go beyond changing pages. I like to keep it simple. So I realized SvelteKit was the wrong tool.&lt;/p&gt;
+      <description>&lt;p&gt;A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven&#39;t touched. Once I had my first release out I revisited my decision.&lt;/p&gt;
+&lt;p&gt;I&#39;m fascinated by performance and optimizations of systems. My website is and will always be static. I don&#39;t need to handle user interaction that go beyond routing. Are SvelteKit and JavaScript the wrong tool?&lt;/p&gt;
 &lt;h2&gt;Finding the right tool&lt;/h2&gt;
-&lt;p&gt;Over time I played with the thought of how much I could reduce the build size of my website. Pretty much at the same time, I discovered the &lt;a href=&quot;https://512kb.club/&quot;&gt;512k club&lt;/a&gt;, a collection of performance-focused web pages from across the Internet and I set myself the goal to get my website to under 10kB.&lt;/p&gt;
+&lt;p&gt;Over time I played with the thought of how much I could reduce the build size of my website. Pretty much at the same time, I discovered the &lt;a href=&quot;https://512kb.club/&quot;&gt;512KB Club&lt;/a&gt;. I set myself the goal to get my website to under 10kB.&lt;/p&gt;
 &lt;h3&gt;First assessment&lt;/h3&gt;
-&lt;p&gt;Previously every time someone accessed my URL about 140kB got sent from server to client. Most of that came from fonts and custom JavaScript code:&lt;/p&gt;
+&lt;p&gt;Every time someone accessed my old website ~140kB got sent from server to client. Most of that were fonts and JavaScript code:&lt;/p&gt;
 &lt;h4&gt;text/html&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -190,15 +158,66 @@ I saw SyncThing popping up in my feed but never bothered looking at it until abo
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;To get to &amp;lt;10kB I need to prioritize. Obviously 70kB of JavaScript are unnecessary for a static website. The 46kB for my preferred font can&#39;t be part of the final build either. Dumping both would reduce my build from 140kB to 24kb. Close but not there yet.&lt;/p&gt;
-&lt;h2&gt;From 24kB to &amp;lt;10kB&lt;/h2&gt;
-&lt;p&gt;Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life a bit easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) that allowed me to write most of my website content in Markdown and being able to use a templating language like nunjucks. It&#39;s pretty easy to set-up and I was productive way faster than when I tried out other SSG alternatives. Another thing I did to save some kB&#39;s was to use an emoji as favicon instead of creating one that takes up some more space.&lt;/p&gt;
-&lt;h2&gt;To the max&lt;/h2&gt;
-&lt;p&gt;One option to spin this a bit further would be to avoid serving .html via different routes and conditionally render content via CSS and html id&#39;s. While this would save separate &lt;code&gt;GET&lt;/code&gt; requests for content, it would clutter my codebase. It&#39;s a trade-off I&#39;m not willing to take.&lt;/p&gt;
+&lt;h2&gt;Getting my build under 10kb&lt;/h2&gt;
+&lt;p&gt;To get to &amp;lt;10kB I need to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts can&#39;t be part of the final build either. I decided to dump both SvelteKit and fonts.&lt;/p&gt;
+&lt;p&gt;Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) allowing me to write most of my website content in Markdown and being able to use a templating language like nunjucks. Setup was easy and I was productive sooner compared to other SSG alternatives. I saved another couple kB&#39;s by using an emoji as favicon instead of creating one that takes up additional space. My website is hosted on GitHub with an automatic deploy pipeline. Access from within North America should be fast.&lt;/p&gt;
+&lt;p&gt;As of now, 07/27/224, transferred size via &lt;a href=&quot;https://radar.cloudflare.com/scan/63f2b9d8-c74b-47f2-b5cd-7c62dea67755/network&quot;&gt;Cloudflare&lt;/a&gt; shows the following:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;URL&lt;/th&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;/&lt;/td&gt;
+&lt;td&gt;9.07kB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Total Size&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;9.07kB&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Next iteration&lt;/h2&gt;
+&lt;p&gt;To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate &lt;code&gt;GET&lt;/code&gt; requests for content, it would clutter my codebase. I&#39;m not sure if that is a trade-off I&#39;m not willing to take.&lt;/p&gt;
 </description>
-      <pubDate>Fri, 31 May 2024 19:00:00 +0000</pubDate>
+      <pubDate>Thu, 27 Jun 2024 08:05:44 +0000</pubDate>
       <dc:creator>Jochen Stierberger</dc:creator>
       <guid>https://jochen.fyi/posts/road-to-512k/</guid>
+    </item>
+    <item>
+      <title>Syncthing to sync things</title>
+      <link>https://jochen.fyi/posts/syncthing-to-sync-things/</link>
+      <description>&lt;h4&gt;tldr&lt;/h4&gt;
+&lt;p&gt;Use Markdown for knowledge management. Sync vaults across devices with Syncthing and symlinks.&lt;/p&gt;
+&lt;h1&gt;SyncThing to sync things&lt;/h1&gt;
+&lt;p&gt;A few month ago I rolled off one, began work on another account, and had to deal with the outcome of changing domains and stakeholders.
+This was demanding, but ultimately positive as I got introduced to new patterns and syntax which inspired me to improve my note taking.&lt;/p&gt;
+&lt;h2&gt;Track solutions&lt;/h2&gt;
+&lt;p&gt;I use Obsidian to track my work, but haven&#39;t tracked things I learn on the daily. Recently, I needed to filter API calls that weren&#39;t &lt;code&gt;GET&lt;/code&gt; requests. While an &lt;code&gt;if-else&lt;/code&gt; statement worked, a cleaner approach using &lt;code&gt;.includes()&lt;/code&gt; in JavaScript was more readable:&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;PUT&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;PATCH&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;type&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// do something here&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I had previously used &lt;code&gt;.includes()&lt;/code&gt; but worried about forgetting it without documentation. I wanted to preserve these types of notes on both my work and personal machines, but so far lacked a synchronization solution.&lt;/p&gt;
+&lt;h2&gt;Vault organization&lt;/h2&gt;
+&lt;p&gt;Right now I have the below Vaults:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Code&lt;/code&gt;: Everything related to my own progression. Notes I take on Books, Frameworks, Languages and Platforms.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Life&lt;/code&gt;: Health Documents, Receipts, Green Card / Citizenship.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Work&lt;/code&gt;: 401k docs, Interview questions, Review Documents.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Each Vault has a root folder for assets (screenshots) and templates, along with a fleeting folder for temporary notes that may be discarded or transformed.&lt;/p&gt;
+&lt;h2&gt;Synchronization strategy&lt;/h2&gt;
+&lt;p&gt;I could use Obsidian Sync or manually copy files. Obsidian Sync wasn&#39;t an option because they offer more than I need, so why pay 50$ per year? I know that manually copying files will not be an option because... Well, because I don&#39;t have the time and I am lazy. I would rather set up a system once and be done with it. So what is this system?
+I saw SyncThing popping up in my feed but never bothered looking at it until about a month ago. I realized it would be ideal. All I wanted to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both &lt;code&gt;Code&lt;/code&gt; vaults connected in no time. Edits on one machine are now reflected on the other. Problem solved.&lt;/p&gt;
+&lt;h2&gt;Backup strategy&lt;/h2&gt;
+&lt;p&gt;My current backup strategy is basic. Vaults reside under &lt;code&gt;~/Documents/Vaults&lt;/code&gt;. Only the &lt;code&gt;Code&lt;/code&gt; vault is backed up, as I intend to use it across MacBook, iPhone, and iPad. I also created symlinks from the local path to iCloud, enabling vault access on all three devices without Obsidian Sync.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 27 Jun 2024 07:53:49 +0000</pubDate>
+      <dc:creator>Jochen Stierberger</dc:creator>
+      <guid>https://jochen.fyi/posts/syncthing-to-sync-things/</guid>
     </item>
     <item>
       <title>Deep Work</title>
