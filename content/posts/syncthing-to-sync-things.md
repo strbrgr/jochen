@@ -10,11 +10,11 @@ Use Markdown for knowledge management. Sync vaults across devices with Syncthing
 # SyncThing to sync things
 
 A few month ago I rolled off one, began work on another account, and had to deal with the outcome of changing domains and stakeholders.
-This was demanding, but ultimately positive as I got introduced to new patterns and syntax which inspired me to improve with my note-taking skillset.
+This was demanding, but ultimately positive as I got introduced to new patterns and syntax which inspired me to improve my note taking.
 
 ## Track solutions
 
-I use Obsidian to track feature work, but haven't captured new language features. Recently, I needed to filter API calls that weren't GET requests. While an `if-else` statement worked, a cleaner approach using `.includes()` in JavaScript was more efficient:
+I use Obsidian to track my work, but haven't tracked things I learn on the daily. Recently, I needed to filter API calls that weren't `GET` requests. While an `if-else` statement worked, a cleaner approach using `.includes()` in JavaScript was more readable:
 
 ```javascript
 if (["PUT", "PATCH"].includes(request.type)) {
@@ -22,7 +22,7 @@ if (["PUT", "PATCH"].includes(request.type)) {
 }
 ```
 
-I'd previously used `.includes()` but worried about forgetting it without documentation. I wanted to preserve these types of notes on both my work and personal machines, but lacked a synchronization solution.
+I had previously used `.includes()` but worried about forgetting it without documentation. I wanted to preserve these types of notes on both my work and personal machines, but so far lacked a synchronization solution.
 
 ## Vault organization
 
@@ -32,14 +32,14 @@ Right now I have the below Vaults:
 2. `Life`: Health Documents, Receipts, Green Card / Citizenship.
 3. `Work`: 401k docs, Interview questions, Review Documents.
 
-Each Vault has a root folder for assets (screenshots) and templates, along with a "Fleeting" folder for temporary notes that may be discarded or transformed.
+Each Vault has a root folder for assets (screenshots) and templates, along with a fleeting folder for temporary notes that may be discarded or transformed.
 
 ## Synchronization strategy
 
-I could use Obsidian Sync or I manually copy files. Obsidian Sync wasn't an option because my use-case is way below than what they offer, so why pay 50$ per year? I know that manually copying files will not be an option because... Well, because I don't have the time and in that case I am lazy. I would rather set up a system once and be done with it. So what is this system?
-I saw SyncThing popping up in my feed but never bothered looking at it in more depth until about a month ago and realized that it would be ideal. All I need to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both `Code` vaults connected in no time. Edits on one machine are now reflected on the other.
+I could use Obsidian Sync or manually copy files. Obsidian Sync wasn't an option because they offer more than I need, so why pay 50$ per year? I know that manually copying files will not be an option because... Well, because I don't have the time and I am lazy. I would rather set up a system once and be done with it. So what is this system?
+I saw SyncThing popping up in my feed but never bothered looking at it until about a month ago. I realized it would be ideal. All I wanted to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both `Code` vaults connected in no time. Edits on one machine are now reflected on the other. Problem solved.
 
 ## Backup strategy
 
-My current backup strategy is basic. Vaults reside under `~/Documents/Vaults`. Only the Code vault is backed up, as I intend to use it across MacBook, iPhone, and iPad. I also created symlinks from the local path to iCloud, enabling vault access on all three devices without Obsidian Sync.
+My current backup strategy is basic. Vaults reside under `~/Documents/Vaults`. Only the `Code` vault is backed up, as I intend to use it across MacBook, iPhone, and iPad. I also created symlinks from the local path to iCloud, enabling vault access on all three devices without Obsidian Sync.
 
