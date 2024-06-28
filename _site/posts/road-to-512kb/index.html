@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jochen Stierberger - Personal Website</title>
+  <title>Road to 512kB</title>
   <meta name="description" content="Personal Website of Software Engineer Jochen Stierberger">
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@_strbrgr" />
@@ -18,8 +18,7 @@
   <meta property="og:image" content="https://jochen.fyi/og.png" />
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍋</text></svg>" />
-  <style>.postlist { counter-reset: start-from 5 }
-* {
+  <style>* {
   margin: 0;
   --c-t: #212121;
   --c-bg: #f8f9fa;
@@ -441,7 +440,7 @@ pre[class*="language-"] {
 
     <nav>
       <ul class="nav__list">
-        <li class="nav__item"><a href="/posts/"  aria-current="page" >Posts</a></li>
+        <li class="nav__item"><a href="/posts/" >Posts</a></li>
         <li class="nav__item"><a href="/about/" >About</a></li>
         <!-- <li class="nav__item"><a href="feed.xml">RSS</a></li> -->
       </ul>
@@ -449,36 +448,197 @@ pre[class*="language-"] {
   </header>
 
   <main>
-    
-<h1>All Posts</h1>
+    <h1>Road to 512kB</h1>
 
+<ul class="post__metadata">
+	<li><time datetime="2024-06-28">28 June 2024</time></li>
+	<li><a href="/tags/performance/" class="post__tag">performance</a></li>
+</ul>
 
+<section class="post__content">
+  <p>A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven't touched. Once I had my first release out I revisited my decision.</p>
+<p>I'm fascinated by performance and optimizations of systems. My website is and will always be static. I don't need to handle user interaction that go beyond routing. Are SvelteKit and JavaScript the wrong tools?</p>
+<h2>Finding the right tool</h2>
+<p>Over time I played with the thought of how much I could reduce the build size of my website. Pretty much at the same time, I discovered the <a href="https://512kb.club/">512KB Club</a>. I set myself the goal to get my website to under 10kB.</p>
+<h3>First assessment</h3>
+<p>Every time someone accessed my old website ~140kB were sent from server to client. Most of that fonts and JavaScript:</p>
+<h4>text/html</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>9.44kB</td>
+</tr>
+<tr>
+<td><strong>Total Size</strong></td>
+<td><strong>9.44kB</strong></td>
+</tr>
+</tbody>
+</table>
+<h4>text/css</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/assets/external/widget.css</td>
+<td>2.45kB</td>
+</tr>
+<tr>
+<td>/_app/immutable/assets/2.91ea808e.css</td>
+<td>5.88kB</td>
+</tr>
+<tr>
+<td><strong>Total Size</strong></td>
+<td><strong>8.33kB</strong></td>
+</tr>
+</tbody>
+</table>
+<h4>application/javascript</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/_app/immutable/entry/start.46ce8342.js</td>
+<td>24.72kB</td>
+</tr>
+<tr>
+<td>/_app/immutable/chunks/scheduler.8b5db029.js</td>
+<td>2.19kB</td>
+</tr>
+<tr>
+<td>/_app/immutable/chunks/singletons.a6259fb6.js</td>
+<td>2.85kB</td>
+</tr>
+<tr>
+<td>/_app/immutable/chunks/control.f5b05b5f.js</td>
+<td>252B</td>
+</tr>
+<tr>
+<td>/_app/immutable/entry/app.128da152.js</td>
+<td>5.33kB</td>
+</tr>
+<tr>
+<td>/_app/immutable/chunks/preload-helper.a4192956.js</td>
+<td>893B</td>
+</tr>
+<tr>
+<td>/_app/immutable/chunks/index.04cb41e1.js</td>
+<td>7.19kB</td>
+</tr>
+<tr>
+<td>/_app/immutable/nodes/0.d3aafa10.js</td>
+<td>595B</td>
+</tr>
+<tr>
+<td>/_app/immutable/nodes/2.bf70aaa7.js</td>
+<td>16.11kB</td>
+</tr>
+<tr>
+<td>/_app/immutable/chunks/each.e59479a4.js</td>
+<td>87B</td>
+</tr>
+<tr>
+<td>/assets/external/widget.js</td>
+<td>11kB</td>
+</tr>
+<tr>
+<td>/_app/immutable/nodes/1.d90a7842.js</td>
+<td>1.03kB</td>
+</tr>
+<tr>
+<td><strong>Total Size</strong></td>
+<td><strong>70.07kB</strong></td>
+</tr>
+</tbody>
+</table>
+<h4>font/woff2</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/_app/immutable/assets/inter-latin-wght-normal.88df0b5a.woff2</td>
+<td>46.7kB</td>
+</tr>
+<tr>
+<td><strong>Total Size</strong></td>
+<td><strong>46.7kB</strong></td>
+</tr>
+</tbody>
+</table>
+<h4>img/favicon</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/favicon.png</td>
+<td>3.75kB</td>
+</tr>
+<tr>
+<td><strong>Total Size</strong></td>
+<td><strong>3.75kB</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>Getting my build under 10kb</h2>
+<p>To get to &lt;10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts can't be part of the final build either. I decided to dump both SvelteKit and fonts.</p>
+<p>Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) allowing me to write most of my website content in Markdown and being able to use a templating language like nunjucks. Setup was easy and I was productive sooner compared to other SSG alternatives.</p>
+<p>Removing special fonts reduced the build by another 1/3 for each (uncached) request. The font-sets that I defined are the following and should :</p>
+<ul>
+<li>Regular Text: <code>Optima, Candara, &quot;Noto Sans&quot;, source-sans-pro, sans-serif;</code></li>
+<li>Code Blocks: <code>Menlo, Monaco, &quot;Andale Mono&quot;, &quot;lucida console&quot;, &quot;Courier New&quot;, monospace;</code></li>
+</ul>
+<p>I saved another couple kB's by using an emoji as favicon instead of creating one that takes up additional space. My website is hosted on GitHub with an automatic deploy pipeline. Access from within North America should be fast.</p>
+<p>As of now, 07/27/224, transferred size via <a href="https://radar.cloudflare.com/scan/63f2b9d8-c74b-47f2-b5cd-7c62dea67755/network">Cloudflare</a> shows the following:</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>9.07kB</td>
+</tr>
+<tr>
+<td><strong>Total Size</strong></td>
+<td><strong>9.07kB</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>Next iteration</h2>
+<p>To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate <code>GET</code> requests for content, it would clutter my codebase. I'm not sure if that is a trade-off I'm not willing to take.</p>
 
-<ol reversed class="postlist">
-
-	<li class="postlist__item">
-		<a href="/posts/road-to-512kb/" class="postlist__link">Road to 512kB</a>
-		<time class="postlist__date" datetime="2024-06-28">June 2024</time>
-	</li>
-
-	<li class="postlist__item">
-		<a href="/posts/syncthing-to-sync-things/" class="postlist__link">Syncthing to sync things</a>
-		<time class="postlist__date" datetime="2024-06-27">June 2024</time>
-	</li>
-
-	<li class="postlist__item">
-		<a href="/posts/deep-work/" class="postlist__link">Deep Work</a>
-		<time class="postlist__date" datetime="2024-04-10">April 2024</time>
-	</li>
-
-	<li class="postlist__item">
-		<a href="/posts/so-good-they-cant-ignore-you/" class="postlist__link">So good they can&#39;t ignore you</a>
-		<time class="postlist__date" datetime="2024-04-10">April 2024</time>
-	</li>
-
-</ol>
-
-
+</section>
+<ul class="post__nextprev"><li>Previous: <a href="/posts/syncthing-to-sync-things/">Syncthing to sync things</a></li>
+</ul>
 
 
   </main>

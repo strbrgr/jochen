@@ -7,8 +7,8 @@
     <description>Short writings about everything related to software engineering.</description>
     <language>en</language>
     <item>
-      <title>Road to 512k</title>
-      <link>https://jochen.fyi/posts/road-to-512k/</link>
+      <title>Road to 512kB</title>
+      <link>https://jochen.fyi/posts/road-to-512kb/</link>
       <description>&lt;p&gt;A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven&#39;t touched. Once I had my first release out I revisited my decision.&lt;/p&gt;
 &lt;p&gt;I&#39;m fascinated by performance and optimizations of systems. My website is and will always be static. I don&#39;t need to handle user interaction that go beyond routing. Are SvelteKit and JavaScript the wrong tools?&lt;/p&gt;
 &lt;h2&gt;Finding the right tool&lt;/h2&gt;
@@ -189,9 +189,9 @@
 &lt;h2&gt;Next iteration&lt;/h2&gt;
 &lt;p&gt;To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate &lt;code&gt;GET&lt;/code&gt; requests for content, it would clutter my codebase. I&#39;m not sure if that is a trade-off I&#39;m not willing to take.&lt;/p&gt;
 </description>
-      <pubDate>Thu, 27 Jun 2024 08:05:44 +0000</pubDate>
+      <pubDate>Fri, 28 Jun 2024 07:49:19 +0000</pubDate>
       <dc:creator>Jochen Stierberger</dc:creator>
-      <guid>https://jochen.fyi/posts/road-to-512k/</guid>
+      <guid>https://jochen.fyi/posts/road-to-512kb/</guid>
     </item>
     <item>
       <title>Syncthing to sync things</title>
