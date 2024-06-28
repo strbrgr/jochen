@@ -1,5 +1,5 @@
 ---
-title: Road to 512k
+title: Road to 512kB
 tags:
   - post
   - performance
