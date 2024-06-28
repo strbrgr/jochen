@@ -6,7 +6,7 @@ tags:
 ---
 A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven't touched. Once I had my first release out I revisited my decision.
 
-I'm fascinated by performance and optimizations of systems. My website is and will always be static. I don't need to handle user interaction that go beyond routing. Are SvelteKit and JavaScript the wrong tool?
+I'm fascinated by performance and optimizations of systems. My website is and will always be static. I don't need to handle user interaction that go beyond routing. Are SvelteKit and JavaScript the wrong tools?
 
 ## Finding the right tool
 
@@ -14,7 +14,7 @@ Over time I played with the thought of how much I could reduce the build size of
 
 ### First assessment
 
-Every time someone accessed my old website ~140kB got sent from server to client. Most of that were fonts and JavaScript code:
+Every time someone accessed my old website ~140kB were sent from server to client. Most of that fonts and JavaScript:
 
 #### text/html
 
@@ -65,9 +65,16 @@ Every time someone accessed my old website ~140kB got sent from server to client
 
 ## Getting my build under 10kb
 
-To get to <10kB I need to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts can't be part of the final build either. I decided to dump both SvelteKit and fonts.
+To get to <10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts can't be part of the final build either. I decided to dump both SvelteKit and fonts.
 
-Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) allowing me to write most of my website content in Markdown and being able to use a templating language like nunjucks. Setup was easy and I was productive sooner compared to other SSG alternatives. I saved another couple kB's by using an emoji as favicon instead of creating one that takes up additional space. My website is hosted on GitHub with an automatic deploy pipeline. Access from within North America should be fast.
+Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) allowing me to write most of my website content in Markdown and being able to use a templating language like nunjucks. Setup was easy and I was productive sooner compared to other SSG alternatives.
+
+Removing special fonts reduced the build by another 1/3 for each (uncached) request. The font-sets that I defined are the following and should :
+
+- Regular Text: `Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;`
+- Code Blocks: `Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;`
+
+I saved another couple kB's by using an emoji as favicon instead of creating one that takes up additional space. My website is hosted on GitHub with an automatic deploy pipeline. Access from within North America should be fast.
 
 As of now, 07/27/224, transferred size via [Cloudflare](https://radar.cloudflare.com/scan/63f2b9d8-c74b-47f2-b5cd-7c62dea67755/network) shows the following:
 | URL | Size |
