@@ -16,9 +16,7 @@ Right now, I am reading Ghost in the Wires and am looking for a new show to watc
 
 ## Reach out
 
-Feel free to shoot me an email. While I don't know a lot, I'm happy to talk tech or give advice to anyone new to the industry.
-
-email: hi at jochen dot fyi
+Feel free to connect on Linkedin. While I don't know a lot, I'm happy to talk tech or give advice to anyone new to the industry.
 
 <blockquote><p>Check out what I am doing <a href="/now">now</a> or <a href="/how">how</a> I built this page.</p></blockquote>
 
