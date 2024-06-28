@@ -462,11 +462,11 @@ pre[class*="language-"] {
 <p>A few month ago I rolled off one, began work on another account, and had to deal with the outcome of changing domains and stakeholders.
 This was demanding, but ultimately positive as I got introduced to new patterns and syntax which inspired me to improve my note taking.</p>
 <h2>Track solutions</h2>
-<p>I use Obsidian to track my work, but haven't tracked things I learn on the daily. Recently, I needed to filter API calls that weren't <code>GET</code> requests. While an <code>if-else</code> statement worked, a cleaner approach using <code>.includes()</code> in JavaScript was more readable:</p>
+<p>I use Obsidian to track feature work, but haven't tracked things I learned. Recently, I needed to filter API calls that weren't GET requests. While an <code>if-else</code> statement worked, a cleaner approach using <code>.includes()</code> in JavaScript was more efficient:</p>
 <pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"PUT"</span><span class="token punctuation">,</span> <span class="token string">"PATCH"</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// do something here</span>
 <span class="token punctuation">}</span></code></pre>
-<p>I had previously used <code>.includes()</code> but worried about forgetting it without documentation. I wanted to preserve these types of notes on both my work and personal machines, but so far lacked a synchronization solution.</p>
+<p>I used <code>.includes()</code> before but worried about forgetting it without documentation. To keep track of such, I wanted to create a system that could store notes on both my work and personal machines, but I hadn't found a good synchronization solution yet.</p>
 <h2>Vault organization</h2>
 <p>Right now I have the below Vaults:</p>
 <ol>
@@ -474,12 +474,12 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
 <li><code>Life</code>: Health Documents, Receipts, Green Card / Citizenship.</li>
 <li><code>Work</code>: 401k docs, Interview questions, Review Documents.</li>
 </ol>
-<p>Each Vault has a root folder for assets (screenshots) and templates, along with a fleeting folder for temporary notes that may be discarded or transformed.</p>
+<p>Each Vault has a <code>Root</code> folder for assets (screenshots) and templates, along with a fleeting folder for temporary notes that may be discarded or transformed. The Root folder stores a general To-Do list as well. I don't want a separate app for that.</p>
 <h2>Synchronization strategy</h2>
-<p>I could use Obsidian Sync or manually copy files. Obsidian Sync wasn't an option because they offer more than I need, so why pay 50$ per year? I know that manually copying files will not be an option because... Well, because I don't have the time and I am lazy. I would rather set up a system once and be done with it. So what is this system?
-I saw SyncThing popping up in my feed but never bothered looking at it until about a month ago. I realized it would be ideal. All I wanted to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both <code>Code</code> vaults connected in no time. Edits on one machine are now reflected on the other. Problem solved.</p>
+<p>I could use Obsidian Sync or manually copy files. Obsidian Sync wasn't an option because it offers more than needed, so why pay 50$ per year? I know that manually copying files will not be an option because... Well, because I don't have the time and in that case I am lazy. I would rather set up a system once and be done with it. So what is this system?
+I saw SyncThing in my feed but never bothered looking at it in more depth until about a month ago and realized that it would be ideal. All I need to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both <code>Code</code> vaults connected in no time. Edits on one machine are now reflected on the other.</p>
 <h2>Backup strategy</h2>
-<p>My current backup strategy is basic. Vaults reside under <code>~/Documents/Vaults</code>. Only the <code>Code</code> vault is backed up, as I intend to use it across MacBook, iPhone, and iPad. I also created symlinks from the local path to iCloud, enabling vault access on all three devices without Obsidian Sync.</p>
+<p>My current backup strategy is basic. Vaults reside under <code>~/Documents/Vaults</code>. Only the Code vault is backed up, as I intend to use it across MacBook, iPhone, and iPad. I also created symlinks from the local path to iCloud, enabling vault access on all three devices without Obsidian Sync. I might add additional symlinks to other remote backup locations and encrypt my folder before backing up.</p>
 
 </section>
 <ul class="post__nextprev"><li>Previous: <a href="/posts/deep-work/">Deep Work</a></li><li>Next: <a href="/posts/road-to-512k/">Road to 512k</a></li>
