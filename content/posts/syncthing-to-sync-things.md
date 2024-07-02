@@ -3,10 +3,6 @@ title: Syncthing to sync things
 tags:
   - code
 ---
-#### tldr
-
-Use Markdown for knowledge management. Sync vaults across devices with Syncthing and symlinks.
-
 # SyncThing to sync things
 
 A few month ago I rolled off one, began work on another account, and had to deal with the outcome of changing domains and stakeholders.
@@ -39,7 +35,7 @@ Each Vault has a `Root` folder for assets (screenshots) and templates, along wit
 I could use Obsidian Sync or manually copy files. Obsidian Sync wasn't an option because it offers more than needed, so why pay 50$ per year? I know that manually copying files will not be an option because... Well, because I don't have the time and in that case I am lazy. I would rather set up a system once and be done with it. So what is this system?
 I saw SyncThing in my feed but never bothered looking at it in more depth until about a month ago and realized that it would be ideal. All I need to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both `Code` vaults connected in no time. Edits on one machine are now reflected on the other.
 
-## Backup strategy
-
-My current backup strategy is basic. Vaults reside under `~/Documents/Vaults`. Only the Code vault is backed up, as I intend to use it across MacBook, iPhone, and iPad. I also created symlinks from the local path to iCloud, enabling vault access on all three devices without Obsidian Sync. I might add additional symlinks to other remote backup locations and encrypt my folder before backing up.
-
+<!-- ## Backup strategy -->
+<!---->
+<!-- My current backup strategy is basic. Vaults reside under `~/Documents/Vaults`. Only the Code vault is backed up, as I intend to use it across MacBook, iPhone, and iPad. I also created symlinks from the local path to iCloud, enabling vault access on all three devices without Obsidian Sync. I might add additional symlinks to other remote backup locations and encrypt my folder before backing up. -->
+<!---->
