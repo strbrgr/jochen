@@ -457,7 +457,7 @@ pre[class*="language-"] {
 
 <section class="post__content">
   <p>A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven't touched. Once I had my first release out I revisited my decision.</p>
-<p>I'm fascinated by performance and optimizations of systems. My website is and will always be static. I don't need to handle user interaction that go beyond routing. Are SvelteKit and JavaScript the wrong tools?</p>
+<p>I'm fascinated by performance and optimizations of systems. My website is and will always be static. I don't need to handle user interaction that exceeds routing. Might SvelteKit and JavaScript be the wrong tools?</p>
 <h2>Finding the right tool</h2>
 <p>Over time I played with the thought of how much I could reduce the build size of my website. Pretty much at the same time, I discovered the <a href="https://512kb.club/">512KB Club</a>. I set myself the goal to get my website to under 10kB.</p>
 <h3>First assessment</h3>
@@ -608,7 +608,7 @@ pre[class*="language-"] {
 <h2>Getting my build under 10kb</h2>
 <p>To get to &lt;10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts can't be part of the final build either. I decided to dump both SvelteKit and fonts.</p>
 <p>Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) allowing me to write most of my website content in Markdown and being able to use a templating language like nunjucks. Setup was easy and I was productive sooner compared to other SSG alternatives.</p>
-<p>Removing special fonts reduced the build by another 1/3 for each (uncached) request. The font-sets that I defined are the following and should :</p>
+<p>Removing special fonts reduced the build by another 30% for each (uncached) request. The font-sets that I defined are the following and should cover +95% of users due to fallback fonts:</p>
 <ul>
 <li>Regular Text: <code>Optima, Candara, &quot;Noto Sans&quot;, source-sans-pro, sans-serif;</code></li>
 <li>Code Blocks: <code>Menlo, Monaco, &quot;Andale Mono&quot;, &quot;lucida console&quot;, &quot;Courier New&quot;, monospace;</code></li>
@@ -633,7 +633,7 @@ pre[class*="language-"] {
 </tr>
 </tbody>
 </table>
-<h2>Next iteration</h2>
+<h2>Next iteration?</h2>
 <p>To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate <code>GET</code> requests for content, it would clutter my codebase. I'm not sure if that is a trade-off I'm not willing to take.</p>
 
 </section>

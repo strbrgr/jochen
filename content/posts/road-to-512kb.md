@@ -6,7 +6,7 @@ tags:
 ---
 A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven't touched. Once I had my first release out I revisited my decision.
 
-I'm fascinated by performance and optimizations of systems. My website is and will always be static. I don't need to handle user interaction that go beyond routing. Are SvelteKit and JavaScript the wrong tools?
+I'm fascinated by performance and optimizations of systems. My website is and will always be static. I don't need to handle user interaction that exceeds routing. Might SvelteKit and JavaScript be the wrong tools?
 
 ## Finding the right tool
 
@@ -69,7 +69,7 @@ To get to <10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary 
 
 Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) allowing me to write most of my website content in Markdown and being able to use a templating language like nunjucks. Setup was easy and I was productive sooner compared to other SSG alternatives.
 
-Removing special fonts reduced the build by another 1/3 for each (uncached) request. The font-sets that I defined are the following and should :
+Removing special fonts reduced the build by another 30% for each (uncached) request. The font-sets that I defined are the following and should cover +95% of users due to fallback fonts:
 
 - Regular Text: `Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;`
 - Code Blocks: `Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;`
@@ -82,7 +82,6 @@ As of now, 07/27/224, transferred size via [Cloudflare](https://radar.cloudflare
 | / | 9.07kB |
 | **Total Size** | **9.07kB** |
 
-## Next iteration
+## Next iteration?
 
 To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate `GET` requests for content, it would clutter my codebase. I'm not sure if that is a trade-off I'm not willing to take.
-
