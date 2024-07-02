@@ -18,5 +18,4 @@ Right now, I am reading Ghost in the Wires and am looking for a new show to watc
 
 Feel free to connect on Linkedin. While I don't know a lot, I'm happy to talk tech or give advice to anyone new to the industry.
 
-<blockquote><p>Check out what I am doing <a href="/now">now</a> or <a href="/how">how</a> I built this page.</p></blockquote>
-
+<blockquote><p>Check out what I am doing <a href="/now">now</a> or <a href="/posts/road-to-512kb">how</a> I built this page.</p></blockquote>
