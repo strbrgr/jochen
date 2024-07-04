@@ -41,10 +41,10 @@ I saw SyncThing in my feed but never bothered looking at it in more depth until 
     <item>
       <title>Road to 512kB</title>
       <link>https://jochen.fyi/posts/road-to-512kb/</link>
-      <description>&lt;p&gt;A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven&#39;t touched. Once I had my first release out I revisited my decision.&lt;/p&gt;
+      <description>&lt;p&gt;A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven&#39;t touched. After a bit I revisited my decision.&lt;/p&gt;
 &lt;p&gt;I&#39;m fascinated by performance and optimizations of systems. My website is and will always be static. I don&#39;t need to handle user interaction that exceeds routing. Might SvelteKit and JavaScript be the wrong tools?&lt;/p&gt;
 &lt;h2&gt;Finding the right tool&lt;/h2&gt;
-&lt;p&gt;Over time I played with the thought of how much I could reduce the build size of my website. Pretty much at the same time, I discovered the &lt;a href=&quot;https://512kb.club/&quot;&gt;512KB Club&lt;/a&gt;. I set myself the goal to get my website to under 10kB.&lt;/p&gt;
+&lt;p&gt;Over time I played with the thought of how much I could reduce the build size of my website. At the same time I discovered the &lt;a href=&quot;https://512kb.club/&quot;&gt;512KB Club&lt;/a&gt;. I set myself the goal to get my website to under 10kB.&lt;/p&gt;
 &lt;h3&gt;First assessment&lt;/h3&gt;
 &lt;p&gt;Every time someone accessed my old website ~140kB were sent from server to client. Most of that fonts and JavaScript:&lt;/p&gt;
 &lt;h4&gt;text/html&lt;/h4&gt;
@@ -191,8 +191,8 @@ I saw SyncThing in my feed but never bothered looking at it in more depth until 
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2&gt;Getting my build under 10kb&lt;/h2&gt;
-&lt;p&gt;To get to &amp;lt;10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts can&#39;t be part of the final build either. I decided to dump both SvelteKit and fonts.&lt;/p&gt;
-&lt;p&gt;Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) allowing me to write most of my website content in Markdown and being able to use a templating language like nunjucks. Setup was easy and I was productive sooner compared to other SSG alternatives.&lt;/p&gt;
+&lt;p&gt;To get to &amp;lt;10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts don&#39;t need to be part of the final build either. I decided to dump both SvelteKit and fonts.&lt;/p&gt;
+&lt;p&gt;Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my project. To make my life easier I chose 11ty, a static site generator (SSG). Setup was easy and I was productive sooner compared to other SSG alternatives. I am able to write content in &lt;code&gt;markdown&lt;/code&gt; and have it compile to &lt;code&gt;html&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Removing special fonts reduced the build by another 30% for each (uncached) request. The font-sets that I defined are the following and should cover +95% of users due to fallback fonts:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Regular Text: &lt;code&gt;Optima, Candara, &amp;quot;Noto Sans&amp;quot;, source-sans-pro, sans-serif;&lt;/code&gt;&lt;/li&gt;

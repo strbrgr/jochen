@@ -4,13 +4,13 @@ tags:
   - post
   - performance
 ---
-A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven't touched. Once I had my first release out I revisited my decision.
+A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven't touched. After a bit I revisited my decision.
 
 I'm fascinated by performance and optimizations of systems. My website is and will always be static. I don't need to handle user interaction that exceeds routing. Might SvelteKit and JavaScript be the wrong tools?
 
 ## Finding the right tool
 
-Over time I played with the thought of how much I could reduce the build size of my website. Pretty much at the same time, I discovered the [512KB Club](https://512kb.club/). I set myself the goal to get my website to under 10kB.
+Over time I played with the thought of how much I could reduce the build size of my website. At the same time I discovered the [512KB Club](https://512kb.club/). I set myself the goal to get my website to under 10kB.
 
 ### First assessment
 
@@ -65,9 +65,9 @@ Every time someone accessed my old website ~140kB were sent from server to clien
 
 ## Getting my build under 10kb
 
-To get to <10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts can't be part of the final build either. I decided to dump both SvelteKit and fonts.
+To get to <10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts don't need to be part of the final build either. I decided to dump both SvelteKit and fonts.
 
-Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my simple project. To make my life easier but without falling back into the trap of a Frontend framework, I chose 11ty, a static site generator (SSG) allowing me to write most of my website content in Markdown and being able to use a templating language like nunjucks. Setup was easy and I was productive sooner compared to other SSG alternatives.
+Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my project. To make my life easier I chose 11ty, a static site generator (SSG). Setup was easy and I was productive sooner compared to other SSG alternatives. I am able to write content in `markdown` and have it compile to `html`.
 
 Removing special fonts reduced the build by another 30% for each (uncached) request. The font-sets that I defined are the following and should cover +95% of users due to fallback fonts:
 
