@@ -1,5 +1,6 @@
 ---
 title: Road to 512kB
+date: 2024-07-27
 tags:
   - post
   - performance
@@ -76,7 +77,7 @@ Removing special fonts reduced the build by another 30% for each (uncached) requ
 
 I saved another couple kB's by using an emoji as favicon instead of creating one that takes up additional space. My website is hosted on GitHub with an automatic deploy pipeline. Access from within North America should be fast.
 
-As of now, 07/27/224, transferred size via [Cloudflare](https://radar.cloudflare.com/scan/63f2b9d8-c74b-47f2-b5cd-7c62dea67755/network) shows the following:
+As of now, 07/27/2024, transferred size via [Cloudflare](https://radar.cloudflare.com/scan/63f2b9d8-c74b-47f2-b5cd-7c62dea67755/network) shows the following:
 | URL | Size |
 | -------------- | ---------- |
 | / | 9.07kB |
