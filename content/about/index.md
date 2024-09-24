@@ -12,7 +12,7 @@ I'm curious and like to go down all kinds of rabbit holes.
 
 I listen to a lot of punk and hardcore. I went to see Restraining Order last year and man do they have energy.
 
-Right now, I am reading Ghost in the Wires and am looking for a new show to watch. One of my favorite movies is La Haine.
+Right now, I read a book about Data Structures in C++ and watch The Night of. One of my favorite movies is La Haine.
 
 ## Reach out
 
