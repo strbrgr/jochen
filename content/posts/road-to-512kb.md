@@ -1,6 +1,6 @@
 ---
 title: Road to 512kB
-date: 2024-07-27
+date: 2024-07-02
 tags:
   - post
   - performance
