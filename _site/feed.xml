@@ -7,6 +7,37 @@
     <description>Short writings about everything related to software engineering.</description>
     <language>en</language>
     <item>
+      <title>Git alias&#39; I use on a daily basis</title>
+      <link>https://jochen.fyi/posts/git-alias-daily/</link>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Whether or not this quote can be attributed to Bill Gates or Walter Chrysler doesn&#39;t matter.&lt;a href=&quot;https://quoteinvestigator.com/2014/02/26/lazy-job/&quot;&gt;^1&lt;/a&gt; What matters is that if I have to do something repetitive frequently, I’ll find ways to make my life easier.&lt;/p&gt;
+&lt;p&gt;Most of us who write code for a living use version control, often interacting with our repositories through the command line. While I’m aware of applications like GitHub Desktop, if I can accomplish the task with a terminal, I prefer to use it.&lt;/p&gt;
+&lt;p&gt;I’ve typed commands like &lt;code&gt;git checkout&lt;/code&gt;, &lt;code&gt;git merge&lt;/code&gt;, and &lt;code&gt;git commit xyz&lt;/code&gt; more times than I can count. It feels like a waste of time, so why not find a shortcut? Setting up our Git configuration can make a huge difference. While Git provides default behaviors for many tasks, it also allows you to set your own preferences. With &lt;code&gt;git alias&lt;/code&gt;, we can create short, vim-inspired mnemonics that save us from repetitive typing.&lt;/p&gt;
+&lt;p&gt;All you need to do is add these, or your own, to your &lt;code&gt;~/.gitconfig&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;alias&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+	ga &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;
+	gcm &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout app-main
+	gc- &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout -
+    gaa &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--all&lt;/span&gt;
+    gcb &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout &lt;span class=&quot;token parameter variable&quot;&gt;-b&lt;/span&gt;
+    gco &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout
+    gll &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log &lt;span class=&quot;token parameter variable&quot;&gt;--pretty&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;format:&lt;span class=&quot;token string&quot;&gt;&quot;%C(yellow)%h%Cred%d&lt;span class=&quot;token entity&quot; title=&quot;&#92;&#92;&quot;&gt;&#92;&#92;&lt;/span&gt; %Creset%s%Cblue&lt;span class=&quot;token entity&quot; title=&quot;&#92;&#92;&quot;&gt;&#92;&#92;&lt;/span&gt; [%cn]&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--decorate&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--numstat&lt;/span&gt;
+    gld &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log &lt;span class=&quot;token parameter variable&quot;&gt;--pretty&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;format:&lt;span class=&quot;token string&quot;&gt;&quot;%C(yellow)%h&lt;span class=&quot;token entity&quot; title=&quot;&#92;&#92;&quot;&gt;&#92;&#92;&lt;/span&gt; %C(green)%ad%Cred%d&lt;span class=&quot;token entity&quot; title=&quot;&#92;&#92;&quot;&gt;&#92;&#92;&lt;/span&gt; %Creset%s%Cblue&lt;span class=&quot;token entity&quot; title=&quot;&#92;&#92;&quot;&gt;&#92;&#92;&lt;/span&gt; [%cn]&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--decorate&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--date&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;short &lt;span class=&quot;token parameter variable&quot;&gt;--graph&lt;/span&gt;
+    gls &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log &lt;span class=&quot;token parameter variable&quot;&gt;--pretty&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;format:&lt;span class=&quot;token string&quot;&gt;&quot;%C(green)%h&lt;span class=&quot;token entity&quot; title=&quot;&#92;&#92;&quot;&gt;&#92;&#92;&lt;/span&gt; %C(yellow)[%ad]%Cred%d&lt;span class=&quot;token entity&quot; title=&quot;&#92;&#92;&quot;&gt;&#92;&#92;&lt;/span&gt; %Creset%s%Cblue&lt;span class=&quot;token entity&quot; title=&quot;&#92;&#92;&quot;&gt;&#92;&#92;&lt;/span&gt; [%cn]&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--decorate&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--date&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;relative
+    gst &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status &lt;span class=&quot;token parameter variable&quot;&gt;--short&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--branch&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;color&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;  
+    &lt;span class=&quot;token function&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; auto  
+    status &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; auto  
+   &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;branch&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;  
+    autosetuprebase &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; always&lt;/code&gt;&lt;/pre&gt;
+</description>
+      <pubDate>Thu, 26 Sep 2024 19:00:00 +0000</pubDate>
+      <dc:creator>Jochen Stierberger</dc:creator>
+      <guid>https://jochen.fyi/posts/git-alias-daily/</guid>
+    </item>
+    <item>
       <title>Syncthing to sync things</title>
       <link>https://jochen.fyi/posts/syncthing-to-sync-things/</link>
       <description>&lt;h1&gt;SyncThing to sync things&lt;/h1&gt;

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jochen Stierberger - Personal Website</title>
+  <title>Git alias&#39; I use on a daily basis</title>
   <meta name="description" content="Personal Website of Software Engineer Jochen Stierberger">
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@_strbrgr" />
@@ -18,8 +18,7 @@
   <meta property="og:image" content="https://jochen.fyi/og.png" />
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍋</text></svg>" />
-  <style>.postlist { counter-reset: start-from 6 }
-* {
+  <style>* {
   margin: 0;
   --c-t: #212121;
   --c-bg: #f8f9fa;
@@ -449,47 +448,41 @@ pre[class*="language-"] {
   </header>
 
   <main>
-    
+    <h1>Git alias&#39; I use on a daily basis</h1>
 
-<h1>Hi.</h1>
+<ul class="post__metadata">
+	<li><time datetime="2024-09-27">27 September 2024</time></li>
+	<li><a href="/tags/code/" class="post__tag">code</a></li>
+</ul>
 
-<p>My name is Jochen. I work as a Software Engineer in Chicago where I build cutting-edge applications, prioritizing quality and performance of the products shipped.</p>
+<section class="post__content">
+  <blockquote>
+<p>&quot;I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it.&quot;</p>
+</blockquote>
+<p>Whether or not this quote can be attributed to Bill Gates or Walter Chrysler doesn't matter.<a href="https://quoteinvestigator.com/2014/02/26/lazy-job/">^1</a> What matters is that if I have to do something repetitive frequently, I’ll find ways to make my life easier.</p>
+<p>Most of us who write code for a living use version control, often interacting with our repositories through the command line. While I’m aware of applications like GitHub Desktop, if I can accomplish the task with a terminal, I prefer to use it.</p>
+<p>I’ve typed commands like <code>git checkout</code>, <code>git merge</code>, and <code>git commit xyz</code> more times than I can count. It feels like a waste of time, so why not find a shortcut? Setting up our Git configuration can make a huge difference. While Git provides default behaviors for many tasks, it also allows you to set your own preferences. With <code>git alias</code>, we can create short, vim-inspired mnemonics that save us from repetitive typing.</p>
+<p>All you need to do is add these, or your own, to your <code>~/.gitconfig</code>:</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token punctuation">[</span>alias<span class="token punctuation">]</span>
+	ga <span class="token operator">=</span> <span class="token function">git</span> <span class="token function">add</span>
+	gcm <span class="token operator">=</span> <span class="token function">git</span> checkout app-main
+	gc- <span class="token operator">=</span> <span class="token function">git</span> checkout -
+    gaa <span class="token operator">=</span> <span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">--all</span>
+    gcb <span class="token operator">=</span> <span class="token function">git</span> checkout <span class="token parameter variable">-b</span>
+    gco <span class="token operator">=</span> <span class="token function">git</span> checkout
+    gll <span class="token operator">=</span> <span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:<span class="token string">"%C(yellow)%h%Cred%d<span class="token entity" title="\\">\\</span> %Creset%s%Cblue<span class="token entity" title="\\">\\</span> [%cn]"</span> <span class="token parameter variable">--decorate</span> <span class="token parameter variable">--numstat</span>
+    gld <span class="token operator">=</span> <span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:<span class="token string">"%C(yellow)%h<span class="token entity" title="\\">\\</span> %C(green)%ad%Cred%d<span class="token entity" title="\\">\\</span> %Creset%s%Cblue<span class="token entity" title="\\">\\</span> [%cn]"</span> <span class="token parameter variable">--decorate</span> <span class="token parameter variable">--date</span><span class="token operator">=</span>short <span class="token parameter variable">--graph</span>
+    gls <span class="token operator">=</span> <span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>format:<span class="token string">"%C(green)%h<span class="token entity" title="\\">\\</span> %C(yellow)[%ad]%Cred%d<span class="token entity" title="\\">\\</span> %Creset%s%Cblue<span class="token entity" title="\\">\\</span> [%cn]"</span> <span class="token parameter variable">--decorate</span> <span class="token parameter variable">--date</span><span class="token operator">=</span>relative
+    gst <span class="token operator">=</span> <span class="token function">git</span> status <span class="token parameter variable">--short</span> <span class="token parameter variable">--branch</span>
+   <span class="token punctuation">[</span>color<span class="token punctuation">]</span>  
+    <span class="token function">diff</span> <span class="token operator">=</span> auto  
+    status <span class="token operator">=</span> auto  
+   <span class="token punctuation">[</span>branch<span class="token punctuation">]</span>  
+    autosetuprebase <span class="token operator">=</span> always</code></pre>
 
-<p>I occasionally write about things that I find interesting.</p>
-<p>If you want to know more about me feel free to check out my <a href="/about">About</a> page or find out <a href="/posts/road-to-512kb">how</a> I made this page fast, performant, and climate-friendly.
-
-
-
-<h1>Latest 3 Posts</h1>
-
-
-
-
-<ol reversed class="postlist">
-
-	<li class="postlist__item">
-		<a href="/posts/git-alias-daily/" class="postlist__link">Git alias&#39; I use on a daily basis</a>
-		<time class="postlist__date" datetime="2024-09-27">September 2024</time>
-	</li>
-
-	<li class="postlist__item">
-		<a href="/posts/syncthing-to-sync-things/" class="postlist__link">Syncthing to sync things</a>
-		<time class="postlist__date" datetime="2024-07-02">July 2024</time>
-	</li>
-
-	<li class="postlist__item">
-		<a href="/posts/road-to-512kb/" class="postlist__link">Road to 512kB</a>
-		<time class="postlist__date" datetime="2024-07-02">July 2024</time>
-	</li>
-
-</ol>
-
-
-
-
-<p>2 more posts can be found in <a href="/posts/">the archive</a>.</p>
-
-
+</section>
+<ul class="post__nextprev"><li>Previous: <a href="/posts/syncthing-to-sync-things/">Syncthing to sync things</a></li>
+</ul>
 
 
   </main>
