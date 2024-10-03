@@ -23,13 +23,15 @@
   margin: 0;
   --c-t: #212121;
   --c-bg: #f8f9fa;
+  --c-acc: #fabd2f;
   --c-100: #212529;
   --c-200: #2E3338;
   --c-300: #B7C3CC;
   --c-400: #CFD7DD;
   --c-500: #E7EBEE;
-  --font: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
-  --font-code: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+  --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol ;
+  --sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --monospace: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,7 +48,7 @@
 }
 
 body {
-  font: 1.25rem var(--font);
+  font: 1rem var(--sans-serif);
   line-height: 1.4;
   color: var(--c-t);
   background: var(--c-bg);
@@ -74,7 +76,18 @@ a:hover {
   color: var(--c-bg);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+{
+  font-family: var(--sans-serif);
+}
+
 p {
+  font-family: var(--serif);
   margin-bottom: 1em;
 }
 
@@ -279,10 +292,16 @@ code {
  * to target inline code elements
  * */
 code:not(pre code) {
-  font-size: 0.8em;
-  background: var(--c-500);
-  padding: 2px;
-  border: 1px solid var(--c-300);
+  color: var(--c-acc);
+  font-size: 1rem;
+}
+
+code::before {
+  content: "`";
+}
+
+code::after {
+  content: "`";
 }
 
 .centered {
@@ -302,7 +321,7 @@ code:not(pre code) {
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #ebdbb2; /* fg1 / fg */
-	font-family: Consolas, Monaco, "Andale Mono", monospace;
+	font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
