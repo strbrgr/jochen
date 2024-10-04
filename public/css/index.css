@@ -8,6 +8,7 @@
   --c-300: #B7C3CC;
   --c-400: #CFD7DD;
   --c-500: #E7EBEE;
+  --c-link: #b8bb26;
   --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol ;
   --sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
   --monospace: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; 
@@ -15,14 +16,16 @@
 
 @media (prefers-color-scheme: dark) {
   * {
-    --c-t: #f8f9fa;
-    --c-bg: #212121;
+    --c-t: hsla(12, 61%, 97%, 0.8);
+    --c-bg: #131b1e;
+    --c-acc: #fabd2f;
     --c-100: #f8f9fa;
     --c-200: #B8C1CC;
     --c-300: #42484C;
     --c-400: #383D43;
     --c-500: #2E3338;
     --c-600: #212529;
+    --c-link: #b8bb26;
   }
 }
 
@@ -37,17 +40,23 @@ body {
 }
 
 main {
-  margin: 3em 0;
+  margin: 3em 1em;
 }
 
-a {
-  color: var(--c-100);
+a:not(li a):not(header a) {
+  color: var(--c-link);
   text-decoration: underline;
   transition: .05s;
 }
 
 a:hover {
   color: var(--c-200);
+}
+
+header a, li a {
+  color: var(--c-t);
+  text-decoration: underline;
+  transition: .05s;
 }
 
 *::selection {
@@ -255,7 +264,6 @@ tbody tr:nth-child(even) {
 pre[class^="language-"] {
   background: var(--c-500);
   padding: 1em;
-  border: 1px solid var(--c-300);
   font-size: 0.8em;
   margin: 1em 0;
   overflow: scroll;
@@ -275,11 +283,11 @@ code:not(pre code) {
   font-size: 1rem;
 }
 
-code::before {
+code:not(pre code)::before {
   content: "`";
 }
 
-code::after {
+code:not(pre code)::after {
   content: "`";
 }
 
