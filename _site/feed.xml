@@ -52,20 +52,20 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
 &lt;h2&gt;Vault organization&lt;/h2&gt;
 &lt;p&gt;Right now I have the below Vaults:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;Code&lt;/code&gt;: Everything related to my own progression. Notes I take on Books, Frameworks, Languages and Platforms.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Life&lt;/code&gt;: Health Documents, Receipts, Green Card / Citizenship.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Work&lt;/code&gt;: 401k docs, Interview questions, Review Documents.&lt;/li&gt;
+&lt;li&gt;Code: Everything related to my own progression. Notes I take on Books, Frameworks, Languages and Platforms.&lt;/li&gt;
+&lt;li&gt;Life: Health Documents, Receipts, Green Card / Citizenship.&lt;/li&gt;
+&lt;li&gt;Work: 401k docs, Interview questions, Review Documents.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Each Vault has a &lt;code&gt;Root&lt;/code&gt; folder for assets (screenshots) and templates, along with a fleeting folder for temporary notes that may be discarded or transformed. The Root folder stores a general To-Do list as well. I don&#39;t want a separate app for that.&lt;/p&gt;
+&lt;p&gt;Each Vault has a Root folder for assets (screenshots) and templates, along with a fleeting folder for temporary notes that may be discarded or transformed. The Root folder stores a general To-Do list as well. I don&#39;t want a separate app for that.&lt;/p&gt;
 &lt;h2&gt;Synchronization strategy&lt;/h2&gt;
-&lt;p&gt;I could use Obsidian Sync or manually copy files. Obsidian Sync wasn&#39;t an option because it offers more than needed, so why pay 50$ per year? I know that manually copying files will not be an option because... Well, because I don&#39;t have the time and in that case I am lazy. I would rather set up a system once and be done with it. So what is this system?
-I saw SyncThing in my feed but never bothered looking at it in more depth until about a month ago and realized that it would be ideal. All I need to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both &lt;code&gt;Code&lt;/code&gt; vaults connected in no time. Edits on one machine are now reflected on the other.&lt;/p&gt;
+&lt;p&gt;I could use Obsidian Sync or manually copy files. Obsidian Sync wasn&#39;t an option because it offers more than needed. I know that manually copying files will not be an option because... Well, because I don&#39;t have the time and in that case I am lazy. I would rather set up a system once and be done with it. So what is this system?&lt;/p&gt;
+&lt;p&gt;I saw SyncThing in my feed but never bothered looking at it in more depth until about a month ago and realized that it would be ideal. All I need to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both Code vaults connected in no time. Edits on one machine are now reflected on the other.&lt;/p&gt;
 &lt;!-- ## Backup strategy --&gt;
 &lt;!----&gt;
 &lt;!-- My current backup strategy is basic. Vaults reside under `~/Documents/Vaults`. Only the Code vault is backed up, as I intend to use it across MacBook, iPhone, and iPad. I also created symlinks from the local path to iCloud, enabling vault access on all three devices without Obsidian Sync. I might add additional symlinks to other remote backup locations and encrypt my folder before backing up. --&gt;
 &lt;!----&gt;
 </description>
-      <pubDate>Tue, 02 Jul 2024 08:27:25 +0000</pubDate>
+      <pubDate>Mon, 01 Jul 2024 19:00:00 +0000</pubDate>
       <dc:creator>Jochen Stierberger</dc:creator>
       <guid>https://jochen.fyi/posts/syncthing-to-sync-things/</guid>
     </item>
@@ -223,13 +223,14 @@ I saw SyncThing in my feed but never bothered looking at it in more depth until 
 &lt;/table&gt;
 &lt;h2&gt;Getting my build under 10kb&lt;/h2&gt;
 &lt;p&gt;To get to &amp;lt;10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts don&#39;t need to be part of the final build either. I decided to dump both SvelteKit and fonts.&lt;/p&gt;
-&lt;p&gt;Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my project. To make my life easier I chose 11ty, a static site generator (SSG). Setup was easy and I was productive sooner compared to other SSG alternatives. I am able to write content in &lt;code&gt;markdown&lt;/code&gt; and have it compile to &lt;code&gt;html&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my project. To make my life easier I chose 11ty, a static site generator (SSG). Setup was easy and I was productive sooner compared to other SSG alternatives. I am able to write content in markdown and have it compile to html.&lt;/p&gt;
 &lt;p&gt;Removing special fonts reduced the build by another 30% for each (uncached) request. The font-sets that I defined are the following and should cover +95% of users due to fallback fonts:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Regular Text: &lt;code&gt;Optima, Candara, &amp;quot;Noto Sans&amp;quot;, source-sans-pro, sans-serif;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Code Blocks: &lt;code&gt;Menlo, Monaco, &amp;quot;Andale Mono&amp;quot;, &amp;quot;lucida console&amp;quot;, &amp;quot;Courier New&amp;quot;, monospace;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Serif Text: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol ;&lt;/li&gt;
+&lt;li&gt;Sans-serif Text: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;&lt;/li&gt;
+&lt;li&gt;Code Blocks: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I saved another couple kB&#39;s by using an emoji as favicon instead of creating one that takes up additional space. My website is hosted on GitHub with an automatic deploy pipeline. Access from within North America should be fast.&lt;/p&gt;
+&lt;p&gt;I saved another couple kB&#39;s by using an emoji as favicon instead of creating one that takes up additional space. My website is hosted on GitHub with an automatic deploy pipeline. Access from within North America is as fast as it gets.&lt;/p&gt;
 &lt;p&gt;As of now, 07/27/2024, transferred size via &lt;a href=&quot;https://radar.cloudflare.com/scan/63f2b9d8-c74b-47f2-b5cd-7c62dea67755/network&quot;&gt;Cloudflare&lt;/a&gt; shows the following:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -250,7 +251,7 @@ I saw SyncThing in my feed but never bothered looking at it in more depth until 
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2&gt;Next iteration?&lt;/h2&gt;
-&lt;p&gt;To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate &lt;code&gt;GET&lt;/code&gt; requests for content, it would clutter my codebase. I&#39;m not sure if that is a trade-off I&#39;m not willing to take.&lt;/p&gt;
+&lt;p&gt;To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate GET requests for content, it would clutter my codebase. I&#39;m not sure if that is a trade-off I&#39;m not willing to take.&lt;/p&gt;
 </description>
       <pubDate>Mon, 01 Jul 2024 19:00:00 +0000</pubDate>
       <dc:creator>Jochen Stierberger</dc:creator>
