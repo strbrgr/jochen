@@ -68,14 +68,16 @@ Every time someone accessed my old website ~140kB were sent from server to clien
 
 To get to <10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts don't need to be part of the final build either. I decided to dump both SvelteKit and fonts.
 
-Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my project. To make my life easier I chose 11ty, a static site generator (SSG). Setup was easy and I was productive sooner compared to other SSG alternatives. I am able to write content in `markdown` and have it compile to `html`.
+Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my project. To make my life easier I chose 11ty, a static site generator (SSG). Setup was easy and I was productive sooner compared to other SSG alternatives. I am able to write content in markdown and have it compile to html.
 
 Removing special fonts reduced the build by another 30% for each (uncached) request. The font-sets that I defined are the following and should cover +95% of users due to fallback fonts:
 
-- Regular Text: `Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;`
-- Code Blocks: `Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;`
 
-I saved another couple kB's by using an emoji as favicon instead of creating one that takes up additional space. My website is hosted on GitHub with an automatic deploy pipeline. Access from within North America should be fast.
+- Serif Text: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol ;
+- Sans-serif Text: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+- Code Blocks: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; 
+
+I saved another couple kB's by using an emoji as favicon instead of creating one that takes up additional space. My website is hosted on GitHub with an automatic deploy pipeline. Access from within North America is as fast as it gets.
 
 As of now, 07/27/2024, transferred size via [Cloudflare](https://radar.cloudflare.com/scan/63f2b9d8-c74b-47f2-b5cd-7c62dea67755/network) shows the following:
 | URL | Size |
@@ -85,4 +87,4 @@ As of now, 07/27/2024, transferred size via [Cloudflare](https://radar.cloudflar
 
 ## Next iteration?
 
-To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate `GET` requests for content, it would clutter my codebase. I'm not sure if that is a trade-off I'm not willing to take.
+To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate GET requests for content, it would clutter my codebase. I'm not sure if that is a trade-off I'm not willing to take.

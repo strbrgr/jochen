@@ -1,5 +1,6 @@
 ---
 title: Syncthing to sync things
+date: 2024-07-02
 tags:
   - code
 ---
@@ -24,16 +25,17 @@ I used `.includes()` before but worried about forgetting it without documentatio
 
 Right now I have the below Vaults:
 
-1. `Code`: Everything related to my own progression. Notes I take on Books, Frameworks, Languages and Platforms.
-2. `Life`: Health Documents, Receipts, Green Card / Citizenship.
-3. `Work`: 401k docs, Interview questions, Review Documents.
+1. Code: Everything related to my own progression. Notes I take on Books, Frameworks, Languages and Platforms.
+2. Life: Health Documents, Receipts, Green Card / Citizenship.
+3. Work: 401k docs, Interview questions, Review Documents.
 
-Each Vault has a `Root` folder for assets (screenshots) and templates, along with a fleeting folder for temporary notes that may be discarded or transformed. The Root folder stores a general To-Do list as well. I don't want a separate app for that.
+Each Vault has a Root folder for assets (screenshots) and templates, along with a fleeting folder for temporary notes that may be discarded or transformed. The Root folder stores a general To-Do list as well. I don't want a separate app for that.
 
 ## Synchronization strategy
 
-I could use Obsidian Sync or manually copy files. Obsidian Sync wasn't an option because it offers more than needed, so why pay 50$ per year? I know that manually copying files will not be an option because... Well, because I don't have the time and in that case I am lazy. I would rather set up a system once and be done with it. So what is this system?
-I saw SyncThing in my feed but never bothered looking at it in more depth until about a month ago and realized that it would be ideal. All I need to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both `Code` vaults connected in no time. Edits on one machine are now reflected on the other.
+I could use Obsidian Sync or manually copy files. Obsidian Sync wasn't an option because it offers more than needed. I know that manually copying files will not be an option because... Well, because I don't have the time and in that case I am lazy. I would rather set up a system once and be done with it. So what is this system?
+
+I saw SyncThing in my feed but never bothered looking at it in more depth until about a month ago and realized that it would be ideal. All I need to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both Code vaults connected in no time. Edits on one machine are now reflected on the other.
 
 <!-- ## Backup strategy -->
 <!---->

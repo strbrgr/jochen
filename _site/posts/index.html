@@ -21,15 +21,15 @@
   <style>.postlist { counter-reset: start-from 6 }
 * {
   margin: 0;
-  --c-t: #212121;
-  --c-bg: #f8f9fa;
-  --c-acc: #fabd2f;
+  --c-t: #171d20;
+  --c-bg: hsla(12, 61%, 97%, 0.8);
+  --c-syntax: #fabd2f;
   --c-100: #212529;
   --c-200: #2E3338;
   --c-300: #B7C3CC;
   --c-400: #CFD7DD;
   --c-500: #E7EBEE;
-  --c-link: #b8bb26;
+  --c-link: #fa8e2f;
   --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol ;
   --sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
   --monospace: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; 
@@ -38,15 +38,15 @@
 @media (prefers-color-scheme: dark) {
   * {
     --c-t: hsla(12, 61%, 97%, 0.8);
-    --c-bg: #131b1e;
-    --c-acc: #fabd2f;
+    --c-bg: #171d20;
+    --c-syntax: #fabd2f;
     --c-100: #f8f9fa;
     --c-200: #B8C1CC;
     --c-300: #42484C;
     --c-400: #383D43;
     --c-500: #2E3338;
     --c-600: #212529;
-    --c-link: #b8bb26;
+    --c-link: #fa8e2f;
   }
 }
 
@@ -301,7 +301,7 @@ code {
  * to target inline code elements
  * */
 code:not(pre code) {
-  color: var(--c-acc);
+  color: var(--c-syntax);
   font-size: 1rem;
 }
 
