@@ -1,6 +1,7 @@
 ---
 title: So good they can't ignore you
 author: Cal Newport
+date: 2024-05-02
 tags:
   - book
   - read
