@@ -10,9 +10,9 @@ What's up, my name is Jochen, I'm a Software Engineer. I have lived, worked, and
 
 I'm curious and like to go down all kinds of rabbit holes.
 
-I listen to a lot of punk and hardcore. I went to see Restraining Order last year and man do they have energy.
+I listen to a lot of punk and hardcore. I went to see _Restraining Order_ last year and man do they have energy.
 
-Right now, I read a book about Data Structures in C++. Last week I finished watching _The Night of_. One of my favorite movies is La Haine.
+Right now, I read a book about _Data Structures in C++_. Last week I finished watching _The Night of_. One of my favorite movies is _La Haine_.
 
 ## Reach out
 
