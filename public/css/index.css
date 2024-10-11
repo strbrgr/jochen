@@ -114,7 +114,6 @@ header>a {
 }
 
 blockquote {
-  font-style: italic;
   padding-left: .25rem;
   border-left: 2px solid var(--c-300);
 
