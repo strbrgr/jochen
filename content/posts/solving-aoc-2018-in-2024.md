@@ -119,7 +119,7 @@ fn part_2(input: &str) -> String {
 ---
 
 ## Day 3
-As you can see, I have a lot of todos left in this challenge that I want to address at some point. Looking at it a few days later, I should have not used index accessing with the vectors. Parsing could see some improvements as well. Ideally I want to make a call to some parsing function that then returns the necessary data for each `l in input.lines()` iteration.
+As you can see, I have a lot of todos left in this challenge that I want to address at some point. Looking at it a few days later, I should have not used index accessing with the vectors. Parsing could see some improvements as well. Ideally I want to make a call to some parsing function that then returns the necessary data for each `l in input.lines()` iteration. That would bring the iterations down from 1.3m to 50k.
 ```rust
 use std::{collections::HashSet, fs::read_to_string};
 
