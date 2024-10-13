@@ -54,7 +54,7 @@ body {
   line-height: 1.4;
   color: var(--c-t);
   background: var(--c-bg);
-  max-width: 36em;
+  max-width: 40em;
   margin: 0 auto;
   padding: 0 0.7em;
 }
@@ -65,6 +65,12 @@ main {
 
 a:not(li a):not(header a) {
   color: var(--c-link);
+  text-decoration: underline;
+  transition: .05s;
+}
+
+a:not(li a):not(header a):hover {
+  color: #b3621b;
   text-decoration: underline;
   transition: .05s;
 }
@@ -315,6 +321,56 @@ code:not(pre code)::after {
   display: block;
   margin: 0 auto;
 }
+
+.post {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: 2rem;
+    position: relative;
+  }
+}
+
+/*.header-anchor {*/
+/*  @media screen and (min-width: 700px) {*/
+/*    left: -0.8em;*/
+/*    position: absolute;*/
+/*    width: 0.8em;*/
+/*  }*/
+/*}*/
+
+.header-anchor__symbol {
+  @media screen and (min-width: 700px) and (hover: hover) {
+    visibility: hidden;
+
+    h2:hover &,
+    h3:hover &,
+    h4:hover &,
+    h5:hover &,
+    h6:hover &,
+    .header-anchor:focus & {
+      visibility: visible;
+    }
+  }
+}
+
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+hr {
+  margin-block-end: 3rem;
+  margin-block-start: 2rem;
+}
 /**
  * Gruvbox dark theme
  *
@@ -372,6 +428,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #1d2021; /* bg0_h */
+  border-radius: 1rem;
 }
 
 /* Inline code */
@@ -474,7 +531,8 @@ pre[class*="language-"] {
   </header>
 
   <main>
-    <h1>How</h1>
+    <h1 id="how" tabindex="-1">How <a class="header-anchor" href="#how"><span aria-hidden="true" class="header-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span></a></h1>
 <p>I made some basic decisions before re-building this website:</p>
 <ul>
 <li>Built a product that lasts</li>

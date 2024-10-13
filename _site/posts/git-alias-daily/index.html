@@ -54,7 +54,7 @@ body {
   line-height: 1.4;
   color: var(--c-t);
   background: var(--c-bg);
-  max-width: 36em;
+  max-width: 40em;
   margin: 0 auto;
   padding: 0 0.7em;
 }
@@ -65,6 +65,12 @@ main {
 
 a:not(li a):not(header a) {
   color: var(--c-link);
+  text-decoration: underline;
+  transition: .05s;
+}
+
+a:not(li a):not(header a):hover {
+  color: #b3621b;
   text-decoration: underline;
   transition: .05s;
 }
@@ -315,6 +321,56 @@ code:not(pre code)::after {
   display: block;
   margin: 0 auto;
 }
+
+.post {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: 2rem;
+    position: relative;
+  }
+}
+
+/*.header-anchor {*/
+/*  @media screen and (min-width: 700px) {*/
+/*    left: -0.8em;*/
+/*    position: absolute;*/
+/*    width: 0.8em;*/
+/*  }*/
+/*}*/
+
+.header-anchor__symbol {
+  @media screen and (min-width: 700px) and (hover: hover) {
+    visibility: hidden;
+
+    h2:hover &,
+    h3:hover &,
+    h4:hover &,
+    h5:hover &,
+    h6:hover &,
+    .header-anchor:focus & {
+      visibility: visible;
+    }
+  }
+}
+
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+hr {
+  margin-block-end: 3rem;
+  margin-block-start: 2rem;
+}
 /**
  * Gruvbox dark theme
  *
@@ -372,6 +428,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #1d2021; /* bg0_h */
+  border-radius: 1rem;
 }
 
 /* Inline code */
@@ -487,7 +544,7 @@ pre[class*="language-"] {
 </blockquote>
 <p>Whether or not this quote can be attributed to Bill Gates or Walter Chrysler doesn't matter.<a href="https://quoteinvestigator.com/2014/02/26/lazy-job/">^1</a> What matters is that if I have to do something repetitive frequently, I’ll find ways to make my life easier.</p>
 <p>Most of us who write code for a living use version control, often interacting with our repositories through the command line. While I’m aware of applications like GitHub Desktop, if I can accomplish the task with a terminal, I prefer to use it.</p>
-<p>I’ve typed commands like <code>git checkout</code>, <code>git merge</code>, and <code>git commit xyz</code> more times than I can count. It feels like a waste of time, so why not find a shortcut? Setting up our Git configuration can make a huge difference. While Git provides default behaviors for many tasks, it also allows you to set your own preferences. With <code>git alias</code>, we can create short, vim-inspired mnemonics that save us from repetitive typing.</p>
+<p>I have typed commands like <code>git checkout</code>, <code>git merge</code>, and <code>git commit xyz</code> more times than I can count. It feels like a waste of time, so why not find a shortcut? Setting up our Git configuration can make a huge difference. While Git provides default behaviors for many tasks, it also allows you to set your own preferences. With <code>git alias</code>, we can create short, vim-inspired mnemonics that save us from repetitive typing.</p>
 <p>All you need to do is add these, or your own, to your <code>~/.gitconfig</code>:</p>
 <pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token punctuation">[</span>alias<span class="token punctuation">]</span>
 	ga <span class="token operator">=</span> <span class="token function">git</span> <span class="token function">add</span>
@@ -507,7 +564,7 @@ pre[class*="language-"] {
     autosetuprebase <span class="token operator">=</span> always</code></pre>
 
 </section>
-<ul class="post__nextprev"><li>Previous: <a href="/posts/syncthing-to-sync-things/">Syncthing to sync things</a></li>
+<ul class="post__nextprev"><li>Previous: <a href="/posts/syncthing-to-sync-things/">Syncthing to sync things</a></li><li>Next: <a href="/posts/solving-aoc-2018-in-2024/">Solving AoC 2018 in 2024</a></li>
 </ul>
 
 

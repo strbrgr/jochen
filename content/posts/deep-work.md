@@ -1,6 +1,7 @@
 ---
 title: Deep Work
 author: Cal Newport
+date: 2024-04-02
 tags:
   - book
   - read

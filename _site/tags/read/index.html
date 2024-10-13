@@ -55,7 +55,7 @@ body {
   line-height: 1.4;
   color: var(--c-t);
   background: var(--c-bg);
-  max-width: 36em;
+  max-width: 40em;
   margin: 0 auto;
   padding: 0 0.7em;
 }
@@ -66,6 +66,12 @@ main {
 
 a:not(li a):not(header a) {
   color: var(--c-link);
+  text-decoration: underline;
+  transition: .05s;
+}
+
+a:not(li a):not(header a):hover {
+  color: #b3621b;
   text-decoration: underline;
   transition: .05s;
 }
@@ -316,6 +322,56 @@ code:not(pre code)::after {
   display: block;
   margin: 0 auto;
 }
+
+.post {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: 2rem;
+    position: relative;
+  }
+}
+
+/*.header-anchor {*/
+/*  @media screen and (min-width: 700px) {*/
+/*    left: -0.8em;*/
+/*    position: absolute;*/
+/*    width: 0.8em;*/
+/*  }*/
+/*}*/
+
+.header-anchor__symbol {
+  @media screen and (min-width: 700px) and (hover: hover) {
+    visibility: hidden;
+
+    h2:hover &,
+    h3:hover &,
+    h4:hover &,
+    h5:hover &,
+    h6:hover &,
+    .header-anchor:focus & {
+      visibility: visible;
+    }
+  }
+}
+
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+hr {
+  margin-block-end: 3rem;
+  margin-block-start: 2rem;
+}
 /**
  * Gruvbox dark theme
  *
@@ -373,6 +429,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #1d2021; /* bg0_h */
+  border-radius: 1rem;
 }
 
 /* Inline code */
@@ -488,7 +545,7 @@ pre[class*="language-"] {
 
 	<li class="postlist__item">
 		<a href="/posts/deep-work/" class="postlist__link">Deep Work</a>
-		<time class="postlist__date" datetime="2024-04-10">April 2024</time>
+		<time class="postlist__date" datetime="2024-04-02">April 2024</time>
 	</li>
 
 </ol>

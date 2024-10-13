@@ -54,7 +54,7 @@ body {
   line-height: 1.4;
   color: var(--c-t);
   background: var(--c-bg);
-  max-width: 36em;
+  max-width: 40em;
   margin: 0 auto;
   padding: 0 0.7em;
 }
@@ -65,6 +65,12 @@ main {
 
 a:not(li a):not(header a) {
   color: var(--c-link);
+  text-decoration: underline;
+  transition: .05s;
+}
+
+a:not(li a):not(header a):hover {
+  color: #b3621b;
   text-decoration: underline;
   transition: .05s;
 }
@@ -315,6 +321,56 @@ code:not(pre code)::after {
   display: block;
   margin: 0 auto;
 }
+
+.post {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: 2rem;
+    position: relative;
+  }
+}
+
+/*.header-anchor {*/
+/*  @media screen and (min-width: 700px) {*/
+/*    left: -0.8em;*/
+/*    position: absolute;*/
+/*    width: 0.8em;*/
+/*  }*/
+/*}*/
+
+.header-anchor__symbol {
+  @media screen and (min-width: 700px) and (hover: hover) {
+    visibility: hidden;
+
+    h2:hover &,
+    h3:hover &,
+    h4:hover &,
+    h5:hover &,
+    h6:hover &,
+    .header-anchor:focus & {
+      visibility: visible;
+    }
+  }
+}
+
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+hr {
+  margin-block-end: 3rem;
+  margin-block-start: 2rem;
+}
 /**
  * Gruvbox dark theme
  *
@@ -372,6 +428,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #1d2021; /* bg0_h */
+  border-radius: 1rem;
 }
 
 /* Inline code */
@@ -484,11 +541,14 @@ pre[class*="language-"] {
 <section class="post__content">
   <p>A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven't touched. After a bit I revisited my decision.</p>
 <p>I'm fascinated by performance and optimizations of systems. My website is and will always be static. I don't need to handle user interaction that exceeds routing. Might SvelteKit and JavaScript be the wrong tools?</p>
-<h2>Finding the right tool</h2>
+<h2 id="finding-the-right-tool" tabindex="-1">Finding the right tool <a class="header-anchor" href="#finding-the-right-tool"><span aria-hidden="true" class="header-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span></a></h2>
 <p>Over time I played with the thought of how much I could reduce the build size of my website. At the same time I discovered the <a href="https://512kb.club/">512KB Club</a>. I set myself the goal to get my website to under 10kB.</p>
-<h3>First assessment</h3>
+<h3 id="first-assessment" tabindex="-1">First assessment <a class="header-anchor" href="#first-assessment"><span aria-hidden="true" class="header-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span></a></h3>
 <p>Every time someone accessed my old website ~140kB were sent from server to client. Most of that fonts and JavaScript:</p>
-<h4>text/html</h4>
+<h4 id="text%2Fhtml" tabindex="-1">text/html <a class="header-anchor" href="#text%2Fhtml"><span aria-hidden="true" class="header-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span></a></h4>
 <table>
 <thead>
 <tr>
@@ -507,7 +567,8 @@ pre[class*="language-"] {
 </tr>
 </tbody>
 </table>
-<h4>text/css</h4>
+<h4 id="text%2Fcss" tabindex="-1">text/css <a class="header-anchor" href="#text%2Fcss"><span aria-hidden="true" class="header-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span></a></h4>
 <table>
 <thead>
 <tr>
@@ -530,7 +591,8 @@ pre[class*="language-"] {
 </tr>
 </tbody>
 </table>
-<h4>application/javascript</h4>
+<h4 id="application%2Fjavascript" tabindex="-1">application/javascript <a class="header-anchor" href="#application%2Fjavascript"><span aria-hidden="true" class="header-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span></a></h4>
 <table>
 <thead>
 <tr>
@@ -593,7 +655,8 @@ pre[class*="language-"] {
 </tr>
 </tbody>
 </table>
-<h4>font/woff2</h4>
+<h4 id="font%2Fwoff2" tabindex="-1">font/woff2 <a class="header-anchor" href="#font%2Fwoff2"><span aria-hidden="true" class="header-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span></a></h4>
 <table>
 <thead>
 <tr>
@@ -612,7 +675,8 @@ pre[class*="language-"] {
 </tr>
 </tbody>
 </table>
-<h4>img/favicon</h4>
+<h4 id="img%2Ffavicon" tabindex="-1">img/favicon <a class="header-anchor" href="#img%2Ffavicon"><span aria-hidden="true" class="header-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span></a></h4>
 <table>
 <thead>
 <tr>
@@ -631,7 +695,8 @@ pre[class*="language-"] {
 </tr>
 </tbody>
 </table>
-<h2>Getting my build under 10kb</h2>
+<h2 id="getting-my-build-under-10kb" tabindex="-1">Getting my build under 10kb <a class="header-anchor" href="#getting-my-build-under-10kb"><span aria-hidden="true" class="header-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span></a></h2>
 <p>To get to &lt;10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts don't need to be part of the final build either. I decided to dump both SvelteKit and fonts.</p>
 <p>Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my project. To make my life easier I chose 11ty, a static site generator (SSG). Setup was easy and I was productive sooner compared to other SSG alternatives. I am able to write content in markdown and have it compile to html.</p>
 <p>Removing special fonts reduced the build by another 30% for each (uncached) request. The font-sets that I defined are the following and should cover +95% of users due to fallback fonts:</p>
@@ -660,7 +725,8 @@ pre[class*="language-"] {
 </tr>
 </tbody>
 </table>
-<h2>Next iteration?</h2>
+<h2 id="next-iteration%3F" tabindex="-1">Next iteration? <a class="header-anchor" href="#next-iteration%3F"><span aria-hidden="true" class="header-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span></a></h2>
 <p>To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate GET requests for content, it would clutter my codebase. I'm not sure if that is a trade-off I'm not willing to take.</p>
 
 </section>
