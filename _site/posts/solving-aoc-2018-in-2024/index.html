@@ -75,8 +75,19 @@ a:not(li a):not(header a):hover {
   transition: .05s;
 }
 
+
 a:hover {
   color: var(--c-200);
+}
+
+a[href^="#day"] {
+  margin-right: .5rem;
+  /*font-family: var(--sans-serif);*/
+  /*font-style: italic;*/
+}
+
+p:has(a[href^="#day"]) {
+  text-align: center;
 }
 
 header a, li a {
@@ -540,12 +551,12 @@ pre[class*="language-"] {
 </ul>
 
 <section class="post__content">
-  <p><a href="#day-1">Day 1</a>
+  <p>I'm currently working through <a href="https://adventofcode.com/">Advent of Code</a> whenever I get the chance, alongside my day-to-day activities. I chose to start with the 2018 challenges because of the excellent repository by <a href="https://github.com/BurntSushi/advent-of-code/tree/master">BurntSushi</a>. When else do you get the opportunity to compare your solutions with some of the best?</p>
+<p><a href="#day-1">Day 1</a>
 <a href="#day-2">Day 2</a>
 <a href="#day-3">Day 3</a>
 <a href="#day-4">Day 4</a>
 <a href="#day-5">Day 5</a></p>
-<!--TODO: Intro text-->
 <h2 id="day-1" tabindex="-1">Day 1 <a class="header-anchor" href="#day-1"><span aria-hidden="true" class="header-anchor__symbol">#</span>
       <span class="screen-reader-only">Direct link to this section</span></a></h2>
 <p>My first AoC challenge ever. So far most coding challenges were either on Codewars, Leetcode, or Exercism. I think forcing yourself to do these every once in a while is important, but I have not been very happy with the format of the mentioned options. While I dreaded those, doing AoC challenges is a lot of fun.</p>

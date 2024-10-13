@@ -55,8 +55,19 @@ a:not(li a):not(header a):hover {
   transition: .05s;
 }
 
+
 a:hover {
   color: var(--c-200);
+}
+
+a[href^="#day"] {
+  margin-right: .5rem;
+  /*font-family: var(--sans-serif);*/
+  /*font-style: italic;*/
+}
+
+p:has(a[href^="#day"]) {
+  text-align: center;
 }
 
 header a, li a {
@@ -351,3 +362,4 @@ hr {
   margin-block-end: 3rem;
   margin-block-start: 2rem;
 }
+

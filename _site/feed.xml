@@ -9,12 +9,12 @@
     <item>
       <title>Solving AoC 2018 in 2024</title>
       <link>https://jochen.fyi/posts/solving-aoc-2018-in-2024/</link>
-      <description>&lt;p&gt;&lt;a href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-1&quot;&gt;Day 1&lt;/a&gt;
+      <description>&lt;p&gt;I&#39;m currently working through &lt;a href=&quot;https://adventofcode.com/&quot;&gt;Advent of Code&lt;/a&gt; whenever I get the chance, alongside my day-to-day activities. I chose to start with the 2018 challenges because of the excellent repository by &lt;a href=&quot;https://github.com/BurntSushi/advent-of-code/tree/master&quot;&gt;BurntSushi&lt;/a&gt;. When else do you get the opportunity to compare your solutions with some of the best?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-1&quot;&gt;Day 1&lt;/a&gt;
 &lt;a href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-2&quot;&gt;Day 2&lt;/a&gt;
 &lt;a href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-3&quot;&gt;Day 3&lt;/a&gt;
 &lt;a href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-4&quot;&gt;Day 4&lt;/a&gt;
 &lt;a href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-5&quot;&gt;Day 5&lt;/a&gt;&lt;/p&gt;
-&lt;!--TODO: Intro text--&gt;
 &lt;h2 id=&quot;day-1&quot; tabindex=&quot;-1&quot;&gt;Day 1 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-1&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
       &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;My first AoC challenge ever. So far most coding challenges were either on Codewars, Leetcode, or Exercism. I think forcing yourself to do these every once in a while is important, but I have not been very happy with the format of the mentioned options. While I dreaded those, doing AoC challenges is a lot of fun.&lt;/p&gt;

@@ -6,13 +6,14 @@ tags:
   - performance
 ---
 
+I'm currently working through [Advent of Code](https://adventofcode.com/) whenever I get the chance, alongside my day-to-day activities. I chose to start with the 2018 challenges because of the excellent repository by [BurntSushi](https://github.com/BurntSushi/advent-of-code/tree/master). When else do you get the opportunity to compare your solutions with some of the best?
+
 [Day 1](#day-1)
 [Day 2](#day-2)
 [Day 3](#day-3)
 [Day 4](#day-4)
 [Day 5](#day-5)
 
-<!--TODO: Intro text-->
 
 ## Day 1
 My first AoC challenge ever. So far most coding challenges were either on Codewars, Leetcode, or Exercism. I think forcing yourself to do these every once in a while is important, but I have not been very happy with the format of the mentioned options. While I dreaded those, doing AoC challenges is a lot of fun.
