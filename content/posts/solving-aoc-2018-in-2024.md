@@ -356,7 +356,9 @@ let upper = (b'A' + i) as char;
 ```
 Lower and upper were then used to compare against the current character.
 
-Performance wise this is not an ideal approach with it's time complexity of O(m\*n), where m is the length of the alphabet and n the input size. In our example 26 * 50000. I'm pretty sure there is an O(n) solution.
+Performance wise this is not an ideal approach with it's time complexity of O(m\*n), where m is the length of the alphabet and n the input size. In our example 26 * 50000. If anyone knows of a solution bringing the iterations down from 1.3m to 50k, please let me know!!
+
+Also got into testing a bit, which was neat.
 
 ```rust
 use std::{error, fs};
