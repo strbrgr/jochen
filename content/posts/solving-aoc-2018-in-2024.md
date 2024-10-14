@@ -188,7 +188,7 @@ fn part_1(input: &str) -> i32 {
 ---
 
 ## Day 4
-This was a lot of code. Pretty sure the logic between part 1 and part 2 is sort of duplicated, so that should be improved. I'm also not happy about the parsing and splitting to extract the timestamps. I should probably look at regex or a library like [nom](https://docs.rs/nom/latest/nom/).
+This was a lot of code. Pretty sure the logic between part 1 and part 2 is sort of duplicated, so that should be improved. I'm also not happy about the parsing and splitting to extract the timestamps. I should probably look at regex or a crate like [nom](https://docs.rs/nom/latest/nom/).
 ```rust
 use std::error::Error;
 use std::result;
