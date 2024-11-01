@@ -142,6 +142,10 @@ ul {
   margin-bottom: .5em;
   padding-left: 2em;
   list-style-type: circle;
+
+  li {
+  font-family: var(--serif);
+  }
 }
 
 ol {
