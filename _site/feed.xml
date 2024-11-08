@@ -15,8 +15,7 @@
 &lt;a href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-3&quot;&gt;Day 3&lt;/a&gt;
 &lt;a href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-4&quot;&gt;Day 4&lt;/a&gt;
 &lt;a href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-5&quot;&gt;Day 5&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;day-1&quot; tabindex=&quot;-1&quot;&gt;Day 1 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-1&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;day-1&quot; tabindex=&quot;-1&quot;&gt;Day 1 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-1&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;My first AoC challenge ever. So far most coding challenges were either on Codewars, Leetcode, or Exercism. I think forcing yourself to do these every once in a while is important, but I have not been very happy with the format of the mentioned options. While I dreaded those, doing AoC challenges is a lot of fun.&lt;/p&gt;
 &lt;pre class=&quot;language-rust&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;std&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;collections&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;HashSet&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;std&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;&lt;/span&gt;fs&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -42,8 +41,7 @@
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-&lt;h2 id=&quot;day-2&quot; tabindex=&quot;-1&quot;&gt;Day 2 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-2&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;day-2&quot; tabindex=&quot;-1&quot;&gt;Day 2 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-2&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I think the code is overall okay. Sort of imperative and not very idiomatic but at this stage, I am happy to get through the challenges. Idiomatic code will come with time. I could have definitely improved variable naming for my &lt;code&gt;HashMap&lt;/code&gt; and &lt;code&gt;HashSet&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&quot;language-rust&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;std&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;collections&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;HashSet&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
@@ -113,8 +111,7 @@
     result
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-&lt;h2 id=&quot;day-3&quot; tabindex=&quot;-1&quot;&gt;Day 3 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-3&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;day-3&quot; tabindex=&quot;-1&quot;&gt;Day 3 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-3&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;As you can see, I have a lot of todos left in this challenge that I want to address at some point. Looking at it a few days later, I should have not used index accessing with the vectors. Parsing could see some improvements as well. Ideally I want to make a call to some parsing function that then returns the necessary data for each &lt;code&gt;l in input.lines()&lt;/code&gt; iteration.&lt;/p&gt;
 &lt;pre class=&quot;language-rust&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;std&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token namespace&quot;&gt;collections&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;HashSet&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;fs&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;&lt;/span&gt;read_to_string&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
@@ -179,8 +176,7 @@
     count
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-&lt;h2 id=&quot;day-4&quot; tabindex=&quot;-1&quot;&gt;Day 4 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-4&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;day-4&quot; tabindex=&quot;-1&quot;&gt;Day 4 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-4&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;This was a lot of code. Pretty sure the logic between part 1 and part 2 is sort of duplicated, so that should be improved. I&#39;m also not happy about the parsing and splitting to extract the timestamps. I should probably look at regex or a crate like &lt;a href=&quot;https://docs.rs/nom/latest/nom/&quot;&gt;nom&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&quot;language-rust&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;std&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;std&lt;span class=&quot;token punctuation&quot;&gt;::&lt;/span&gt;&lt;/span&gt;result&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -338,8 +334,7 @@
     &lt;span class=&quot;token class-name&quot;&gt;Ok&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;minute&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; action&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-&lt;h2 id=&quot;day-5&quot; tabindex=&quot;-1&quot;&gt;Day 5 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-5&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;day-5&quot; tabindex=&quot;-1&quot;&gt;Day 5 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/solving-aoc-2018-in-2024/#day-5&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I got side-tracked by starting the implementation with a sliding window approach. Turns out that this was not the best idea. I simple stack approach was all I needed. Part 2 felt pretty straight forward. I solved it by looping over a range of 0..26 while grabbing the numerical value of a character via:&lt;/p&gt;
 &lt;pre class=&quot;language-rust&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; lower &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token char&quot;&gt;b&#39;a&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; upper &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token char&quot;&gt;b&#39;A&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -477,19 +472,16 @@
     <item>
       <title>Syncthing to sync things</title>
       <link>https://jochen.fyi/posts/syncthing-to-sync-things/</link>
-      <description>&lt;h1 id=&quot;syncthing-to-sync-things&quot; tabindex=&quot;-1&quot;&gt;SyncThing to sync things &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/syncthing-to-sync-things/#syncthing-to-sync-things&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+      <description>&lt;h1 id=&quot;syncthing-to-sync-things&quot; tabindex=&quot;-1&quot;&gt;SyncThing to sync things &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/syncthing-to-sync-things/#syncthing-to-sync-things&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;A few month ago I rolled off one, began work on another account, and had to deal with the outcome of changing domains and stakeholders.
 This was demanding, but ultimately positive as I got introduced to new patterns and syntax which inspired me to improve my note taking.&lt;/p&gt;
-&lt;h2 id=&quot;track-solutions&quot; tabindex=&quot;-1&quot;&gt;Track solutions &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/syncthing-to-sync-things/#track-solutions&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;track-solutions&quot; tabindex=&quot;-1&quot;&gt;Track solutions &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/syncthing-to-sync-things/#track-solutions&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I use Obsidian to track feature work, but haven&#39;t tracked things I learned. Recently, I needed to filter API calls that weren&#39;t GET requests. While an &lt;code&gt;if-else&lt;/code&gt; statement worked, a cleaner approach using &lt;code&gt;.includes()&lt;/code&gt; in JavaScript was more efficient:&lt;/p&gt;
 &lt;pre class=&quot;language-javascript&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;PUT&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;PATCH&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;type&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token comment&quot;&gt;// do something here&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I used &lt;code&gt;.includes()&lt;/code&gt; before but worried about forgetting it without documentation. To keep track of such, I wanted to create a system that could store notes on both my work and personal machines, but I hadn&#39;t found a good synchronization solution yet.&lt;/p&gt;
-&lt;h2 id=&quot;vault-organization&quot; tabindex=&quot;-1&quot;&gt;Vault organization &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/syncthing-to-sync-things/#vault-organization&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;vault-organization&quot; tabindex=&quot;-1&quot;&gt;Vault organization &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/syncthing-to-sync-things/#vault-organization&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Right now I have the below Vaults:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Code: Everything related to my own progression. Notes I take on Books, Frameworks, Languages and Platforms.&lt;/li&gt;
@@ -497,8 +489,7 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
 &lt;li&gt;Work: 401k docs, Interview questions, Review Documents.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Each Vault has a Root folder for assets (screenshots) and templates, along with a fleeting folder for temporary notes that may be discarded or transformed. The Root folder stores a general To-Do list as well. I don&#39;t want a separate app for that.&lt;/p&gt;
-&lt;h2 id=&quot;synchronization-strategy&quot; tabindex=&quot;-1&quot;&gt;Synchronization strategy &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/syncthing-to-sync-things/#synchronization-strategy&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;synchronization-strategy&quot; tabindex=&quot;-1&quot;&gt;Synchronization strategy &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/syncthing-to-sync-things/#synchronization-strategy&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I could use Obsidian Sync or manually copy files. Obsidian Sync wasn&#39;t an option because it offers more than needed. I know that manually copying files will not be an option because... Well, because I don&#39;t have the time and in that case I am lazy. I would rather set up a system once and be done with it. So what is this system?&lt;/p&gt;
 &lt;p&gt;I saw SyncThing in my feed but never bothered looking at it in more depth until about a month ago and realized that it would be ideal. All I need to do is keep two folders between two machines synchronized. Installation and configuration was a breeze and I had both Code vaults connected in no time. Edits on one machine are now reflected on the other.&lt;/p&gt;
 &lt;!-- ## Backup strategy --&gt;
@@ -515,14 +506,11 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
       <link>https://jochen.fyi/posts/road-to-512kb/</link>
       <description>&lt;p&gt;A year ago I built my website using SvelteKit as it was the only Frontend framework that I haven&#39;t touched. After a bit I revisited my decision.&lt;/p&gt;
 &lt;p&gt;I&#39;m fascinated by performance and optimizations of systems. My website is and will always be static. I don&#39;t need to handle user interaction that exceeds routing. Might SvelteKit and JavaScript be the wrong tools?&lt;/p&gt;
-&lt;h2 id=&quot;finding-the-right-tool&quot; tabindex=&quot;-1&quot;&gt;Finding the right tool &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#finding-the-right-tool&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;finding-the-right-tool&quot; tabindex=&quot;-1&quot;&gt;Finding the right tool &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#finding-the-right-tool&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Over time I played with the thought of how much I could reduce the build size of my website. At the same time I discovered the &lt;a href=&quot;https://512kb.club/&quot;&gt;512KB Club&lt;/a&gt;. I set myself the goal to get my website to under 10kB.&lt;/p&gt;
-&lt;h3 id=&quot;first-assessment&quot; tabindex=&quot;-1&quot;&gt;First assessment &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#first-assessment&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;first-assessment&quot; tabindex=&quot;-1&quot;&gt;First assessment &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#first-assessment&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Every time someone accessed my old website ~140kB were sent from server to client. Most of that fonts and JavaScript:&lt;/p&gt;
-&lt;h4 id=&quot;text%2Fhtml&quot; tabindex=&quot;-1&quot;&gt;text/html &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#text%2Fhtml&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;text%2Fhtml&quot; tabindex=&quot;-1&quot;&gt;text/html &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#text%2Fhtml&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -541,8 +529,7 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&quot;text%2Fcss&quot; tabindex=&quot;-1&quot;&gt;text/css &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#text%2Fcss&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;text%2Fcss&quot; tabindex=&quot;-1&quot;&gt;text/css &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#text%2Fcss&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -565,8 +552,7 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&quot;application%2Fjavascript&quot; tabindex=&quot;-1&quot;&gt;application/javascript &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#application%2Fjavascript&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;application%2Fjavascript&quot; tabindex=&quot;-1&quot;&gt;application/javascript &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#application%2Fjavascript&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -629,8 +615,7 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&quot;font%2Fwoff2&quot; tabindex=&quot;-1&quot;&gt;font/woff2 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#font%2Fwoff2&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;font%2Fwoff2&quot; tabindex=&quot;-1&quot;&gt;font/woff2 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#font%2Fwoff2&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -649,8 +634,7 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&quot;img%2Ffavicon&quot; tabindex=&quot;-1&quot;&gt;img/favicon &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#img%2Ffavicon&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;img%2Ffavicon&quot; tabindex=&quot;-1&quot;&gt;img/favicon &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#img%2Ffavicon&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -669,8 +653,7 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&quot;getting-my-build-under-10kb&quot; tabindex=&quot;-1&quot;&gt;Getting my build under 10kb &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#getting-my-build-under-10kb&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;getting-my-build-under-10kb&quot; tabindex=&quot;-1&quot;&gt;Getting my build under 10kb &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#getting-my-build-under-10kb&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;To get to &amp;lt;10kB I needed to prioritize. Yes, 70kB of JavaScript are unnecessary for a static website. Yes, 46kB for fonts don&#39;t need to be part of the final build either. I decided to dump both SvelteKit and fonts.&lt;/p&gt;
 &lt;p&gt;Dumping JavaScript left me with bare CSS and HTML, which are exactly the right tool for my project. To make my life easier I chose 11ty, a static site generator (SSG). Setup was easy and I was productive sooner compared to other SSG alternatives. I am able to write content in markdown and have it compile to html.&lt;/p&gt;
 &lt;p&gt;Removing special fonts reduced the build by another 30% for each (uncached) request. The font-sets that I defined are the following and should cover +95% of users due to fallback fonts:&lt;/p&gt;
@@ -699,8 +682,7 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&quot;next-iteration%3F&quot; tabindex=&quot;-1&quot;&gt;Next iteration? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#next-iteration%3F&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;next-iteration%3F&quot; tabindex=&quot;-1&quot;&gt;Next iteration? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/road-to-512kb/#next-iteration%3F&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;To save further, I could avoid serving .html via different routes. Instead content could be rendered dynamically through CSS and html selectors. While this would save separate GET requests for content, it would clutter my codebase. I&#39;m not sure if that is a trade-off I&#39;m not willing to take.&lt;/p&gt;
 </description>
       <pubDate>Mon, 01 Jul 2024 19:00:00 +0000</pubDate>
@@ -717,24 +699,18 @@ This was demanding, but ultimately positive as I got introduced to new patterns 
 &lt;li&gt;The Research Bible Routine&lt;/li&gt;
 &lt;li&gt;His mission-development system&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;become-the-purple-cow&quot; tabindex=&quot;-1&quot;&gt;Become the Purple Cow &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#become-the-purple-cow&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;become-the-purple-cow&quot; tabindex=&quot;-1&quot;&gt;Become the Purple Cow &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#become-the-purple-cow&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Strive for uniqueness and innovation. You should be remarkable and stand out from the competition, attract attention and create a memorable impression on the audience.
 This concept emphasizes the importance of creativity, differentiation, and being bold in order to thrive in a crowded marketplace.&lt;/p&gt;
-&lt;h2 id=&quot;the-research-bible-routine&quot; tabindex=&quot;-1&quot;&gt;The Research Bible Routine &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#the-research-bible-routine&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;the-research-bible-routine&quot; tabindex=&quot;-1&quot;&gt;The Research Bible Routine &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#the-research-bible-routine&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Start a document titled &lt;em&gt;Research Bible&lt;/em&gt; (or whatever) and summarize an article, blog post, framework, idea, paper or anything else that interests you in your profession. The summary must include a description, how it compares to other work, and the main strategies. Those summaries should be a holistic overview and not a in-depth exploration. Only that way you are able to them do once a week.&lt;/p&gt;
-&lt;h3 id=&quot;cal-newports-mission-development-system&quot; tabindex=&quot;-1&quot;&gt;Cal Newports &lt;em&gt;mission-development&lt;/em&gt; system &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#cal-newports-mission-development-system&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;cal-newports-mission-development-system&quot; tabindex=&quot;-1&quot;&gt;Cal Newports &lt;em&gt;mission-development&lt;/em&gt; system &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#cal-newports-mission-development-system&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;A three level pyramid.&lt;/p&gt;
-&lt;h4 id=&quot;top-level%3A-the-tentative-research-mission&quot; tabindex=&quot;-1&quot;&gt;Top Level: The Tentative Research Mission &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#top-level%3A-the-tentative-research-mission&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;top-level%3A-the-tentative-research-mission&quot; tabindex=&quot;-1&quot;&gt;Top Level: The Tentative Research Mission &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#top-level%3A-the-tentative-research-mission&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;A rough guideline for the type of work I&#39;m interested in doing. In order to identify this mission description you need career capital in your field.&lt;/p&gt;
-&lt;h4 id=&quot;bottom-level%3A-background-research&quot; tabindex=&quot;-1&quot;&gt;Bottom Level: Background Research &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#bottom-level%3A-background-research&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;bottom-level%3A-background-research&quot; tabindex=&quot;-1&quot;&gt;Bottom Level: Background Research &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#bottom-level%3A-background-research&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Every week you expose yourself to something new in your field (re: Research Bible). According to Steven Johnson (author of &lt;em&gt;Where good ideas come from&lt;/em&gt;), access to new ideas and to the liquid networks that facilitate their mixing and matching often provides the catalyst for new breakthrough ideas.&lt;/p&gt;
-&lt;h4 id=&quot;middle-level%3A-exploratory-projects&quot; tabindex=&quot;-1&quot;&gt;Middle Level: Exploratory projects &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#middle-level%3A-exploratory-projects&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
-      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;middle-level%3A-exploratory-projects&quot; tabindex=&quot;-1&quot;&gt;Middle Level: Exploratory projects &lt;a class=&quot;header-anchor&quot; href=&quot;https://jochen.fyi/posts/so-good-they-cant-ignore-you/#middle-level%3A-exploratory-projects&quot;&gt;&lt;span&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;This is responsible for most of the work. Create small projects (&lt;em&gt;little bets&lt;/em&gt;) that can be completed in less than a month. These force you to create new value and produce a concrete result that you can use to gather feedback.
 Keep deadlines and track your hours spent to hold yourself accountable.
 Use the concrete feedback to drive your research forward.&lt;/p&gt;

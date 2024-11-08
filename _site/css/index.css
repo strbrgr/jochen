@@ -326,40 +326,6 @@ code:not(pre code)::after {
   }
 }
 
-/*.header-anchor {*/
-/*  @media screen and (min-width: 700px) {*/
-/*    left: -0.8em;*/
-/*    position: absolute;*/
-/*    width: 0.8em;*/
-/*  }*/
-/*}*/
-
-.header-anchor__symbol {
-  @media screen and (min-width: 700px) and (hover: hover) {
-    visibility: hidden;
-
-    h2:hover &,
-    h3:hover &,
-    h4:hover &,
-    h5:hover &,
-    h6:hover &,
-    .header-anchor:focus & {
-      visibility: visible;
-    }
-  }
-}
-
-.screen-reader-only {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 hr {
   margin-block-end: 3rem;
   margin-block-start: 2rem;
