@@ -13,6 +13,7 @@ I'm currently working through [Advent of Code](https://adventofcode.com/) whenev
 [Day 3](#day-3)
 [Day 4](#day-4)
 [Day 5](#day-5)
+[Day 6](#day-6)
 
 
 ## Day 1
@@ -452,5 +453,92 @@ mod tests {
         assert!(!will_units_react('A', 'b'));
     }
 }
+```
+---
 
+## Day 6
+Pretty straight forward approach. On this one I had to do a lot of debugging and created visuals to figure out a good approach. Part 2 is replicating the approach in Part 1 and while it led to a quick solution, it should be optimized.
+```rust
+fn part_1(grid: &mut grid<string>, coordinates: &grid<i32>) -> result<i32> {
+    let mut infinite_values = hashset::new();
+    for row in 0..grid.len() {
+        for col in 0..grid[0].len() {
+            let mut minimum_distance = i32::max;
+            let mut minimum_index = none;
+            let mut conflict = false;
+
+            for (i, el) in coordinates.iter().enumerate() {
+                let manhattan_distance =
+                    (row as i32 - el[1]).abs() + (col as i32 - el[0]).abs();
+
+                match manhattan_distance.cmp(&minimum_distance) {
+                    ordering::less => {
+                        minimum_distance = manhattan_distance;
+                        minimum_index = some(i);
+                        conflict = false;
+                    }
+                    ordering::equal => {
+                        conflict = true;
+                    }
+                    ordering::greater => {
+                        // do nothing
+                    }
+                }
+            }
+
+            if conflict {
+                grid[row][col] = string::from(".");
+            } else if let some(index) = minimum_index {
+                let coordinate = (b'a' + index as u8) as char;
+                grid[row][col] = coordinate.to_string();
+            }
+
+            // check which of the values are infinte
+            if row == 0
+                || row == grid.len() - 1
+                || col == 0
+                || col == grid[0].len() - 1
+            {
+                infinite_values.insert(grid[row][col].to_string());
+            }
+        }
+    }
+
+    let mut finite_values: hashmap<string, i32> = hashmap::new();
+    for row in 0..grid.len() {
+        for col in 0..grid[0].len() {
+            if !infinite_values.contains(&grid[row][col]) {
+                *finite_values
+                    .entry(grid[row][col].to_string())
+                    .or_insert(0) += 1;
+            }
+        }
+    }
+
+    let largest_value = finite_values
+        .iter()
+        .max_by_key(|&(_, v)| v)
+        .ok_or("could not find an entry")?;
+
+    ok(*largest_value.1)
+}
+
+fn part_2(grid: &mut grid<string>, coordinates: &grid<i32>) -> result<i32> {
+    let mut count = 0;
+    for row in 0..grid.len() {
+        for col in 0..grid[0].len() {
+            let mut distance_total = 0;
+            for (i, el) in coordinates.iter().enumerate() {
+                let manhattan_distance =
+                    (row as i32 - el[1]).abs() + (col as i32 - el[0]).abs();
+                distance_total += manhattan_distance;
+            }
+
+            if distance_total < 10_000 {
+                count += 1;
+            }
+        }
+    }
+    Ok(count)
+}
 ```
