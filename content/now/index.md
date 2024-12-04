@@ -6,7 +6,6 @@ Short notes about what I'm up to, listen to, and read. My booklist is relatively
 
 ## What am I doing soon?
 - I will apply for a Masters program at GaTech. Wish me luck!
-- Have my naturalization interview coming up shortly.
 
 ## What am I doing lately?
 - Taking online classes at Oakton CC to refresh my DSA and OOP knowledge.
@@ -16,7 +15,7 @@ Short notes about what I'm up to, listen to, and read. My booklist is relatively
 - Big road trip with my parents all across the West.
 - Read _Sandworm_, a book about cybersecurity and Zero days.
 - Bought a T480s off ebay, dabbled with arch and realized that I don't have the time for any of this.
-- Applied for citizenship. YEHAAAAAA.
+- Had my N-400 interview
 
 ## Tunes
 - **Restraining Order** - Fight Back
