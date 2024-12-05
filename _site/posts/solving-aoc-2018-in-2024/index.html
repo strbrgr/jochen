@@ -1028,6 +1028,130 @@ pre[class*="language-"] {
     <span class="token punctuation">}</span>
     <span class="token class-name">Ok</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre>
+<hr>
+<h2 id="day-7" tabindex="-1">Day 7 <a class="header-anchor" href="#day-7"><span>#</span></a></h2>
+<p>I worked on this challenge when I had a lot of other stuff going on and was only able to finish Part 1.</p>
+<pre class="language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span></span><span class="token punctuation">{</span><span class="token namespace">collections<span class="token punctuation">::</span></span><span class="token class-name">HashMap</span><span class="token punctuation">,</span> <span class="token namespace">error<span class="token punctuation">::</span></span><span class="token class-name">Error</span><span class="token punctuation">,</span> fs<span class="token punctuation">,</span> result<span class="token punctuation">,</span> <span class="token keyword">u8</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">type</span> <span class="token type-definition class-name">Result</span><span class="token operator">&lt;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token namespace">result<span class="token punctuation">::</span></span><span class="token class-name">Result</span><span class="token operator">&lt;</span><span class="token class-name">T</span><span class="token punctuation">,</span> <span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token keyword">dyn</span> <span class="token class-name">Error</span><span class="token operator">>></span><span class="token punctuation">;</span>
+
+<span class="token keyword">type</span> <span class="token type-definition class-name">StepMap</span> <span class="token operator">=</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token punctuation">,</span> <span class="token class-name">Vec</span><span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">>></span><span class="token punctuation">;</span>
+
+<span class="token attribute attr-name">#[derive(Copy, Clone, Debug)]</span>
+<span class="token keyword">struct</span> <span class="token type-definition class-name">Worker</span> <span class="token punctuation">{</span>
+    remaining_seconds<span class="token punctuation">:</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token keyword">u8</span><span class="token operator">></span><span class="token punctuation">,</span>
+    current_char<span class="token punctuation">:</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">impl</span> <span class="token class-name">Worker</span> <span class="token punctuation">{</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">Self</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Worker</span> <span class="token punctuation">{</span>
+            remaining_seconds<span class="token punctuation">:</span> <span class="token class-name">None</span><span class="token punctuation">,</span>
+            current_char<span class="token punctuation">:</span> <span class="token class-name">None</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">busy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">bool</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>remaining<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">self</span><span class="token punctuation">.</span>remaining_seconds <span class="token punctuation">{</span>
+            remaining <span class="token operator">>=</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token boolean">false</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">work</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token keyword">mut</span> remaining<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">self</span><span class="token punctuation">.</span>remaining_seconds <span class="token punctuation">{</span>
+            remaining <span class="token operator">-=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">Result</span><span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> input <span class="token operator">=</span> <span class="token namespace">fs<span class="token punctuation">::</span></span><span class="token function">read_to_string</span><span class="token punctuation">(</span><span class="token string">"input/final.txt"</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> incoming<span class="token punctuation">:</span> <span class="token class-name">StepMap</span> <span class="token operator">=</span> <span class="token class-name">HashMap</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> outgoing<span class="token punctuation">:</span> <span class="token class-name">StepMap</span> <span class="token operator">=</span> <span class="token class-name">HashMap</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> l <span class="token keyword">in</span> input<span class="token punctuation">.</span><span class="token function">lines</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> <span class="token punctuation">(</span>points_to<span class="token punctuation">,</span> pointed_at<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">parse_line</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// The chars that have incoming "pointers"</span>
+        incoming
+            <span class="token punctuation">.</span><span class="token function">entry</span><span class="token punctuation">(</span>pointed_at<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">and_modify</span><span class="token punctuation">(</span><span class="token closure-params"><span class="token closure-punctuation punctuation">|</span>e<span class="token closure-punctuation punctuation">|</span></span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>points_to<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">or_insert_with</span><span class="token punctuation">(</span><span class="token closure-params"><span class="token closure-punctuation punctuation">|</span><span class="token closure-punctuation punctuation">|</span></span> <span class="token macro property">vec!</span><span class="token punctuation">[</span>points_to<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// The chars that have outgoing "pointers"</span>
+        outgoing
+            <span class="token punctuation">.</span><span class="token function">entry</span><span class="token punctuation">(</span>points_to<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">and_modify</span><span class="token punctuation">(</span><span class="token closure-params"><span class="token closure-punctuation punctuation">|</span>e<span class="token closure-punctuation punctuation">|</span></span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>pointed_at<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">or_insert_with</span><span class="token punctuation">(</span><span class="token closure-params"><span class="token closure-punctuation punctuation">|</span><span class="token closure-punctuation punctuation">|</span></span> <span class="token macro property">vec!</span><span class="token punctuation">[</span>pointed_at<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">match</span> <span class="token function">part_1</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>incoming<span class="token punctuation">,</span> <span class="token operator">&amp;</span>outgoing<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Ok</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Part 1 result: {}"</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token class-name">Err</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">return</span> <span class="token class-name">Err</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">match</span> <span class="token function">part_2</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>incoming<span class="token punctuation">,</span> <span class="token operator">&amp;</span>outgoing<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Ok</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Part 2 result: {}"</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token class-name">Err</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">return</span> <span class="token class-name">Err</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">Ok</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">part_1</span><span class="token punctuation">(</span>incoming<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token class-name">StepMap</span><span class="token punctuation">,</span> outgoing<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token class-name">StepMap</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">Result</span><span class="token operator">&lt;</span><span class="token class-name">String</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> available_steps <span class="token operator">=</span> <span class="token class-name">Vec</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> completed_steps <span class="token operator">=</span> <span class="token class-name">Vec</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Find all steps that have no prerequisites</span>
+    <span class="token keyword">for</span> k <span class="token keyword">in</span> outgoing<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token operator">!</span>incoming<span class="token punctuation">.</span><span class="token function">contains_key</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            available_steps<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">*</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">while</span> <span class="token operator">!</span>available_steps<span class="token punctuation">.</span><span class="token function">is_empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Sort available steps to always choose alphabetically first</span>
+        available_steps<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Take the first available step</span>
+        <span class="token keyword">let</span> current_step <span class="token operator">=</span> available_steps<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        completed_steps<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>current_step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// If this step has outgoing steps, check which can now be completed</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>next_steps<span class="token punctuation">)</span> <span class="token operator">=</span> outgoing<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>current_step<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token operator">&amp;</span>next_step <span class="token keyword">in</span> next_steps <span class="token punctuation">{</span>
+                <span class="token comment">// Check if all prerequisites for this next step are completed</span>
+                <span class="token keyword">if</span> <span class="token keyword">let</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>prereqs<span class="token punctuation">)</span> <span class="token operator">=</span> incoming<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>next_step<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">if</span> prereqs<span class="token punctuation">.</span><span class="token function">iter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token closure-params"><span class="token closure-punctuation punctuation">|</span>p<span class="token closure-punctuation punctuation">|</span></span> completed_steps<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// Only add if not already in available or completed steps</span>
+                        <span class="token keyword">if</span> <span class="token operator">!</span>available_steps<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>next_step<span class="token punctuation">)</span>
+                            <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>completed_steps<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>next_step<span class="token punctuation">)</span>
+                        <span class="token punctuation">{</span>
+                            available_steps<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>next_step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token class-name">Ok</span><span class="token punctuation">(</span>completed_steps<span class="token punctuation">.</span><span class="token function">iter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">::</span><span class="token operator">&lt;</span><span class="token class-name">String</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Returns character tuple, at 1: &amp;str from which we point, at 2: &amp;str pointed at</span>
+<span class="token comment">// Index' are guaranteed to exist</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">parse_line</span><span class="token punctuation">(</span>line<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token keyword">str</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> line<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">..</span><span class="token number">6</span><span class="token punctuation">]</span>
+        <span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">expect</span><span class="token punctuation">(</span><span class="token string">"Expected at least 6 characters in the line"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> b <span class="token operator">=</span> line<span class="token punctuation">[</span><span class="token number">36</span><span class="token punctuation">..</span><span class="token number">37</span><span class="token punctuation">]</span>
+        <span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">expect</span><span class="token punctuation">(</span><span class="token string">"Expected at least 36 characters in the line"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
 
 </section>
 <ul class="post__nextprev"><li>Previous: <a href="/posts/git-alias-daily/">Git alias&#39; I use on a daily basis</a></li>
