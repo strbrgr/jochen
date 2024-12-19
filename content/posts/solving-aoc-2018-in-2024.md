@@ -1,7 +1,7 @@
 ---
 title: Solving AoC 2018 in 2024
-date: 2024-10-11
-eleventyExcludeFromCollections: true
+start_date: 2024-10-11
+# eleventyExcludeFromCollections: true
 tags:
   - code
   - performance
@@ -15,6 +15,8 @@ I'm currently working through [Advent of Code](https://adventofcode.com/) whenev
 [Day 4](#day-4)
 [Day 5](#day-5)
 [Day 6](#day-6)
+[Day 7](#day-7)
+[Day 8](#day-8)
 
 
 ## Day 1
@@ -670,4 +672,46 @@ fn parse_line(line: &str) -> (char, char) {
     (a, b)
 }
 ```
+---
 
+## Day 8
+Trees and Recursion. I did not expect making use of that during AoC. The challenge was laying out the tree. Once that was in place the solution was relatively straight forward.
+Very cool to see how idiomatic Rust makes the code so much simpler. My first solution for Part 2 was the following:
+```rust
+fn part_2(root: &Node, mut sum: usize) -> usize {
+    if root.children.is_empty() {
+        sum += root.metadata.iter().sum::<usize>();
+        sum
+    } else {
+        let mut temp_sum = 0usize;
+        // has child nodes
+        for i in &root.metadata {
+            let child = root.children.get(i - 1);
+            if let Some(ch) = child {
+                if ch.children.is_empty() {
+                    temp_sum += ch.metadata.iter().sum::<usize>();
+                } else {
+                    temp_sum += part_2(ch, temp_sum);
+                }
+            }
+        }
+        temp_sum
+    }
+}
+```
+
+However writing it in idiomatic Rust brings it down to this:
+```rust
+fn part_2(root: &Node) -> usize {
+    if root.children.is_empty() {
+        root.metadata.iter().sum::<usize>()
+    } else {
+        root.metadata
+            .iter()
+            .filter_map(|i| root.children.get(i - 1))
+            .map(part_2)
+            .sum()
+    }
+}
+```
+Also thanks to clippy I was able to remove the closure `.map(|child| part_2(child))` completely.
