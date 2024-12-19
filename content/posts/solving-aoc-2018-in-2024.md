@@ -715,3 +715,5 @@ fn part_2(root: &Node) -> usize {
 }
 ```
 Also thanks to clippy I was able to remove the closure `.map(|child| part_2(child))` completely.
+
+One thing that I should change next time is that my logic to parse the tree and sum the metadata entries should be implemented under the Node struct instead of separate functions.

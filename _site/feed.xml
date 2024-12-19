@@ -681,8 +681,9 @@ Very cool to see how idiomatic Rust makes the code so much simpler. My first sol
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Also thanks to clippy I was able to remove the closure &lt;code&gt;.map(|child| part_2(child))&lt;/code&gt; completely.&lt;/p&gt;
+&lt;p&gt;One thing that I should change next time is that my logic to parse the tree and sum the metadata entries should be implemented under the Node struct instead of separate functions.&lt;/p&gt;
 </description>
-      <pubDate>Thu, 19 Dec 2024 06:48:54 +0000</pubDate>
+      <pubDate>Thu, 19 Dec 2024 06:49:09 +0000</pubDate>
       <dc:creator>Jochen Stierberger</dc:creator>
       <guid>https://jochen.fyi/posts/solving-aoc-2018-in-2024/</guid>
     </item>
