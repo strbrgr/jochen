@@ -1,7 +1,7 @@
 ---
 title: Solving AoC 2018 in 2024
 start_date: 2024-10-11
-# eleventyExcludeFromCollections: true
+eleventyExcludeFromCollections: true
 tags:
   - code
   - performance
