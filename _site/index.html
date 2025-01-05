@@ -31,7 +31,7 @@
   --c-500: #E7EBEE;
   --c-link: #fa8e2f;
   --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol ;
-  --sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --sans-serif: "Manrope", serif;
   --monospace: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; 
 }
 
@@ -65,7 +65,7 @@ main {
 }
 
 a:not(li a):not(header a) {
-  color: var(--c-link);
+  color: var(--c-t);
   text-decoration: underline;
   transition: .05s;
 }
@@ -111,7 +111,7 @@ h6,
 }
 
 p {
-  font-family: var(--serif);
+  font-family: var(--sans-serif);
   margin-bottom: 1em;
 }
 
@@ -495,16 +495,16 @@ pre[class*="language-"] {
 .token.deleted {
 	background: #fb4934; /* red2 */
 }</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <a href="/" class="home-link">jochen.fyi</a>
 
     <nav>
       <ul class="nav__list">
-        <li class="nav__item"><a href="/posts/" >Posts</a></li>
-        <li class="nav__item"><a href="/about/" >About</a></li>
         <!-- <li class="nav__item"><a href="feed.xml">RSS</a></li> -->
       </ul>
     </nav>
@@ -513,9 +513,9 @@ pre[class*="language-"] {
   <main>
     
 
-<h1>Hi.</h1>
+<h1>Hi, I'm Jochen.</h1>
 
-<p>My name is Jochen. I'm a versatile technologist with experience in full software development lifecycle – from inception and design to deployment, operation, and iterative development.</p>
+<p>I'm a versatile technologist with experience in full software development lifecycle – from inception and design to deployment, operation, and iterative development.</p>
 
 <p>I occasionally write about things that I find interesting. In my spare time I go shredding with my skateboard or shoot large format photography.
 <p>If you want to know more about me feel free to check out my <a href="/about">About</a> page or find out <a href="/posts/road-to-512kb">how</a> I made this page fast, performant, and climate-friendly.
