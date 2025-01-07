@@ -2,7 +2,7 @@
 layout: layouts/now_date_footer.njk
 ---
 # Now
-Short notes about what I'm up to, listen to, and read. My booklist is relatively short, I tend to pass out quite quickly and then forget what I read...
+Short notes about what I'm up to, listen to, and read.
 
 ## What will I be doing soon?
 - I will apply for a Masters program at GaTech, UIUC and UT Austin. Wish me luck!
