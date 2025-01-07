@@ -70,7 +70,6 @@ a:not(li a):not(header a) {
 }
 
 a:not(li a):not(header a):hover {
-  color: #b3621b;
   text-decoration: underline;
   transition: .05s;
 }
@@ -112,6 +111,7 @@ h6,
 p {
   font-family: var(--sans-serif);
   margin-bottom: 1em;
+  line-height: 1.75;
 }
 
 section,
@@ -162,14 +162,17 @@ ul {
   margin-bottom: .5em;
   padding-left: 2em;
   list-style-type: circle;
+  line-height: 1.75;
+
 
   li {
-  font-family: var(--serif);
+  font-family: var(--sans-serif);
   }
 }
 
 ol {
   margin: 1em 0;
+  line-height: 1.75;
 }
 
 table {
@@ -218,6 +221,7 @@ tbody tr:nth-child(even) {
 }
 
 .postlist {
+  line-height: 1.25;
   list-style: none;
   padding: 0;
   padding-left: 1.5rem;

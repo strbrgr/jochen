@@ -4,18 +4,18 @@ layout: layouts/now_date_footer.njk
 # Now
 Short notes about what I'm up to, listen to, and read. My booklist is relatively short, I tend to pass out quite quickly and then forget what I read...
 
-## What am I doing soon?
-- I will apply for a Masters program at GaTech. Wish me luck!
+## What will I be doing soon?
+- I will apply for a Masters program at GaTech, UIUC and UT Austin. Wish me luck!
 
-## What am I doing lately?
-- Taking online classes at Oakton CC to refresh my DSA and OOP knowledge.
-- Reading _C++ Data Structures_ by Weiss and _Guide to C Programming_ by Beej.
+## What am I doing now?
+- Working through _Zero 2 Production_ in Rust.
 
 ## What have I done recently?
+- Took online classes at Oakton CC to refresh my DSA and OOP knowledge.
 - Big road trip with my parents all across the West.
 - Read _Sandworm_, a book about cybersecurity and Zero days.
 - Bought a T480s off ebay, dabbled with arch and realized that I don't have the time for any of this.
-- Had my N-400 interview
+- Had my N-400 interview.
 
 ## Tunes
 - **Restraining Order** - Fight Back

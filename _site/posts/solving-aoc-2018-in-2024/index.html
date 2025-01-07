@@ -70,7 +70,6 @@ a:not(li a):not(header a) {
 }
 
 a:not(li a):not(header a):hover {
-  color: #b3621b;
   text-decoration: underline;
   transition: .05s;
 }
@@ -112,6 +111,7 @@ h6,
 p {
   font-family: var(--sans-serif);
   margin-bottom: 1em;
+  line-height: 1.75;
 }
 
 section,
@@ -162,14 +162,17 @@ ul {
   margin-bottom: .5em;
   padding-left: 2em;
   list-style-type: circle;
+  line-height: 1.75;
+
 
   li {
-  font-family: var(--serif);
+  font-family: var(--sans-serif);
   }
 }
 
 ol {
   margin: 1em 0;
+  line-height: 1.75;
 }
 
 table {
@@ -218,6 +221,7 @@ tbody tr:nth-child(even) {
 }
 
 .postlist {
+  line-height: 1.25;
   list-style: none;
   padding: 0;
   padding-left: 1.5rem;
@@ -528,7 +532,7 @@ pre[class*="language-"] {
 <a href="#day-6">Day 6</a>
 <a href="#day-7">Day 7</a>
 <a href="#day-8">Day 8</a></p>
-<h2 id="day-1" tabindex="-1">Day 1 <a class="header-anchor" href="#day-1"><span>#</span></a></h2>
+<h2>Day 1</h2>
 <p>My first AoC challenge ever. So far most coding challenges were either on Codewars, Leetcode, or Exercism. I think forcing yourself to do these every once in a while is important, but I have not been very happy with the format of the mentioned options. While I dreaded those, doing AoC challenges is a lot of fun.</p>
 <pre class="language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>collections<span class="token punctuation">::</span></span><span class="token class-name">HashSet</span><span class="token punctuation">;</span>
 <span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span></span>fs<span class="token punctuation">;</span>
@@ -554,7 +558,7 @@ pre[class*="language-"] {
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <hr>
-<h2 id="day-2" tabindex="-1">Day 2 <a class="header-anchor" href="#day-2"><span>#</span></a></h2>
+<h2>Day 2</h2>
 <p>I think the code is overall okay. Sort of imperative and not very idiomatic but at this stage, I am happy to get through the challenges. Idiomatic code will come with time. I could have definitely improved variable naming for my <code>HashMap</code> and <code>HashSet</code>.</p>
 <pre class="language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>collections<span class="token punctuation">::</span></span><span class="token punctuation">{</span><span class="token class-name">HashMap</span><span class="token punctuation">,</span> <span class="token class-name">HashSet</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
@@ -624,7 +628,7 @@ pre[class*="language-"] {
     result
 <span class="token punctuation">}</span></code></pre>
 <hr>
-<h2 id="day-3" tabindex="-1">Day 3 <a class="header-anchor" href="#day-3"><span>#</span></a></h2>
+<h2>Day 3</h2>
 <p>As you can see, I have a lot of todos left in this challenge that I want to address at some point. Looking at it a few days later, I should have not used index accessing with the vectors. Parsing could see some improvements as well. Ideally I want to make a call to some parsing function that then returns the necessary data for each <code>l in input.lines()</code> iteration.</p>
 <pre class="language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span></span><span class="token punctuation">{</span><span class="token namespace">collections<span class="token punctuation">::</span></span><span class="token class-name">HashSet</span><span class="token punctuation">,</span> <span class="token namespace">fs<span class="token punctuation">::</span></span>read_to_string<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
@@ -689,7 +693,7 @@ pre[class*="language-"] {
     count
 <span class="token punctuation">}</span></code></pre>
 <hr>
-<h2 id="day-4" tabindex="-1">Day 4 <a class="header-anchor" href="#day-4"><span>#</span></a></h2>
+<h2>Day 4</h2>
 <p>This was a lot of code. Pretty sure the logic between part 1 and part 2 is sort of duplicated, so that should be improved. I'm also not happy about the parsing and splitting to extract the timestamps. I should probably look at regex or a crate like <a href="https://docs.rs/nom/latest/nom/">nom</a>.</p>
 <pre class="language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>error<span class="token punctuation">::</span></span><span class="token class-name">Error</span><span class="token punctuation">;</span>
 <span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span></span>result<span class="token punctuation">;</span>
@@ -847,7 +851,7 @@ pre[class*="language-"] {
     <span class="token class-name">Ok</span><span class="token punctuation">(</span><span class="token punctuation">(</span>minute<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre>
 <hr>
-<h2 id="day-5" tabindex="-1">Day 5 <a class="header-anchor" href="#day-5"><span>#</span></a></h2>
+<h2>Day 5</h2>
 <p>I got side-tracked by starting the implementation with a sliding window approach. Turns out that this was not the best idea. I simple stack approach was all I needed. Part 2 felt pretty straight forward. I solved it by looping over a range of 0..26 while grabbing the numerical value of a character via:</p>
 <pre class="language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">let</span> lower <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token char">b'a'</span> <span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token keyword">char</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> upper <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token char">b'A'</span> <span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token keyword">char</span><span class="token punctuation">;</span></code></pre>
@@ -946,7 +950,7 @@ pre[class*="language-"] {
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <hr>
-<h2 id="day-6" tabindex="-1">Day 6 <a class="header-anchor" href="#day-6"><span>#</span></a></h2>
+<h2>Day 6</h2>
 <p>Pretty straight forward approach. On this one I had to do a lot of debugging and created visuals to figure out a good approach. Part 2 is replicating the approach in Part 1 and while it led to a quick solution, it should be optimized.</p>
 <pre class="language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">part_1</span><span class="token punctuation">(</span>grid<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> grid<span class="token operator">&lt;</span>string<span class="token operator">></span><span class="token punctuation">,</span> coordinates<span class="token punctuation">:</span> <span class="token operator">&amp;</span>grid<span class="token operator">&lt;</span><span class="token keyword">i32</span><span class="token operator">></span><span class="token punctuation">)</span> <span class="token punctuation">-></span> result<span class="token operator">&lt;</span><span class="token keyword">i32</span><span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> <span class="token keyword">mut</span> infinite_values <span class="token operator">=</span> <span class="token namespace">hashset<span class="token punctuation">::</span></span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1031,7 +1035,7 @@ pre[class*="language-"] {
     <span class="token class-name">Ok</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre>
 <hr>
-<h2 id="day-7" tabindex="-1">Day 7 <a class="header-anchor" href="#day-7"><span>#</span></a></h2>
+<h2>Day 7</h2>
 <p>I worked on this challenge when I had a lot of other stuff going on and was only able to finish Part 1.</p>
 <pre class="language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span></span><span class="token punctuation">{</span><span class="token namespace">collections<span class="token punctuation">::</span></span><span class="token class-name">HashMap</span><span class="token punctuation">,</span> <span class="token namespace">error<span class="token punctuation">::</span></span><span class="token class-name">Error</span><span class="token punctuation">,</span> fs<span class="token punctuation">,</span> result<span class="token punctuation">,</span> <span class="token keyword">u8</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
@@ -1155,7 +1159,7 @@ pre[class*="language-"] {
     <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre>
 <hr>
-<h2 id="day-8" tabindex="-1">Day 8 <a class="header-anchor" href="#day-8"><span>#</span></a></h2>
+<h2>Day 8</h2>
 <p>Trees and Recursion. I did not expect making use of that during AoC. The challenge was laying out the tree. Once that was in place the solution was relatively straight forward.
 Very cool to see how idiomatic Rust makes the code so much simpler. My first solution for Part 2 was the following:</p>
 <pre class="language-rust" tabindex="0"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">part_2</span><span class="token punctuation">(</span>root<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token class-name">Node</span><span class="token punctuation">,</span> <span class="token keyword">mut</span> sum<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">usize</span> <span class="token punctuation">{</span>
