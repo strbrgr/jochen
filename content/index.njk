@@ -5,20 +5,6 @@ numberOfLatestPostsToShow: 3
 
 <h1>Hi, I'm Jochen.</h1>
 
-<p>I'm a versatile technologist with experience in full software development lifecycle – from inception and design to deployment, operation, and iterative development. Currently, I work as a Software Engineer for nvisia out of Chicago, where we are replatforming an application within the financial space.</p>
-
-<p>Outside of work I go shredding with my skateboard or make pizza for my friends.
+<p>I'm a versatile technologist with experience in full software development lifecycle – from inception and design to deployment, operation, and iterative development. Currently, I work as a Software Engineer within the financial space.</p>
+<p>Before transitioning to Software Engineering, I worked in the creative industries across Germany and China, including a brief stint at <a href="https://www.artnet.com/artists/chen-man/">ChenMan</a>'s Studio6.</p>
 <p>If you want to know more about me feel free to check out my <a href="https://www.linkedin.com/in/strbrgr/">resume</a> or find out what I am doing <a href="/now">now</a>.
-
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
-
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
-
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/posts/">the archive</a>.</p>
-{% endif %}

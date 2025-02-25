@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jochen Stierberger - Personal Website</title>
+  <title>Jochen Stierberger</title>
   <meta name="description" content="Personal Website of Software Engineer Jochen Stierberger">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@_strbrgr">
@@ -16,9 +16,8 @@
   <meta property="og:description" content="Personal Website">
   <meta property="og:url" content="https://jochen.fyi">
   <meta property="og:image" content="https://jochen.fyi/og.png">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍋</text></svg>">
-  <style>.postlist { counter-reset: start-from 6 }
-* {
+  <meta name="title" content="Jochen Stierberger">
+  <style>* {
   margin: 0;
   --c-t: #171d20;
   --c-bg: hsla(12, 61%, 97%, 0.8);
@@ -106,6 +105,7 @@ h5,
 h6,
 {
   font-family: var(--sans-serif);
+  margin: 1em;
 }
 
 p {
@@ -224,7 +224,8 @@ tbody tr:nth-child(even) {
   line-height: 1.25;
   list-style: none;
   padding: 0;
-  padding-left: 1.5rem;
+  /*removed for now because we removed the counter*/
+  /*padding-left: 1.5rem;*/
 }
 
 .postlist__item {
@@ -235,13 +236,15 @@ tbody tr:nth-child(even) {
   margin-bottom: 1em;
 }
 
+/*This adds counter to the postlist*/
 .postlist__item:before {
-  display: inline-block;
-  pointer-events: none;
-  content: "" counter(start-from, decimal-leading-zero) ". ";
-  line-height: 100%;
-  text-align: right;
-  margin-left: -1.5rem;
+  content: none;
+  /*display: inline-block;*/
+  /*pointer-events: none;*/
+  /*content: "" counter(start-from, decimal-leading-zero) ". ";*/
+  /*line-height: 100%;*/
+  /*text-align: right;*/
+  /*margin-left: -1.5rem;*/
 }
 
 .postlist__date,
@@ -258,7 +261,8 @@ tbody tr:nth-child(even) {
   font-size: 1.1875em;
   font-weight: 700;
   flex-basis: calc(100% - 1.5rem);
-  padding-left: .25em;
+  /*removed for now because we removed the counter*/
+  /*padding-left: .25em;*/
   padding-right: .5em;
   text-underline-position: from-font;
   text-underline-offset: 0;
@@ -353,6 +357,16 @@ code:not(pre code)::after {
 hr {
   margin-block-end: 3rem;
   margin-block-start: 2rem;
+}
+
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto; 
+  text-align: center;
 }
 /**
  * Gruvbox dark theme
@@ -518,46 +532,13 @@ pre[class*="language-"] {
 
 <h1>Hi, I'm Jochen.</h1>
 
-<p>I'm a versatile technologist with experience in full software development lifecycle – from inception and design to deployment, operation, and iterative development. Currently, I work as a Software Engineer for nvisia out of Chicago, where we are replatforming an application within the financial space.</p>
-
-<p>Outside of work I go shredding with my skateboard or make pizza for my friends.
-</p><p>If you want to know more about me feel free to check out my <a href="https://www.linkedin.com/in/strbrgr/">resume</a> or find out what I am doing <a href="/now">now</a>.
-
-
-
-</p><h1>Latest 3 Posts</h1>
+<p>I'm a versatile technologist with experience in full software development lifecycle – from inception and design to deployment, operation, and iterative development. Currently, I work as a Software Engineer within the financial space.</p>
+<p>Before transitioning to Software Engineering, I worked in the creative industries across Germany and China, including a brief stint at <a href="https://www.artnet.com/artists/chen-man/">ChenMan</a>'s Studio6.</p>
+<p>If you want to know more about me feel free to check out my <a href="https://www.linkedin.com/in/strbrgr/">resume</a> or find out what I am doing <a href="/now">now</a>.
 
 
 
-
-<ol reversed="" class="postlist">
-
-	<li class="postlist__item">
-		<a href="/posts/git-alias-daily/" class="postlist__link">Git alias&#39; I use on a daily basis</a>
-		<time class="postlist__date" datetime="2024-09-27">September 2024</time>
-	</li>
-
-	<li class="postlist__item">
-		<a href="/posts/syncthing-to-sync-things/" class="postlist__link">Syncthing to sync things</a>
-		<time class="postlist__date" datetime="2024-07-02">July 2024</time>
-	</li>
-
-	<li class="postlist__item">
-		<a href="/posts/road-to-512kb/" class="postlist__link">Road to 512kB</a>
-		<time class="postlist__date" datetime="2024-07-02">July 2024</time>
-	</li>
-
-</ol>
-
-
-
-
-<p>2 more posts can be found in <a href="/posts/">the archive</a>.</p>
-
-
-
-
-  </main>
+  </p></main>
 </body>
 
 </html>

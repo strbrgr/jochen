@@ -1,5 +1,6 @@
 module.exports = {
-  title: "Jochen Stierberger - Personal Website",
+  title: "Jochen Stierberger",
+  siteName: "Jochen Stierberger",
   base_url: "jochen.fyi",
   url: "https://jochen.fyi/",
   language: "en",

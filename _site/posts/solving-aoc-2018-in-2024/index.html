@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solving AoC 2018 in 2024</title>
+  <title>Jochen Stierberger</title>
   <meta name="description" content="Personal Website of Software Engineer Jochen Stierberger">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@_strbrgr">
@@ -16,7 +16,7 @@
   <meta property="og:description" content="Personal Website">
   <meta property="og:url" content="https://jochen.fyi">
   <meta property="og:image" content="https://jochen.fyi/og.png">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍋</text></svg>">
+  <meta name="title" content="Jochen Stierberger">
   <style>* {
   margin: 0;
   --c-t: #171d20;
@@ -105,6 +105,7 @@ h5,
 h6,
 {
   font-family: var(--sans-serif);
+  margin: 1em;
 }
 
 p {
@@ -223,7 +224,8 @@ tbody tr:nth-child(even) {
   line-height: 1.25;
   list-style: none;
   padding: 0;
-  padding-left: 1.5rem;
+  /*removed for now because we removed the counter*/
+  /*padding-left: 1.5rem;*/
 }
 
 .postlist__item {
@@ -234,13 +236,15 @@ tbody tr:nth-child(even) {
   margin-bottom: 1em;
 }
 
+/*This adds counter to the postlist*/
 .postlist__item:before {
-  display: inline-block;
-  pointer-events: none;
-  content: "" counter(start-from, decimal-leading-zero) ". ";
-  line-height: 100%;
-  text-align: right;
-  margin-left: -1.5rem;
+  content: none;
+  /*display: inline-block;*/
+  /*pointer-events: none;*/
+  /*content: "" counter(start-from, decimal-leading-zero) ". ";*/
+  /*line-height: 100%;*/
+  /*text-align: right;*/
+  /*margin-left: -1.5rem;*/
 }
 
 .postlist__date,
@@ -257,7 +261,8 @@ tbody tr:nth-child(even) {
   font-size: 1.1875em;
   font-weight: 700;
   flex-basis: calc(100% - 1.5rem);
-  padding-left: .25em;
+  /*removed for now because we removed the counter*/
+  /*padding-left: .25em;*/
   padding-right: .5em;
   text-underline-position: from-font;
   text-underline-offset: 0;
@@ -352,6 +357,16 @@ code:not(pre code)::after {
 hr {
   margin-block-end: 3rem;
   margin-block-start: 2rem;
+}
+
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto; 
+  text-align: center;
 }
 /**
  * Gruvbox dark theme
