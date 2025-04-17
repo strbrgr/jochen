@@ -29,6 +29,7 @@ Short notes about what I'm up to, listen to, and read.
 
 ## Books (reading)
 
+- [The Software Engineer's Guidebook](https://www.goodreads.com/book/show/201545491-the-software-engineer-s-guidebook) by Gergely Orosz
 - [The Trigger Point Therapy Workbook](https://www.goodreads.com/book/show/137795.The_Trigger_Point_Therapy_Workbook) by Clair Davies
 
 ## Books (finished)
