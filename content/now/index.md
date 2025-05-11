@@ -19,7 +19,6 @@ Short notes about what I'm up to, listen to, and read.
 - Became a Citizen. Part of the dumpster fire ;)
 - Went to Colombia
 - Big road trip with my parents all across the West
-- Had my N-400 interview
 
 ## Tunes
 
@@ -29,11 +28,12 @@ Short notes about what I'm up to, listen to, and read.
 
 ## Books (reading)
 
-- [The Software Engineer's Guidebook](https://www.goodreads.com/book/show/201545491-the-software-engineer-s-guidebook) by Gergely Orosz
+- [The Outsiders](https://www.goodreads.com/book/show/192566704-the-outsiders) by S. E. Hinton
 - [The Trigger Point Therapy Workbook](https://www.goodreads.com/book/show/137795.The_Trigger_Point_Therapy_Workbook) by Clair Davies
 
 ## Books (finished)
 
+- [The Software Engineer's Guidebook](https://www.goodreads.com/book/show/201545491-the-software-engineer-s-guidebook) by Gergely Orosz. It's allright.
 - [Hard Rain Falling](https://www.goodreads.com/book/show/6553843-hard-rain-falling) by Don Carpenter. Was looking for something along the lines of Bukowski
 - [Butcher's Crossing](https://www.goodreads.com/book/show/457228.Butcher_s_Crossing) by John Williams. Western classic, beautiful language
 - [Ghost in the Wires](https://www.goodreads.com/book/show/10256723-ghost-in-the-wires) by Kevin Mitnick. Enjoying it so far. Hacking just for the sake of it
