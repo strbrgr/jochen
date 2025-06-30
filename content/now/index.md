@@ -1,6 +1,7 @@
 ---
 layout: layouts/now_date_footer.njk
 ---
+
 # Now
 
 Short notes about what I'm up to, listen to, and read.
@@ -11,12 +12,12 @@ Short notes about what I'm up to, listen to, and read.
 
 ## What am I doing now?
 
-- Getting better at C
+- Enjoying summer and going for 6am swims
 
 ## What have I done recently?
 
 - Headed to Portugal to celebrate being married to my wife
-- Became a Citizen. Part of the dumpster fire ;)
+- Became a Citizen
 - Went to Colombia
 
 ## Tunes
