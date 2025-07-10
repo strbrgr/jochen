@@ -28,11 +28,12 @@ Short notes about what I'm up to, listen to, and read.
 
 ## Books (reading)
 
-- [The Force](https://www.goodreads.com/book/show/32075859-the-force) by Don Winslow
+- [A Cool Breeze on the Underground](https://www.goodreads.com/book/show/243362.A_Cool_Breeze_on_the_Underground) by Don Winslow
 - [The Trigger Point Therapy Workbook](https://www.goodreads.com/book/show/137795.The_Trigger_Point_Therapy_Workbook) by Clair Davies
 
 ## Books (finished)
 
+- [The Force](https://www.goodreads.com/book/show/32075859-the-force) by Don Winslow. Pretty solid novel.
 - [The Outsiders](https://www.goodreads.com/book/show/192566704-the-outsiders) by S. E. Hinton. I don't care if it's a YA novel, but I liked it!
 - [The Software Engineer's Guidebook](https://www.goodreads.com/book/show/201545491-the-software-engineer-s-guidebook) by Gergely Orosz. It's allright.
 - [Hard Rain Falling](https://www.goodreads.com/book/show/6553843-hard-rain-falling) by Don Carpenter. Was looking for something along the lines of Bukowski
