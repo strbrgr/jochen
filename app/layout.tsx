@@ -19,11 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-y-auto">
-      <body className="antialiased w-screen flex justify-center px-4">
-        <div className="w-full max-w-2xl flex flex-col min-h-screen">
-          <header className="text-gray-500">
-            <nav className="container mx-auto px-4 py-4">
+    <html lang="en" className="">
+      <body className="antialiased min-h-screen flex justify-center overflow-y-scroll px-4">
+        <div className="max-w-2xl flex flex-col min-h-screen w-full">
+          <header className="mt-4">
+            <nav className="mx-auto">
               <ul className="flex justify-end space-x-6">
                 {headerLinks.map((l) => (
                   <li key={l.href}>
@@ -33,6 +33,7 @@ export default function RootLayout({
               </ul>
             </nav>
           </header>
+
           <main className="flex-1 mt-24">{children}</main>
         </div>
       </body>
