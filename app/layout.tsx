@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-y-auto">
-      <body className="antialiased w-screen flex justify-center">
+      <body className="antialiased w-screen flex justify-center px-4">
         <div className="w-full max-w-2xl flex flex-col min-h-screen">
           <header className="text-gray-500">
             <nav className="container mx-auto px-4 py-4">
