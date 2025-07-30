@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavLink from "./components/nav-link";
 import { Manrope } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Jochen Stierberger",
@@ -42,6 +44,8 @@ export default function RootLayout({
 
           <main className="flex-1 mt-24">{children}</main>
         </div>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

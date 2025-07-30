@@ -8,7 +8,7 @@ import {
   tunes,
   upcoming,
 } from "./data";
-import { getFileLastModifiedDate } from "@/lib/getLastModifiedDate";
+import { getFileLastModifiedDate } from "@/utils/getLastModifiedDate";
 
 export default function Page() {
   const buildDate = getFileLastModifiedDate("app/now/page.tsx");

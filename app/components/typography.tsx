@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { ComponentPropsWithoutRef } from "react";
 
 type HeaderLevel = 1 | 2 | 3 | 4 | 5 | 6;
