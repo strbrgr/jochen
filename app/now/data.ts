@@ -11,6 +11,7 @@ type BookEntry = {
 };
 
 const upcoming: string[] = [
+  "Going to Vegas to bake in the sun",
   "Starting a Master in Computer Science at Georgia Tech",
 ];
 
@@ -30,18 +31,20 @@ const tunes: TuneEntry[] = [
 
 const booksReading: BookEntry[] = [
   {
-    title: "A Cool Breeze on the Underground",
-    author: "Don Winslow",
-    url: "https://www.goodreads.com/book/show/243362.A_Cool_Breeze_on_the_Underground",
-  },
-  {
-    title: "The Trigger Point Therapy Workbook",
-    author: "Clair Davies",
-    url: "https://www.goodreads.com/book/show/137795.The_Trigger_Point_Therapy_Workbook",
+    title: "Rust for Rustaeceans",
+    author: "Jon Gjengset",
+    url: "https://www.goodreads.com/book/show/58244064-rust-for-rustaceans",
   },
 ];
 
 const booksFinished: BookEntry[] = [
+  {
+    title:
+      "Understanding Distributed Systems: What every developer should know about large distributed applications",
+    author: "Roberto Vitillo",
+    url: "https://www.goodreads.com/book/show/56977420-understanding-distributed-systems",
+    note: "Highly recommend, great introduction to Distributed Systems.",
+  },
   {
     title: "The Force",
     author: "Don Winslow",
@@ -76,13 +79,13 @@ const booksFinished: BookEntry[] = [
     title: "Ghost in the Wires",
     author: "Kevin Mitnick",
     url: "https://www.goodreads.com/book/show/10256723-ghost-in-the-wires",
-    note: "Enjoying it so far. Hacking just for the sake of it.",
+    note: "Enjoyed it. Hacking just for the sake of it.",
   },
   {
     title: "Sandworm",
     author: "Andy Greenberg",
     url: "https://www.goodreads.com/book/show/41436213-sandworm",
-    note: "Zero-days and hackers — I like it but wish there was more insight into the actual malware.",
+    note: "Zero-days and hackers — I liked it but wish there was more insight into the actual malware.",
   },
   {
     title: "The Three-Body Problem",
