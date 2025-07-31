@@ -11,3 +11,12 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #171717;
+    --foreground: #d6d6d6;
+    --link-color-default: #757575;
+    --link-color-hover: #d6d6d6;
+  }
+}
