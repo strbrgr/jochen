@@ -31,7 +31,12 @@ const tunes: TuneEntry[] = [
 
 const booksReading: BookEntry[] = [
   {
-    title: "Rust for Rustaeceans",
+    title: "The Power of the Dog",
+    author: "Don Winslow",
+    url: "https://www.goodreads.com/book/show/206236.The_Power_of_the_Dog",
+  },
+  {
+    title: "Rust for Rustaceans",
     author: "Jon Gjengset",
     url: "https://www.goodreads.com/book/show/58244064-rust-for-rustaceans",
   },
