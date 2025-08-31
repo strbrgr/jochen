@@ -10,18 +10,11 @@ type BookEntry = {
   note?: string;
 };
 
-const upcoming: string[] = [
-  "Going to Vegas to bake in the sun",
-  "Starting a Master in Computer Science at Georgia Tech",
-];
+const upcoming: string[] = ["Not much happening right now due to below"];
 
-const current: string[] = ["Enjoying summer and going for 6am swims"];
+const current: string[] = ["Started my Masters"];
 
-const recent: string[] = [
-  "Headed to Portugal to celebrate being married to my wife",
-  "Became a Citizen",
-  "Went to Colombia",
-];
+const recent: string[] = ["Went to Vegas"];
 
 const tunes: TuneEntry[] = [
   { artist: "Restraining Order", title: "Fight Back" },
@@ -30,6 +23,11 @@ const tunes: TuneEntry[] = [
 ];
 
 const booksReading: BookEntry[] = [
+  {
+    title: "An Astronaut's Guide to Life on Earth",
+    author: "Chris Hadfield",
+    url: "https://www.goodreads.com/book/show/18170143-an-astronaut-s-guide-to-life-on-earth",
+  },
   {
     title: "The Power of the Dog",
     author: "Don Winslow",
