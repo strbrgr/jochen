@@ -17,21 +17,16 @@ const current: string[] = ["Started my Masters"];
 const recent: string[] = ["Went to Vegas"];
 
 const tunes: TuneEntry[] = [
+  { artist: "Blackout", title: "Turnstile" },
   { artist: "Restraining Order", title: "Fight Back" },
   { artist: "Pestpocken", title: "Ueber 20 Jahre" },
-  { artist: "Bootlicker", title: "Conventional Life" },
 ];
 
 const booksReading: BookEntry[] = [
   {
-    title: "An Astronaut's Guide to Life on Earth",
-    author: "Chris Hadfield",
-    url: "https://www.goodreads.com/book/show/18170143-an-astronaut-s-guide-to-life-on-earth",
-  },
-  {
-    title: "The Power of the Dog",
-    author: "Don Winslow",
-    url: "https://www.goodreads.com/book/show/206236.The_Power_of_the_Dog",
+    title: "There's No Such Thing as an Easy Job",
+    author: "Kikuko Tsumura",
+    url: "https://www.goodreads.com/book/show/52692515-there-s-no-such-thing-as-an-easy-job",
   },
   {
     title: "Rust for Rustaceans",
@@ -41,6 +36,11 @@ const booksReading: BookEntry[] = [
 ];
 
 const booksFinished: BookEntry[] = [
+  {
+    title: "An Astronaut's Guide to Life on Earth",
+    author: "Chris Hadfield",
+    url: "https://www.goodreads.com/book/show/18170143-an-astronaut-s-guide-to-life-on-earth",
+  },
   {
     title:
       "Understanding Distributed Systems: What every developer should know about large distributed applications",
