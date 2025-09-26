@@ -17,7 +17,7 @@ const current: string[] = ["Started my Masters"];
 const recent: string[] = ["Went to Vegas"];
 
 const tunes: TuneEntry[] = [
-  { artist: "Blackout", title: "Turnstile" },
+  { artist: "Turnstile", title: "SUNSHOWER" },
   { artist: "Restraining Order", title: "Fight Back" },
   { artist: "Pestpocken", title: "Ueber 20 Jahre" },
 ];
