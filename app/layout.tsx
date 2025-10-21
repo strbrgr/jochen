@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 const headerLinks: { href: string; title: string }[] = [
-  { href: "/", title: "home" },
-  { href: "/now", title: "now" },
-  // { href: "/posts", title: "posts" },
+  { href: "/", title: "Home" },
+  // { href: "/posts", title: "Posts" },
+  { href: "/now", title: "Now" },
 ];
 
 const manrope = Manrope({
