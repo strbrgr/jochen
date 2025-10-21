@@ -18,14 +18,13 @@ function Header({
   const Tag = `h${level}` as HeaderTag;
 
   const baseStyles: Record<HeaderLevel, string> = {
-    1: "mb-2 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight",
-    2: "mb-2 text-xl md:text-2xl lg:text-3xl font-semibold leading-snug tracking-tight",
-    3: "mb-1 text-lg md:text-xl lg:text-2xl font-semibold leading-snug tracking-tight",
-    4: "mb-1 text-lg md:text-xl lg:text-2xl font-semibold leading-snug tracking-tight",
-    5: "mb-1 text-base md:text-lg lg:text-xl font-medium leading-snug tracking-tight",
-    6: "mb-1 text-sm md:text-base lg:text-lg font-medium leading-snug tracking-tight",
+    1: "mt-8 mb-2 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight",
+    2: "mt-6 mb-2 text-xl md:text-2xl lg:text-3xl font-semibold leading-snug tracking-tight",
+    3: "mt-4 mb-1 text-lg md:text-xl lg:text-2xl font-semibold leading-snug tracking-tight",
+    4: "mt-4 mb-1 text-lg md:text-xl lg:text-2xl font-semibold leading-snug tracking-tight",
+    5: "mt-2 mb-1 text-base md:text-lg lg:text-xl font-medium leading-snug tracking-tight",
+    6: "mt-2 mb-1 text-sm md:text-base lg:text-lg font-medium leading-snug tracking-tight",
   };
-
   return (
     <Tag className={cn(baseStyles[level], className)} {...rest}>
       {text}
