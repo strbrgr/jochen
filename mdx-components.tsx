@@ -8,6 +8,7 @@ import {
   HeaderThree,
   HeaderTwo,
 } from "./app/components/typography";
+import ImageWithCaption from "./app/components/image-with-caption";
 
 const components = {
   h1: ({ children }) => <HeaderOne text={children} />,
@@ -18,23 +19,25 @@ const components = {
   h6: ({ children }) => <HeaderSix text={children} />,
   ul: ({ children }) => <ul className="list-disc list-inside">{children}</ul>,
   li: ({ children }) => <li className="ml-4">{children}</li>,
-  img: (props) => (
-    <Image
-      sizes="100vw"
-      style={{ width: "100%", height: "auto" }}
-      {...(props as ImageProps)}
-    />
+  img: ({ src, alt }) => (
+    <ImageWithCaption src={src || ""} alt={alt || ""} caption={alt} />
   ),
-  a: ({ href, children }) => (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="underline decoration-[1px]"
-    >
-      {children}
-    </a>
-  ),
+  p: ({ children }) => <p className="mb-4">{children}</p>,
+  a: ({ href, children }) => {
+    const isInternal = href?.startsWith("/");
+    return (
+      <a
+        href={href}
+        {...(!isInternal && {
+          target: "_blank",
+          rel: "noopener noreferrer",
+        })}
+        className="underline decoration-[1px]"
+      >
+        {children}
+      </a>
+    );
+  },
 } satisfies MDXComponents;
 
 export function useMDXComponents(): MDXComponents {
