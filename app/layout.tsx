@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const headerLinks: { href: string; title: string }[] = [
   { href: "/", title: "Home" },
-  // { href: "/posts", title: "Posts" },
+  { href: "/posts", title: "Posts" },
   { href: "/now", title: "Now" },
 ];
 
