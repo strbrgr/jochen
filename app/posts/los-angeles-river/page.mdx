@@ -1,4 +1,4 @@
-import ImageWithCaption from "../../components/image-with-caption";
+import {ImageWithCaption, ImageType} from "../../components/image-with-caption";
 import PostMetadata from "../../components/post-metadata";
 import rancho from "./rancho.jpg";
 
@@ -13,11 +13,18 @@ Long before the Los Angeles River became a pop culture backdrop, it was the reas
 
 The LA River made it possible to manage the seasonal snowmelt from the San Gabriel Mountains and protect the city from flooding. Engineered into submission, overlooked for decades, and now iconic, the river still shapes the life of the city. Whether we notice it or not.
 
-I've always been interested in urban structures, so while living in Los Angeles, I started documenting the river bed across the city limits with my large format cameras. I must have captured about 100 images and am happy with about 10 of them.
-Still only a handful have seen them and I don't know if I will ever show them to a wider audience.
-
 <ImageWithCaption
+  className="mx-auto"
   src={rancho}
+  type={ImageType.Vertical}
   alt="Large Format photograph of the Los Angeles river"
   caption="200716_js_03_F6_Rancho"
+  width={600}
+  height={800}
+  placeholder="blur"
+  priority={true}
 />
+
+I've always been interested in urban structures, so while living in Los Angeles, I started documenting the river bed across the city limits with my large format cameras. I must have captured about 100 images and am happy with about 10 of them.
+
+Still only a handful have seen them and I don't know if I will ever show them to a wider audience.
