@@ -8,7 +8,7 @@ import {
   HeaderThree,
   HeaderTwo,
 } from "./app/components/typography";
-import ImageWithCaption from "./app/components/image-with-caption";
+import { ImageType, ImageWithCaption } from "./app/components/image-with-caption";
 
 const components = {
   h1: ({ children }) => <HeaderOne text={children} />,
@@ -20,7 +20,7 @@ const components = {
   ul: ({ children }) => <ul className="list-disc list-inside">{children}</ul>,
   li: ({ children }) => <li className="ml-4">{children}</li>,
   img: ({ src, alt }) => (
-    <ImageWithCaption src={src || ""} alt={alt || ""} caption={alt} />
+    <ImageWithCaption src={src || ""} alt={alt || ""} caption={alt} type={ImageType.Vertical} priority={true} />
   ),
   p: ({ children }) => <p className="mb-4">{children}</p>,
   a: ({ href, children }) => {
