@@ -11,16 +11,21 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
   const pathname = usePathname();
-  const isActive = pathname === href;
+
+  const isActive = (href: string) => {
+    if (href === "/posts") {
+      return pathname === href || pathname.startsWith("/posts/");
+    }
+    return pathname === href;
+  };
 
   return (
     <Link
       href={href}
-      className={`transition-colors duration-200 ${
-        isActive
-          ? "text-[var(--link-color-hover)]"
-          : "text-[var(--link-color-default)] hover:text-[var(--link-color-hover)]"
-      }`}
+      className={`transition-colors duration-200 ${isActive(href)
+        ? "text-[var(--link-color-hover)]"
+        : "text-[var(--link-color-default)] hover:text-[var(--link-color-hover)]"
+        }`}
     >
       {children}
     </Link>
