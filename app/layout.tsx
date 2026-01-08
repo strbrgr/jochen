@@ -5,9 +5,21 @@ import { Manrope } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
+const BASE_URL = 'https://jochen.fyi';
+
 export const metadata: Metadata = {
   title: "Jochen Stierberger",
   description: "Software Engineer",
+  alternates: {
+    types: {
+      'application/rss+xml': [
+        {
+          url: `${BASE_URL}/feed.xml`,
+          title: 'Jochen Stierberger',
+        },
+      ],
+    },
+  },
 };
 
 const headerLinks: { href: string; title: string }[] = [
