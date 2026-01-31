@@ -1,0 +1,170 @@
+import PostMetadata from "../../components/post-metadata";
+import {ImageType, ImageWithCaption} from "../../components/image-with-caption";
+import colemak from "./COLEMAK.png";
+import nav from "./NAV.png";
+import sym from "./SYM.png";
+import num from "./NUM.png";
+
+# Run QMK
+
+<PostMetadata
+  created="01/31/2026"
+/>
+
+If you are into mechanical keyboards, you might have heard about QMK (Quantum Mechanical Keyboard), an open-source keyboard firmware that lets you customize functionality.
+
+Over the last four years, I went from a TKL layout (87 keys), to a Kinesis Advantage Pro (86 keys), a Keebio Iris (54 keys), and finally landed at a [BastardKB](https://bastardkb.com/) Dilemma and CNano.
+
+These have been my daily drivers for more than 3 years.
+
+Once you get the hang of 36-keys its quite nice but still, I had to read up on QMK's API to make life a bit more convenient.
+
+## QMK Features
+
+Sizing down from a regular keyboard to 36 keys means that certain functionality will be harder to trigger, but we can use different features of QMK to make up for this.
+
+### Layers
+
+Using layers is probably the most important thing if you don't have a lot of keys. The layers that I use most are Symbols, Numbers, and Navigation. These can be activated by a press-and-hold of Escape, Tab, or Space.
+
+#### Base
+
+When I made the switch to a split keyboard, I decided to increase the pain by ditching QWERTY for a more logical layout.
+I chose Colemak-DH because it places the most common English letters on the home row, meaning your fingers move less distance overall compared to QWERTY. My typing speed still hovers around 60 WPM, and I haven't fully adjusted yet, but I _think_ it's an improvement.
+
+On paper, the metrics are clearly better, though in practice the mental overhead of coordinating layers can be surprisingly taxing. Anyways, here is the beauty:
+
+<div className="my-12">
+<ImageWithCaption
+  className="mx-auto"
+  src={colemak}
+  type={ImageType.Horizontal}
+  alt="Colemak keyboard layout"
+  caption="Colemak-DH"
+  width={800}
+  height={600}
+  placeholder="blur"
+  priority={false}
+/>
+</div>
+
+#### Navigation
+
+Choosing Colemak-DH over QWERTY means that my `HJKL` homerow is gone. As those keys are used for navigation in Vim, I added a navigation layer instead of remapping `NEIO` to `HJKL`.
+
+<div className="my-12">
+<ImageWithCaption
+  className="mx-auto"
+  src={nav}
+  type={ImageType.Horizontal}
+  alt="Navigation Layer"
+  caption="LAYER_NAV"
+  width={800}
+  height={600}
+  placeholder="blur"
+  priority={false}
+/>
+</div>
+
+#### Symbol
+
+<div className="my-12">
+<ImageWithCaption
+  className="mx-auto"
+  src={sym}
+  type={ImageType.Horizontal}
+  alt="Symbol Layer"
+  caption="LAYER_SYM"
+  width={800}
+  height={600}
+  placeholder="blur"
+  priority={false}
+/>
+</div>
+
+#### Number
+
+<div className="my-12">
+<ImageWithCaption
+  className="mx-auto"
+  src={num}
+  type={ImageType.Horizontal}
+  alt="Number Layer"
+  caption="LAYER_NUM"
+  width={800}
+  height={600}
+  placeholder="blur"
+  priority={false}
+/>
+</div>
+
+### Combos
+
+I use combos for two main purposes: accommodating symbols that don't fit on my symbol layer, and implementing more complex functionality. My current combos include:
+
+- Delete last word — replicates Option+Backspace on MacOS
+- Caps Word — a modern caps lock alternative that auto-capitalizes until you hit space or punctuation, eliminating the need for a dedicated caps lock key
+- Underscore — didn't fit cleanly on my symbol layer
+- Screenshot — triggers SHIFT + CMD + 4 (Screenshot on MacOS)
+- Maximize window — sends the Rectangle.app command to fullscreen the active window
+
+Again, thos are defined in my `keymap.c`:
+
+```c
+// Combo definitions
+const uint16_t PROGMEM delete_word_combo[] = {KC_H, KC_COMM, COMBO_END};
+const uint16_t PROGMEM caps_word_combo[]   = {KC_F, KC_U, COMBO_END};
+const uint16_t PROGMEM underscore_combo[]  = {TD(TD_DISPLAY_RIGHT), KC_H, COMBO_END};
+const uint16_t PROGMEM screenshot_combo[]  = {KC_B, KC_J, COMBO_END};
+const uint16_t PROGMEM full_window_combo[] = {TD(TD_DISPLAY_LEFT), TD(TD_DISPLAY_RIGHT), COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(delete_word_combo, LALT(KC_BSPC)), 
+    COMBO(caps_word_combo, CW_TOGG), 
+    COMBO(underscore_combo, KC_UNDS), 
+    COMBO(screenshot_combo, LSG(KC_4)),
+    COMBO(full_window_combo, LCA(KC_ENTER)),
+};
+
+uint16_t COMBO_LEN = sizeof(key_combos) / sizeof(key_combos[0]);
+```
+
+### Tap Dance
+
+Another QMK feature that I really like is tap dance which is turning one key into any number of keys. I have a Tap Dance on my `V` and `K` keys.
+If I press `V` within a 160ms time window it will ouput a `V`, if pressed twice it will move the currently active window to the left hand side of my screen. I did set up the same for the `K` key and now have an easy way to rearrange windows on my screen without using my mouse. The way it works in QMK is that you set `TAP_DANCE_ENABLE = yes` in your `rules.mk` and then define the following in your `keymap.c`:
+
+```c
+/* Enum that declares your tap-dances */
+enum {
+    TD_DISPLAY_LEFT,
+    TD_DISPLAY_RIGHT,
+};
+
+/* TD_DISPLAY_LEFT */
+void td_display_left(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        tap_code(KC_V);
+    } else if (state->count == 2) {
+        tap_code16(LALT(LCTL(KC_LEFT)));
+    }
+}
+
+/* TD_DISPLAY_RIGHT */
+void td_display_right(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        tap_code(KC_K);
+    } else if (state->count == 2) {
+        tap_code16(LALT(LCTL(KC_RIGHT)));
+    }
+}
+
+/* Tap Dance Action declaration */
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_DISPLAY_LEFT]  = ACTION_TAP_DANCE_FN(td_display_left),
+    [TD_DISPLAY_RIGHT] = ACTION_TAP_DANCE_FN(td_display_right),
+};
+
+```
+
+And then all you gotta do is to plug it into your keymap wherever you want the tap dance, for me instead of `KC_V` I have `TD(TD_DISPLAY_LEFT)`
