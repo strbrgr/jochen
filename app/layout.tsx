@@ -5,20 +5,49 @@ import { Manrope } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
-const BASE_URL = 'https://jochen.fyi';
+const BASE_URL = "https://jochen.fyi";
+const SITE_DESCRIPTION = "Software engineer working across distributed services.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: "Jochen Stierberger",
-  description: "Software Engineer",
+  description: SITE_DESCRIPTION,
   alternates: {
+    canonical: "/",
     types: {
-      'application/rss+xml': [
+      "application/rss+xml": [
         {
           url: `${BASE_URL}/feed.xml`,
-          title: 'Jochen Stierberger',
+          title: "Jochen Stierberger",
         },
       ],
     },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: BASE_URL,
+    siteName: "Jochen Stierberger",
+    title: "Jochen Stierberger",
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Jochen Stierberger — software engineer working across distributed services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jochen Stierberger",
+    description: SITE_DESCRIPTION,
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -54,7 +83,7 @@ export default function RootLayout({
             </nav>
           </header>
 
-          <main className="flex-1 mt-24">{children}</main>
+          <main className="flex-1 mt-24 mb-12">{children}</main>
         </div>
         <SpeedInsights />
         <Analytics />
