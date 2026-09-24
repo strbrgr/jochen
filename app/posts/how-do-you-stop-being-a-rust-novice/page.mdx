@@ -1,0 +1,39 @@
+import PostMetadata from "../../components/post-metadata";
+
+export const metadata = {
+  title: "How do you stop being a Rust novice? | Jochen Stierberger",
+  description:
+    "Learning Rust by exploring networking, concurrency, and systems design.",
+};
+
+# How do you stop being a Rust novice?
+
+<PostMetadata
+  created="09/24/2026"
+/>
+
+You read *the Book* and you can write structs, traits, generics, iterators, and lifetimes. Rustlings taught you syntax and concepts well, while Advent of Code and Exercism.org improved your fluency. However, at some point exercises stop working: their problems tend to be bounded. Working with these resources rarely forces you to model ownership across subsystems or maintain an evolving codebase long-term.
+
+The obvious next step is books. And while *Rust for Rustaceans* gives you the vocabulary and patterns that beginner material doesn't, understanding a pattern when you see it isn't the same as reaching for it naturally when solving a problem. You have to develop an instinct for Rust, something Germans call *Fingerspitzengefühl* (a feel for what to do, when to do it, and how.).
+
+At work, my day-to-day is dominated by writing backend code in C#. Outside of that, though, I write primarily Rust and have done so pretty consistently for the past three years, unless I have to work on school assignments (which are largely in C and C++).
+
+Without any production exposure (yet!), I eventually realized that looking for increasingly advanced Rust exercises was probably the wrong approach. If I wanted to get better at Rust, I needed problems where Rust wasn't the problem. So I changed focus and started taking on challenges in domains that interest me or that I'd like to work in. That has increasingly pulled me toward cyber-physical systems and other areas that are closer to hardware.
+
+Beginner problems in Rust are often compiler problems. The problems that show up later are different: they're design problems. The compiler will yell at you about an invalid borrow, but it won't tell you whether a socket belongs in main, inside your Producer, or behind another abstraction. It also won't tell you whether an `Arc<AtomicBool>` is the right way to coordinate shutdown between threads, only whether the code you've written is valid Rust.
+
+Once this mental shift clicked, I found myself learning less about Rust syntax and more about the things surrounding it: sockets, scoped threads, atomics, synchronization, and design patterns.
+
+AI complicates this way of learning. I use AI to ship code and think it absolutely has its place. But if the goal is to develop *Fingerspitzengefühl*, then you need to be deliberate about how you use it. When I'm trying to learn, I don't want AI to make the design decisions for me, because those decisions shape how I grow. Should the socket be created by the caller or the `Producer`? How do I want my threads to communicate, through shared state or a channel? Does this type actually need to be behind an `Arc`?
+
+Having AI generate the implementation can make those questions disappear before you've had to struggle with them. Where is the fun in that?
+
+Instead, I've found AI much more useful as a mentor: come up with an approach yourself first, implement it, and only then use AI to challenge it. Ask what could go wrong. Does this ownership model make sense? Use it to figure out what an experienced Rust developer would do differently. Use AI to learn faster and be more effective while remaining the one making the decisions you're trying to learn how to make.
+
+Learn networking. Learn embedded systems. Learn concurrency. Build a bootloader until you realize it is not for you. Learn an area of robotics. Pick whatever domain interests you, and use Rust to explore it. You'll eventually run into ownership problems, API design decisions, synchronization issues, and abstractions that no exercise could have manufactured quite as effectively.
+
+Maybe that's how you stop being a Rust novice.
+
+<div className="mt-8 text-sm text-neutral-500">
+Thanks to Ashish who reviewed an earlier draft of this post.
+</div>
