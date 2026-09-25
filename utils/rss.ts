@@ -1,6 +1,6 @@
 import { compile, run } from '@mdx-js/mdx';
 import * as runtime from 'react/jsx-runtime';
-import { renderToStaticMarkup } from 'react-dom/server.edge';
+import { renderToReadableStream } from 'react-dom/server.edge';
 
 /**
  * Render a post's MDX as static HTML. The browser version can continue to use
@@ -21,7 +21,11 @@ export async function renderPostForRss(
     baseUrl: import.meta.url,
   } as Parameters<typeof run>[1]);
 
-  return renderToStaticMarkup(runtime.jsx(Post, {}))
+  const html = await new Response(
+    await renderToReadableStream(runtime.jsx(Post, {})),
+  ).text();
+
+  return html
     // React 19 may emit browser preload hints while rendering <img> tags.
     // They are not useful inside RSS content.
     .replace(/<link rel="preload" as="image"[^>]*\/?>(?:<\/link>)?/g, '')
