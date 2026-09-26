@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const BASE_URL = 'https://jochen.fyi';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://jochen.fyi';
 
 export interface PostMetadata {
   slug: string;
@@ -9,13 +9,15 @@ export interface PostMetadata {
   date: Date;
   description: string;
   url: string;
+  mdx: string;
+  image?: string;
 }
 
 /**
  * Get all blog posts from the app/posts directory
  * Returns posts sorted by date (newest first)
  */
-export function getAllPosts(): PostMetadata[] {
+export function getAllPosts(baseUrl = SITE_URL): PostMetadata[] {
   const postsDirectory = path.join(process.cwd(), 'app', 'posts');
   const entries = fs.readdirSync(postsDirectory, { withFileTypes: true });
 
@@ -23,7 +25,7 @@ export function getAllPosts(): PostMetadata[] {
 
   for (const entry of entries) {
     // Only process directories (skip page.mdx at root level)
-    if (!entry.isDirectory()) {
+    if (!entry.isDirectory() || entry.name.startsWith('[')) {
       continue;
     }
 
@@ -44,8 +46,10 @@ export function getAllPosts(): PostMetadata[] {
         slug,
         title: metadata.title,
         date: metadata.date,
-        description: metadata.description,
-        url: `${BASE_URL}/posts/${slug}`,
+        description: extractDescription(content, slug, baseUrl),
+        url: `${baseUrl}/posts/${slug}`,
+        mdx: content,
+        image: getFeaturedImage(content, slug, baseUrl),
       });
     } catch (error) {
       console.warn(`Error processing ${slug}:`, error);
@@ -65,7 +69,7 @@ export function getAllPosts(): PostMetadata[] {
 function extractMetadataFromMDX(
   content: string,
   slug: string
-): { title: string; date: Date; description: string } {
+): { title: string; date: Date } {
   // Extract title from H1 heading (line starting with # )
   const titleMatch = content.match(/^#\s+(.+)$/m);
   const title = titleMatch ? titleMatch[1].trim() : slug;
@@ -76,13 +80,20 @@ function extractMetadataFromMDX(
   const date = parsePostDate(dateString);
 
   // Extract description (first paragraph after PostMetadata)
-  const description = extractDescription(content, slug);
-
   return {
     title,
     date,
-    description,
   };
+}
+
+function getFeaturedImage(content: string, slug: string, baseUrl: string): string | undefined {
+  const imageMatch = content.match(
+    /^import\s+[A-Za-z_$][\w$]*\s+from\s+["']\.\/([^"']+\.(?:avif|gif|jpe?g|png|webp))["'];?/im,
+  );
+
+  return imageMatch
+    ? `${baseUrl}/posts/${encodeURIComponent(slug)}/${encodeURIComponent(imageMatch[1])}`
+    : undefined;
 }
 
 /**
@@ -110,7 +121,7 @@ function parsePostDate(dateString: string): Date {
  * Extract description (first paragraph) from MDX content
  * Returns plain text with a "Continue reading" link appended
  */
-function extractDescription(content: string, slug: string): string {
+function extractDescription(content: string, slug: string, baseUrl: string): string {
   // Find content after PostMetadata component
   const postMetadataEnd = content.search(/<\/PostMetadata>|<PostMetadata[^>]*\/>/);
 
@@ -154,7 +165,7 @@ function extractDescription(content: string, slug: string): string {
     }
 
     // Add "Continue reading" link on a new line
-    const postUrl = `${BASE_URL}/posts/${slug}`;
+    const postUrl = `${baseUrl}/posts/${slug}`;
     description += `<br/><br/><a href="${postUrl}">Continue reading the full post here...</a>`;
 
     return description;
